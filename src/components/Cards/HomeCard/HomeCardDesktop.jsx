@@ -100,7 +100,7 @@ const HomeCardDesktop = ({ name, image, price, brand, id }) => {
             </h2>
             <button
               onClick={handleAddToCart}
-              className="h-[34px] w-auto bg-[#CFD1D4]  rounded-full py-0 px-8  text-center "
+              className="h-[34px] w-auto bg-[#CFD1D4] hover:bg-white rounded-full py-0 px-8  text-center "
             >
               <p className="text-[10px] font-general-sans font-semibold tracking-wider text-[#191919]">
                 Buy Now

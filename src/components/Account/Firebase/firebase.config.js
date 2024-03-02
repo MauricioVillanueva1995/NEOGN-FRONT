@@ -1,14 +1,18 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+const API_KEY = import.meta.env.VITE_FIREBASE_KEY;
+const API_ID = import.meta.env.VITE_API_ID;
+const MEASUREMENT_ID = import.meta.env.VITE_MEASUREMENT_ID;
+const SENDER_ID = import.meta.env.VITE_SENDER_ID;
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAWoq5_B-vkUeT4bxmlxDoNB5j_Vo48te0",
+  apiKey: API_KEY,
   authDomain: "neogn-ce89c.firebaseapp.com",
   projectId: "neogn-ce89c",
   storageBucket: "neogn-ce89c.appspot.com",
-  messagingSenderId: "928198315438",
-  appId: "1:928198315438:web:a994081d5057e5237a0c3f",
-  measurementId: "G-XXCLN8C8PQ"
+  messagingSenderId: SENDER_ID,
+  appId: API_ID,
+  measurementId: MEASUREMENT_ID,
 };
 
 const app = initializeApp(firebaseConfig);

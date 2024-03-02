@@ -13,7 +13,7 @@ const WalletPayment = ({ prefId }) => {
     try {
       console.log(user.id);
       const response = await axios.post(
-        "https://neogn-backend.up.railway.app/api/payment/create-preference",
+        "https://neogn-back-584v.onrender.com/api/payment/create-preference",
         {
           userId: user.id,
           items: items.map((item) => ({

@@ -11,7 +11,7 @@ export function postProduct(payload) {
   
     console.log(payload);
     const response = await axios.post(
-      "https://neogn-backend.up.railway.app/api/products/create",
+      "https://neogn-back-584v.onrender.com/api/products/create",
       payload
     );
     return response;

@@ -14,7 +14,7 @@ const getAllOrders = (id) => {
 
     try {
       const response = await axios.get(
-        `https://neogn-backend.up.railway.app/api/orders/${id}`
+        `https://neogn-back-584v.onrender.com/api/orders/${id}`
       );
       dispatch(getOrders(response.data));
     } catch (error) {

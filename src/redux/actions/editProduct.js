@@ -14,7 +14,7 @@ export function editProduct(id, payload) {
 
     try {
       const response = await axios.put(
-        `https://neogn-backend.up.railway.app/api/products/update/${id}`,
+        `https://neogn-back-584v.onrender.com/api/products/update/${id}`,
         payload
       );
       return response;

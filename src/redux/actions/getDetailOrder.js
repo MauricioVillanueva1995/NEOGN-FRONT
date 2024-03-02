@@ -14,7 +14,7 @@ const getOrderPerId = (id) => {
 
     try {
       const response = await axios.get(
-        `https://neogn-backend.up.railway.app/api/orders/perid/${id}`
+        `https://neogn-back-584v.onrender.com/api/orders/perid/${id}`
       );
       dispatch(getOrderDetail(response.data));
     } catch (error) {

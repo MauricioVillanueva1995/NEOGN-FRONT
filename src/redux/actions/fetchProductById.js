@@ -14,7 +14,7 @@ const fetchProductById = (id) => {
 
     try {
       const response = await axios.get(
-        `https://neogn-backend.up.railway.app/api/products/${id}`
+        `https://neogn-back-584v.onrender.com/api/products/${id}`
       );
       dispatch(setProductDetail(response.data));
     } catch (error) {

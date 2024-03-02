@@ -15,7 +15,7 @@ const fetchProducts = () => {
 
     try {
       const json = await axios.get(
-        "https://neogn-backend.up.railway.app/api/products"
+        "https://neogn-back-584v.onrender.com/api/products"
       );
       const products = json.data;
       return dispatch(getProducts(products));

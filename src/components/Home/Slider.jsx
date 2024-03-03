@@ -43,8 +43,8 @@ const Slider = () => {
   const slides = [
     Slide1,
     Slide2,
-    Slide3,
-    Slide4,
+    "https://rog.asus.com/media/1692603114505.jpg",
+    "https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2021/12/hyperx-ces2022-2573477.jpg?tf=3840x",
   ];
 
   return (

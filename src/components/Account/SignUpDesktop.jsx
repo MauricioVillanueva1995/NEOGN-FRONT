@@ -4,7 +4,7 @@ import NEOGNDARK from "../../utils/images/Logo/NEOGNDARK.webp";
 import NEOGNLIGHT from "../../utils/images/Logo/NEOGNLIGHT.webp";
 import NEOGNLOGOLIGHT from "../../utils/images/Logo/NEOGNLOGOLIGHT.webp";
 import NEOGNLOGODARK from "../../utils/images/Logo/NEOGNLOGOLIGHT.webp";
-import BackgroundDark from "../../utils/images/Background/BackgroundDark.webp";
+import BACKGROUNDDARK from "../../utils/images/Background/BACKGROUNDDARK.webp";
 import BackgroundLight from "../../utils/images/Background/BackgroundLight.webp";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -61,7 +61,7 @@ const SignUpDesktop = () => {
   };
 
   const darkStyle = {
-    background: `linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url(${BackgroundDark})`,
+    background: `linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url(${BACKGROUNDDARK})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover", // o 'contain'
     backgroundPosition: "center",

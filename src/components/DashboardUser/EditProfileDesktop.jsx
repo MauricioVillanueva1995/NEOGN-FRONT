@@ -11,11 +11,11 @@ import { useNavigate } from "react-router-dom";
 import { getUser } from "../../redux/slices/userSlice";
 import { useTheme } from "../ThemeContext";
 import Footer from "../Footer";
-import BackgroundDark from "../../utils/images/background/BackgroundDark.webp"
+import BACKGROUNDDARK from "../../utils/images/background/BACKGROUNDDARK.webp"
 
 const EditProfileDesktop = ({ modalOpenCart, closeCart }) => {
   const darkStyle = {
-    background: `linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url(${BackgroundDark})`,
+    background: `linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url(${BACKGROUNDDARK})`,
   };
 
   const EditProfileDesktopRef = useRef();

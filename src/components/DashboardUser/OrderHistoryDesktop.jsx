@@ -5,13 +5,13 @@ import SidebarUser from "./SidebarUser";
 import { AnimatePresence } from "framer-motion";
 import CartDesktop from "../Cart/CartDesktop";
 import Footer from "../Footer";
-import BackgroundDark from "../../utils/images/background/BackgroundDark.webp"
+import BACKGROUNDDARK from "../../utils/images/background/BACKGROUNDDARK.webp"
 
 const OrderHistoryDesktop = ({ modalOpenCart, closeCart }) => {
   const orderHistoryDesktopRef = useRef();
   const { theme } = useTheme();
   const darkStyle = {
-    background: `linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url(${BackgroundDark})`,
+    background: `linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url(${BACKGROUNDDARK})`,
   };
 
   return (

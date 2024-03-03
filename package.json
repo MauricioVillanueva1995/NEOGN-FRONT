@@ -15,6 +15,7 @@
     "@react-three/drei": "^9.88.17",
     "@react-three/fiber": "^8.15.11",
     "@reduxjs/toolkit": "^1.9.6",
+    "@rollup/plugin-image": "^3.0.3",
     "axios": "^1.5.1",
     "firebase": "^10.4.0",
     "firebase-tools": "^12.6.2",
@@ -36,7 +37,9 @@
     "redux-persist": "^6.0.0",
     "serve": "^14.2.1",
     "swiper": "^10.3.1",
-    "three": "^0.158.0"
+    "three": "^0.158.0",
+    "vite-plugin-pwa": "^0.19.2",
+    "vite-plugin-vue2": "^2.0.3"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

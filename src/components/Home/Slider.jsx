@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import Carousel from "react-multi-carousel";
 import CustomDot from "../CustomDot";
 import "react-multi-carousel/lib/styles.css";
-import Slide1 from "../../utils/images/Slider/Slide1.jpg";
-import Slide2 from "../../utils/images/Slider/Slide2.jpg";
-import Slide3 from "../../utils/images/Slider/Slide3.jpg";
-import Slide4 from "../../utils/images/Slider/Slide4.jpg";
+import Slide1 from "../../utils/images/Slider/Slide1.webp";
+import Slide2 from "../../utils/images/Slider/Slide2.webp";
+import Slide3 from "../../utils/images/Slider/Slide3.webp";
+import Slide4 from "../../utils/images/Slider/Slide4.webp";
 
 const Slider = () => {
   const [isDesktop, setIsDesktop] = useState(
@@ -43,8 +43,8 @@ const Slider = () => {
   const slides = [
     Slide1,
     Slide2,
-    "https://rog.asus.com/media/1692603114505.jpg",
-    "https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2021/12/hyperx-ces2022-2573477.jpg?tf=3840x",
+    Slide3,
+    Slide4,
   ];
 
   return (

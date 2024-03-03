@@ -5,12 +5,13 @@ import MyWishlistDesktop from "./MyWishlistDesktop";
 import { useTheme } from "../ThemeContext";
 import { useRef } from "react";
 import Footer from "../Footer";
+import BackgroundDark from "../../utils/images/background/BackgroundDark.webp"
 
 const WishlistAccountDesktop = ({ modalOpenCart, closeCart }) => {
   const wishlistAccountDesktopRef = useRef();
   const { theme } = useTheme();
   const darkStyle = {
-    background: `linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url("https://i.postimg.cc/8kGq1KmM/wallpaperflare-com-wallpaper.jpg")`,
+    background: `linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url(${BackgroundDark})`,
   };
 
   return (

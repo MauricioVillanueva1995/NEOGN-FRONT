@@ -53,19 +53,19 @@ const Footer = () => {
                 Company
               </h3>
               <div className="flex flex-col font-poppins gap-y-[18px]">
-                <Link to="/ContactUs" className="flex gap-x-[9px]">
+                <Link to="https://mawi.onrender.com/" target="_blank" className="flex gap-x-[9px]">
                   <img
                     className="h-[24px] w-auto"
                     src="https://i.postimg.cc/bNHg9T9B/website-webpage-url-domain-svgrepo-com.png"
                   />
                   Portfolio
                 </Link>
-                <Link to="https://www.linkedin.com/in/mauriciogonzalovillanueva/" className="flex gap-x-[9px]">
+                <Link to="https://www.linkedin.com/in/mauriciogonzalovillanueva/" target="_blank" className="flex gap-x-[9px]">
                   <img
                     className="h-[24px] w-auto"
                     src="https://i.postimg.cc/wjbsHykV/linkedin-svgrepo-com-1.png"
                   />
-                  Linked In
+                  LinkedIn
                 </Link>
               </div>
             </div>
@@ -74,14 +74,14 @@ const Footer = () => {
                 Resources
               </h3>
               <div className="flex flex-col font-poppins gap-y-[18px]">
-                <Link to="https://github.com/MauricioVillanueva" className="flex gap-x-[9px]">
+                <Link to="https://github.com/MauricioVillanueva/NEOGN" target="_blank" className="flex gap-x-[9px]">
                   <img
                     className="h-[24px] w-auto"
                     src="https://i.postimg.cc/J0T6pF75/github-142-svgrepo-com.png"
                   />
                   Github
                 </Link>
-                <Link to="https://www.figma.com/file/XW5R5igJ6SnnQeCgmzqFES/NEOGN?type=design&node-id=686%3A3753&mode=design&t=8hvpPLrwQRtukL2F-1" className="flex gap-x-[9px]">
+                <Link to="https://www.figma.com/file/XW5R5igJ6SnnQeCgmzqFES/NEOGN?type=design&node-id=686%3A3753&mode=design&t=8hvpPLrwQRtukL2F-1" target="_blank" className="flex gap-x-[9px]">
                   <img
                     className="h-[24px] w-auto"
                     src="https://i.postimg.cc/KjcprbbY/figma-svgrepo-com.png"

@@ -1,4 +1,12 @@
 import { useState } from "react";
+import Monitors from "../utils/images/CategoriesIcons/Monitors.webp";
+import Headsets from "../utils/images/CategoriesIcons/Headsets.webp";
+import Keyboards from "../utils/images/CategoriesIcons/Keyboards.webp";
+import Mice from "../utils/images/CategoriesIcons/Mice.webp";
+import Mousepads from "../utils/images/CategoriesIcons/Mousepads.webp";
+import Controllers from "../utils/images/CategoriesIcons/Controllers.webp";
+import Earbuds from "../utils/images/CategoriesIcons/Earbuds.webp";
+import Microphones from "../utils/images/CategoriesIcons/Microphones.webp";
 
 const CategoriesForFiltersDesktop = ({ handleFilterCategory }) => {
   const [selectCategory, setSelectCategory] = useState("");
@@ -16,7 +24,7 @@ const CategoriesForFiltersDesktop = ({ handleFilterCategory }) => {
         }`}
       >
         <img
-          src="https://i.postimg.cc/xjXTwHc6/monitor-9678589-7924228.png"
+          src={Monitors}
           className="w-[70px] h-[70px]"
         />
         <div className="font-jakarta-sans font-semibold text-[12px] text-white ">
@@ -31,7 +39,7 @@ const CategoriesForFiltersDesktop = ({ handleFilterCategory }) => {
         }`}
       >
         <img
-          src="https://i.postimg.cc/xdsn7TYr/gaming-headset-7480997-6138641.png"
+          src={Headsets}
           className="w-[70px] h-[70px]"
         />
         <div className="font-jakarta-sans font-semibold text-[12px] text-white ">
@@ -46,7 +54,7 @@ const CategoriesForFiltersDesktop = ({ handleFilterCategory }) => {
         }`}
       >
         <img
-          src="https://i.postimg.cc/DysfZTQs/keyboard-gaming-6013628-4979944.png"
+          src={Keyboards}
           className="w-[70px] h-[70px]"
         />
         <div className="font-jakarta-sans font-semibold text-[12px] text-white">
@@ -61,7 +69,7 @@ const CategoriesForFiltersDesktop = ({ handleFilterCategory }) => {
         }`}
       >
         <img
-          src="https://i.postimg.cc/1Rb5stFs/gaming-mouse-5756086-4818641.png"
+          src={Mice}
           className="w-[70px] h-[70px]"
         />
         <div className="font-jakarta-sans font-semibold text-[12px] text-white">
@@ -76,7 +84,7 @@ const CategoriesForFiltersDesktop = ({ handleFilterCategory }) => {
         }`}
       >
         <img
-          src="https://i.postimg.cc/pXrnTXyf/wepik-export-20231115212704-Mjy-X.png"
+          src={Mousepads}
           className="w-[70px] h-[70px]"
         />
         <div className="font-jakarta-sans font-semibold text-[12px] text-white">
@@ -90,7 +98,7 @@ const CategoriesForFiltersDesktop = ({ handleFilterCategory }) => {
         }`}
       >
         <img
-          src="https://i.postimg.cc/k5M7fR0F/Controllers.png"
+          src={Controllers}
           className="w-[70px] h-[70px]"
         />
         <div className="font-jakarta-sans font-semibold text-[12px] text-white">
@@ -104,7 +112,7 @@ const CategoriesForFiltersDesktop = ({ handleFilterCategory }) => {
         }`}
       >
         <img
-          src="https://i.postimg.cc/Njkg6kzj/Earbuds.png"
+          src={Earbuds}
           className="w-[70px] h-[70px]"
         />
         <div className="font-jakarta-sans font-semibold text-[12px] text-white">
@@ -118,7 +126,7 @@ const CategoriesForFiltersDesktop = ({ handleFilterCategory }) => {
         }`}
       >
         <img
-          src="https://i.postimg.cc/7ZkHJWXR/Microphones.png"
+          src={Microphones}
           className="w-[70px] h-[70px]"
         />
         <div className="font-jakarta-sans font-semibold text-[12px] text-white">

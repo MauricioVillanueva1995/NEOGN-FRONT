@@ -3,6 +3,7 @@ import { useLocation, Link } from "react-router-dom";
 import { switchSelector } from "../redux/slices/navBarSlice";
 import { useDispatch } from "react-redux";
 import { useTheme } from "./ThemeContext";
+import NEOGNLOGO from "../utils/images/Logo/NEOGNLOGO.webp"
 
 import Searchbar from "./SearchbarDesktop";
 
@@ -35,7 +36,7 @@ const NavBar = ({modalOpenCart, openCart, closeCart}) => {
             <img
               className="h-[40px] w-[105px]"
               alt="NEOGNLOGO"
-              src="https://i.postimg.cc/D0phkmmL/NEOGNLOGO.png"
+              src={NEOGNLOGO}
             />
           </div>
         </Link>

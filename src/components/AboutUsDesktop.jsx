@@ -3,6 +3,7 @@ import Footer from "./Footer";
 import { AnimatePresence } from "framer-motion";
 import CartDesktop from "../components/Cart/CartDesktop";
 import { useRef, useEffect } from "react";
+import AboutUs from "../utils/images/AboutUs/AboutUs.webp";
 
 const AboutUsDesktop = ({ modalOpenCart, closeCart }) => {
   const aboutUsRef = useRef();
@@ -44,7 +45,7 @@ const AboutUsDesktop = ({ modalOpenCart, closeCart }) => {
             <div className="w-[560px] h-auto overflow-hidden">
               <img
                 className="w-auto h-auto"
-                src="https://www.makerstations.io/content/images/2022/04/gerwyn-manuel-desk-setup-02.jpg"
+                src={AboutUs}
               />
             </div>
             <div className="pl-[72px] gap-y-[24px] font-poppins w-[560px] h-auto overflow-hidden flex flex-col justify-center items-start bg-[#ebebeb]">

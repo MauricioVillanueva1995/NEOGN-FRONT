@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 
-import Monitors from "../utils/images/CategoriesIcons/Monitors.png";
-import Headsets from "../utils/images/CategoriesIcons/Headsets.png";
-import Keyboards from "../utils/images/CategoriesIcons/Keyboards.png";
-import Mice from "../utils/images/CategoriesIcons/Mice.png";
-import Mousepads from "../utils/images/CategoriesIcons/Mousepads.png";
-import Controllers from "../utils/images/CategoriesIcons/Controllers.png";
-import Earbuds from "../utils/images/CategoriesIcons/Earbuds.png";
-import Microphones from "../utils/images/CategoriesIcons/Microphones.png";
+import Monitors from "../utils/images/CategoriesIcons/Monitors.webp";
+import Headsets from "../utils/images/CategoriesIcons/Headsets.webp";
+import Keyboards from "../utils/images/CategoriesIcons/Keyboards.webp";
+import Mice from "../utils/images/CategoriesIcons/Mice.webp";
+import Mousepads from "../utils/images/CategoriesIcons/Mousepads.webp";
+import Controllers from "../utils/images/CategoriesIcons/Controllers.webp";
+import Earbuds from "../utils/images/CategoriesIcons/Earbuds.webp";
+import Microphones from "../utils/images/CategoriesIcons/Microphones.webp";
 import TitleSection from "../components/TitleSection";
 
 const Categories = () => {

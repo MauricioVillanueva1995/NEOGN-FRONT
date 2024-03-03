@@ -1,3 +1,9 @@
+import Aorus from "../utils/images/FooterLogos/Aorus.webp"
+import Asus from "../utils/images/FooterLogos/Asus.webp"
+import Corsair from "../utils/images/FooterLogos/Corsair.webp"
+import HyperX from "../utils/images/FooterLogos/HyperX.webp"
+import Logitech from "../utils/images/FooterLogos/Logitech.webp"
+import Razer from "../utils/images/FooterLogos/Razer.webp"
 const Brands = () => {
   return (
     <div className="hidden w-full h-auto lg:flex flex-col items-center justify-center gap-y-10">
@@ -8,37 +14,37 @@ const Brands = () => {
         <div className="w-auto h-auto flex items-center justify-center">
           <img
             className="w-[230px] h-auto"
-            src="https://i.postimg.cc/Rh34wGy3/1-01.png"
+            src={HyperX}
           />
         </div>
         <div className="w-auto h-auto flex items-center justify-center">
           <img
             className="w-[230px] h-auto"
-            src="https://i.postimg.cc/nhKZKXR1/1-02.png"
+            src={Razer}
           />
         </div>{" "}
         <div className="w-auto h-auto flex items-center justify-center">
           <img
             className="w-[230px] h-auto"
-            src="https://i.postimg.cc/g0YpgG1b/1-05.png"
+            src={Corsair}
           />
         </div>{" "}
         <div className="w-auto h-auto flex items-center justify-center">
           <img
             className="w-[230px] h-auto"
-            src="https://i.postimg.cc/KvMmzqtw/1-04.png"
+            src={Aorus}
           />
         </div>{" "}
         <div className="w-auto h-auto flex items-center justify-center">
           <img
             className="w-[230px] h-auto"
-            src="https://i.postimg.cc/NjvBr64M/1-06.png"
+            src={Logitech}
           />
         </div>{" "}
         <div className="w-auto h-auto flex items-center justify-center">
           <img
             className="w-[230px] h-auto"
-            src="https://i.postimg.cc/PxVdL03s/1-03.png"
+            src={Asus}
           />
         </div>
       </div>

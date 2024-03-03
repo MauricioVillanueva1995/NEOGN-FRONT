@@ -1,9 +1,11 @@
 import { useAuth } from "./Context/AuthContext";
 import { useTheme } from "../ThemeContext";
-import NEOGNDARK from "../../utils/images/Logo/NEOGNDARK.png";
-import NEOGNLIGHT from "../../utils/images/Logo/NEOGNLIGHT.png";
-import BackgroundDark from "../../utils/images/Background/BackgroundDark.jpg";
-import BackgroundLight from "../../utils/images/Background/BackgroundLight.jpg";
+import NEOGNDARK from "../../utils/images/Logo/NEOGNDARK.webp";
+import NEOGNLIGHT from "../../utils/images/Logo/NEOGNLIGHT.webp";
+import NEOGNLOGOLIGHT from "../../utils/images/Logo/NEOGNLOGOLIGHT.webp";
+import NEOGNLOGODARK from "../../utils/images/Logo/NEOGNLOGOLIGHT.webp";
+import BackgroundDark from "../../utils/images/Background/BackgroundDark.webp";
+import BackgroundLight from "../../utils/images/Background/BackgroundLight.webp";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
@@ -87,12 +89,12 @@ const SignUpDesktop = () => {
             {theme === "dark" ? (
               <img
                 className="w-[190px] h-[90px]"
-                src="https://i.postimg.cc/mDhBr0jV/NEOGNLOGOWHITE.png"
+                src={NEOGNLOGOLIGHT}
               />
             ) : (
               <img
                 className="w-[190px] h-[90px]"
-                src="https://i.postimg.cc/wvPHR0bz/NEOGNLOGOBLACK.png"
+                src={NEOGNLOGODARK}
               />
             )}
           </div>

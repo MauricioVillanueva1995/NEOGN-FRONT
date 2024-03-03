@@ -1,4 +1,5 @@
 import { useState } from "react";
+import DefaultImage from "../../utils/images/User/DefaultImage.webp";
 
 const CardUser = ({
   id,
@@ -25,8 +26,7 @@ const CardUser = ({
     toggleStatus(id, newStatus);
   };
 
-  const defaultImageUrl =
-    "https://i.pinimg.com/originals/1d/2a/7b/1d2a7b6ecfa0afc3b7c854d3aad01f37.jpg";
+  const defaultImageUrl = DefaultImage;
 
   return (
     <div className="max-w-screen-sm mx-auto p-4">
@@ -34,7 +34,7 @@ const CardUser = ({
         <div className="flex flex-col items-center">
           <img
             className="w-32 h-32 rounded-full mb-2"
-            src={image?? defaultImageUrl}
+            src={image ?? defaultImageUrl}
             alt=""
           />
           <div className="text-lg font-medium text-gray-900 text-center">

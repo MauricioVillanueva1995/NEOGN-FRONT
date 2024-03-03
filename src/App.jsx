@@ -2,7 +2,7 @@ import { Route, Routes, useLocation, Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { AuthProvider } from "./components/Account/Context/AuthContext";
 import CircleLoader from "react-spinners/CircleLoader";
-import NEOGNLOGOWHITE from "./utils/images/Logo/NEOGNLOGOWHITE.png";
+import NEOGNLOGOWHITE from "./utils/images/Logo/NEOGNLOGOWHITE.webp";
 import NavBar from "./components/NavBar";
 import Error from "./views/Error";
 import AppBar from "./components/AppBar/AppBar";
@@ -31,6 +31,7 @@ import OrderHistory from "./components/DashboardUser/OrderHistory";
 import WishlistAccount from "./components/DashboardUser/WishlistAccount";
 import OrderDetails from "./components/DashboardUser/Orders/OrderDetails";
 import { useSelector } from "react-redux";
+import BackgroundDark from "./utils/images/Background/BackgroundDark.webp"
 
 const App = () => {
   const [desktop, setDesktop] = useState(window.innerWidth > 1024);
@@ -84,7 +85,7 @@ const App = () => {
         <div
           className="w-full h-screen flex flex-col gap-y-10 lg:flex-row lg:gap-x-10 justify-center items-center"
           style={{
-            background: `linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)), url("https://i.postimg.cc/8kGq1KmM/wallpaperflare-com-wallpaper.jpg")`,
+            background: `linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)), url(${BackgroundDark})`,
           }}
         >
           <CircleLoader

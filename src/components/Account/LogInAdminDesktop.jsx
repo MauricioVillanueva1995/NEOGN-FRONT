@@ -1,9 +1,9 @@
 import { AnimatePresence } from "framer-motion";
 import CartDesktop from "../Cart/CartDesktop";
-import NEOGNDARK from "../../utils/images/Logo/NEOGNDARK.png";
-import NEOGNLIGHT from "../../utils/images/Logo/NEOGNLIGHT.png";
-import BackgroundDark from "../../utils/images/Background/BackgroundDark.jpg";
-import BackgroundLight from "../../utils/images/Background/BackgroundLight.jpg";
+import NEOGNDARK from "../../utils/images/Logo/NEOGNDARK.webp";
+import NEOGNLIGHT from "../../utils/images/Logo/NEOGNLIGHT.webp";
+import BackgroundDark from "../../utils/images/Background/BackgroundDark.webp";
+import BackgroundLight from "../../utils/images/Background/BackgroundLight.webp";
 import { useTheme } from "../ThemeContext";
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";

@@ -19,10 +19,10 @@ const Searchbar = () => {
 
   return (
     <div className="relative w-full lg:w-[400px] lg:ml-2">
-      <div className="w-full bg-slate-50/[0.1] rounded-full lg:py-[2px] lg:px-[18px] flex items-center">
+      <div className="w-full bg-slate-50/[0.1] rounded-full lg:py-[2px] lg:px-[18px] flex items-center border border-slate-300/[0.5]">
         <input
           type="text"
-          className="flex-1 bg-transparent text-gray-400 dark:text-white text-[13px] font-poppins focus:outline-none px-2"
+          className="flex-1 bg-transparent text-gray-400 dark:text-white text-[13px] font-poppins focus:outline-none px-2 "
           placeholder="Search anything"
           value={search}
           onChange={searcher}

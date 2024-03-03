@@ -16,6 +16,8 @@ import Footer from "../components/Footer";
 import Carousel from "react-multi-carousel";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import MainBanner from "../utils/images/Home/MainBanner.webp"
+import HomeBanner from "../utils/images/Home/HomeBanner.webp"
 
 const responsive = {
   biggerscreen: {
@@ -55,7 +57,7 @@ const Home = ({ modalOpenCart, closeCart }) => {
         <LazyLoadImage
           effect="blur"
           className="w-full h-auto"
-          src="https://i.postimg.cc/6tVwgTfh/pexels-yan-krukau-9072388.png"
+          src={MainBanner}
         />
         <h2 className=" max-w-[930px] text-center font-general-sans font-semibold text-white text-[55px] absolute z-10">{`Discover the top brands supporting the world's best teams.`}</h2>
       </div>
@@ -85,13 +87,13 @@ const Home = ({ modalOpenCart, closeCart }) => {
           Shop All
         </Link>
       </div>
-      <div className="w-full h-auto my-10">
+      <div className="w-full h-auto my-20">
         <LazyLoadImage
           className="w-auto h-auto"
-          src="https://www.evetech.co.za/repository/ProductImages/logitech-g-pro-series-banner-2560px-v1.jpg"
+          src={HomeBanner}
         />
       </div>
-      <div className="font-jakarta-sans w-auto flex justify-between items-center m-6 lg:justify-center">
+      <div className="font-jakarta-sans w-auto flex justify-between items-center lg:justify-center">
         <h1 className="text-stone-900 text-[18px] font-bold tracking-wide dark:text-white lg:text-[60px] lg:font-exo lg:font-semibold lg:tracking-tight">
           Latest Products
         </h1>

@@ -7,7 +7,7 @@ const RatingFilter = () => {
 
   return (
     <div className=" font-jakarta-plus font-normal space-y-2">
-      <h6 className="text-xl text-black dark:text-white">Rating</h6>
+      <h6 className="text-xl font-medium font-jakarta-sans text-black dark:text-white">Rating</h6>
       <div className="flex">
         {[...Array(5)].map((star, index) => {
           const ratingValue = index + 1;

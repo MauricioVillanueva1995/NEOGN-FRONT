@@ -4,13 +4,14 @@ import { useRef } from "react";
 import { AnimatePresence } from "framer-motion";
 import CartDesktop from "../Cart/CartDesktop";
 import Footer from "../Footer";
+import BackgroundDark from "../../utils/images/background/BackgroundDark.webp"
 
 const DashboardUserDesktop = ({ modalOpenCart, closeCart }) => {
   const { theme } = useTheme();
   const dashboardUserDesktopRef = useRef();
 
   const darkStyle = {
-    background: `linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url("https://i.postimg.cc/8kGq1KmM/wallpaperflare-com-wallpaper.jpg")`,
+    background: `linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url(${BackgroundDark})`,
   };
 
   return (

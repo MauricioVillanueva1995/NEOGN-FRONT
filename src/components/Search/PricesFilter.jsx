@@ -10,7 +10,7 @@ const PricesFilter = ({ handleFilterPrice }) => {
 
   return (
     <div className="space-y-2 font-jakarta-plus font-normal">
-      <h6 className="text-xl text-black dark:text-white pb-4">
+      <h6 className="text-xl font-medium font-jakarta-sans text-black dark:text-white pb-4">
         Prices
       </h6>
       <div className="flex items-center justify-between col-span-2 space-x-3">

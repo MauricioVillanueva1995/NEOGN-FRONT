@@ -8,13 +8,13 @@ const FiltersSideBar = ({
   resetFilters,
 }) => {
   return (
-    <div className="py-5 px-3 h-auto min-w-[300px] bg-white dark:bg-transparent flex flex-col items-start gap-y-6 font-jakarta-plus font-normal">
+    <div className="py-5 px-3 h-auto min-w-[300px] bg-white dark:bg-transparent flex flex-col items-start gap-y-4 font-jakarta-plus font-normal">
       <h1 className=" text-2xl dark:text-white">Filters</h1>
-      <h2 className=" text-xl dark:text-white">Brand</h2>
+      <h2 className="text-xl font-medium font-jakarta-sans dark:text-white mb-[-10px]">Brands</h2>
       <ul className="h-[300px] flex flex-col justify-around text-start">
         <li>
           <button
-            className="btn relative group dark:text-white font-normal text-[17px]"
+            className="btn relative group dark:text-white font-normal text-lg"
             onClick={() => handleFilterBrand("HyperX")}
           >
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-500 group-hover:w-full group-hover:transition-all" />
@@ -23,7 +23,7 @@ const FiltersSideBar = ({
         </li>
         <li>
           <button
-            className="btn relative group dark:text-white font-normal text-[17px]"
+            className="btn relative group dark:text-white font-normal text-lg"
             value="Logitech"
             onClick={() => handleFilterBrand("Logitech")}
           >
@@ -33,7 +33,7 @@ const FiltersSideBar = ({
         </li>
         <li>
           <button
-            className="btn relative group dark:text-white font-normal text-[17px]"
+            className="btn relative group dark:text-white font-normal text-lg"
             value="Razer"
             onClick={() => handleFilterBrand("Razer")}
           >
@@ -43,7 +43,7 @@ const FiltersSideBar = ({
         </li>
         <li>
           <button
-            className="btn relative group dark:text-white font-normal text-[17px]"
+            className="btn relative group dark:text-white font-normal text-lg"
             value="Corsair"
             onClick={() => handleFilterBrand("Corsair")}
           >
@@ -53,7 +53,7 @@ const FiltersSideBar = ({
         </li>
         <li>
           <button
-            className="btn relative group dark:text-white font-normal text-[17px]"
+            className="btn relative group dark:text-white font-normal text-lg"
             value="Aorus"
             onClick={() => handleFilterBrand("Aorus")}
           >
@@ -63,7 +63,7 @@ const FiltersSideBar = ({
         </li>
         <li>
           <button
-            className="btn relative group dark:text-white font-normal text-[17px]"
+            className="btn relative group dark:text-white font-normal text-lg"
             value="Asus"
             onClick={() => handleFilterBrand("Asus")}
           >
@@ -81,7 +81,7 @@ const FiltersSideBar = ({
         <PricesFilter handleFilterPrice={handleFilterPrice} />
       </div>
       <div className="w-full h-1 border-t-[1px] border-black dark:border-white"></div>
-      <h2 className=" text-xl dark:text-white">Sort By</h2>
+      <h2 className="text-xl font-medium font-jakarta-sans dark:text-white">Sort By</h2>
       <ul className="h-[300px] flex flex-col justify-around text-start">
         <li>
           <button
@@ -157,7 +157,7 @@ const FiltersSideBar = ({
         </li>
       </ul>
       <div className="w-full h-auto flex items-center justify-end">
-        <button onClick={resetFilters} className="bg-slate-300 rounded-lg p-2">
+        <button onClick={resetFilters} className="bg-black rounded-lg p-2 dark:text-black text-[14px] font-general-sans font-semibold tracking-wider text-white hover:bg-slate-700">
           Clear Filters
         </button>
       </div>

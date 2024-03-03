@@ -2,6 +2,8 @@ import { AnimatePresence } from "framer-motion";
 import CartDesktop from "../Cart/CartDesktop";
 import NEOGNDARK from "../../utils/images/Logo/NEOGNDARK.webp";
 import NEOGNLIGHT from "../../utils/images/Logo/NEOGNLIGHT.webp";
+import NEOGNLOGODARK from "../../utils/images/Logo/NEOGNLOGODARK.webp";
+import NEOGNLOGOLIGHT from "../../utils/images/Logo/NEOGNLOGOLIGHT.webp";
 import BackgroundDark from "../../utils/images/Background/BackgroundDark.webp";
 import BackgroundLight from "../../utils/images/Background/BackgroundLight.webp";
 import { useTheme } from "../ThemeContext";
@@ -93,12 +95,12 @@ const LogInAdminDesktop = ({ modalOpenCart, closeCart }) => {
             {theme === "dark" ? (
               <img
                 className="w-[130px] h-[90px]"
-                src="https://i.postimg.cc/mDhBr0jV/NEOGNLOGOWHITE.png"
+                src={NEOGNLOGOLIGHT}
               />
             ) : (
               <img
                 className="w-[190px] h-[90px]"
-                src="https://i.postimg.cc/wvPHR0bz/NEOGNLOGOBLACK.png"
+                src={NEOGNLOGODARK}
               />
             )}
           </div>

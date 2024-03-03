@@ -2,7 +2,7 @@ import { Route, Routes, useLocation, Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { AuthProvider } from "./components/Account/Context/AuthContext";
 import CircleLoader from "react-spinners/CircleLoader";
-import NEOGNLOGOWHITE from "./utils/images/Logo/NEOGNLOGOWHITE.webp";
+import NEOGNLOGOLIGHT from "./utils/images/Logo/NEOGNLOGOLIGHT.webp";
 import NavBar from "./components/NavBar";
 import Error from "./views/Error";
 import AppBar from "./components/AppBar/AppBar";
@@ -95,7 +95,7 @@ const App = () => {
             aria-label="Loading Spinner"
             data-testid="loader"
           />
-          <img className="h-40" src={NEOGNLOGOWHITE} />
+          <img className="h-40" src={NEOGNLOGOLIGHT} />
         </div>
       ) : (
         <div>

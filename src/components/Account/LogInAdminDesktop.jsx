@@ -4,7 +4,7 @@ import NEOGNDARK from "../../utils/images/Logo/NEOGNDARK.webp";
 import NEOGNLIGHT from "../../utils/images/Logo/NEOGNLIGHT.webp";
 import NEOGNLOGODARK from "../../utils/images/Logo/NEOGNLOGODARK.webp";
 import NEOGNLOGOLIGHT from "../../utils/images/Logo/NEOGNLOGOLIGHT.webp";
-import BACKGROUNDDARK from "../../utils/images/Background/BACKGROUNDDARK.webp";
+import BGDark from "../../utils/images/Background/BGDark.webp";
 import BackgroundLight from "../../utils/images/Background/BackgroundLight.webp";
 import { useTheme } from "../ThemeContext";
 import { useState, useEffect, useRef } from "react";
@@ -66,7 +66,7 @@ const LogInAdminDesktop = ({ modalOpenCart, closeCart }) => {
   };
 
   const darkStyle = {
-    background: `linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url(${BACKGROUNDDARK})`,
+    background: `linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url(${BGDark})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover", // o 'contain'
     backgroundPosition: "center",

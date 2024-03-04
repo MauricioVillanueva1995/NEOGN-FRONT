@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 import { getUser } from "../../redux/slices/userSlice";
 import { useTheme } from "../ThemeContext";
 import Footer from "../Footer";
-import BGDark from "../../../src/utils/images/background/BGDark.webp"
+import BGDark from "../../../src/utils/images/Background/BGDark.webp"
 
 const EditProfileDesktop = ({ modalOpenCart, closeCart }) => {
   const darkStyle = {

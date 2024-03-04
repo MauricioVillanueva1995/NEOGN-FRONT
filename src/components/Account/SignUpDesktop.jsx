@@ -4,7 +4,7 @@ import NEOGNDARK from "../../utils/images/Logo/NEOGNDARK.webp";
 import NEOGNLIGHT from "../../utils/images/Logo/NEOGNLIGHT.webp";
 import NEOGNLOGOLIGHT from "../../utils/images/Logo/NEOGNLOGOLIGHT.webp";
 import NEOGNLOGODARK from "../../utils/images/Logo/NEOGNLOGOLIGHT.webp";
-import BGDark from "../../utils/images/Background/BGDark.webp";
+import BGDark from "../../../src/utils/images/Background/BGDark.webp";
 import BackgroundLight from "../../utils/images/Background/BackgroundLight.webp";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";

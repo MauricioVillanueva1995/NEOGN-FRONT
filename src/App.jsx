@@ -31,7 +31,7 @@ import OrderHistory from "./components/DashboardUser/OrderHistory";
 import WishlistAccount from "./components/DashboardUser/WishlistAccount";
 import OrderDetails from "./components/DashboardUser/Orders/OrderDetails";
 import { useSelector } from "react-redux";
-import BACKGROUNDDARK from "./utils/images/Background/BACKGROUNDDARK.webp";gi
+import BACKGROUNDDARK from "./utils/images/Background/BACKGROUNDDARK.webp";
 
 const App = () => {
   const [desktop, setDesktop] = useState(window.innerWidth > 1024);

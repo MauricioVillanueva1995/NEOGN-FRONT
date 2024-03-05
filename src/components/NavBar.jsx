@@ -3,16 +3,18 @@ import { useLocation, Link } from "react-router-dom";
 import { switchSelector } from "../redux/slices/navBarSlice";
 import { useDispatch } from "react-redux";
 import { useTheme } from "./ThemeContext";
-import NEOGNLOGO from "../utils/images/Logo/NEOGNLOGO.webp"
+import NEOGNLOGO from "../utils/images/Logo/NEOGNLOGO.webp";
+import ActiveCart from "../utils/Icons/NavBar/ActiveCart.webp";
+import ActiveHeart from "../utils/Icons/NavBar/ActiveHeart.webp";
+import ActiveProfile from "../utils/Icons/NavBar/ActiveProfile.webp";
 
 import Searchbar from "./SearchbarDesktop";
 
-const NavBar = ({modalOpenCart, openCart, closeCart}) => {
+const NavBar = ({ modalOpenCart, openCart, closeCart }) => {
   const { theme } = useTheme();
   const dispatch = useDispatch();
   // const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   // const [forceUpdate, setForceUpdate] = useState(false);
-
 
   const location = useLocation();
   const currentPath = location.pathname;
@@ -20,7 +22,6 @@ const NavBar = ({modalOpenCart, openCart, closeCart}) => {
   const selected = (select) => {
     dispatch(switchSelector(select));
   };
-
 
   // const toggleDrawer = () => {
   //   setIsDrawerOpen(!isDrawerOpen);
@@ -120,11 +121,7 @@ const NavBar = ({modalOpenCart, openCart, closeCart}) => {
             className="flex justify-center items-center"
           >
             <div className="flex-col justify-center items-center inline-flex">
-              <img
-                alt="Saved"
-                src="https://i.postimg.cc/vTLTgtrf/active-heart-svgrepo-com.png"
-                className="w-5 h-5"
-              />
+              <img alt="Saved" src={ActiveHeart} className="w-5 h-5" />
             </div>
           </Link>
           <motion.button
@@ -137,11 +134,7 @@ const NavBar = ({modalOpenCart, openCart, closeCart}) => {
             aria-controls="drawer-right-example"
           >
             <div className="flex-col justify-center items-center inline-flex">
-              <img
-                alt="MyCart"
-                src="https://i.postimg.cc/1Xq6bnN4/active-basket-alt-3-svgrepo-com.png"
-                className="w-6 h-6"
-              />
+              <img alt="MyCart" src={ActiveCart} className="w-6 h-6" />
             </div>
           </motion.button>
           <Link
@@ -150,11 +143,7 @@ const NavBar = ({modalOpenCart, openCart, closeCart}) => {
             className="flex justify-center items-center"
           >
             <div className="flex-col justify-center items-center inline-flex">
-              <img
-                src="https://i.postimg.cc/c1Qrb0pC/active-profile-svgrepo-com.png"
-                className="w-6 h-6"
-                alt="Account"
-              />
+              <img src={ActiveProfile} className="w-6 h-6" alt="Account" />
             </div>
           </Link>
         </div>

@@ -176,7 +176,7 @@ const DashBoardUser = ({ modalOpenCart, closeCart }) => {
                     : "https://www.svgrepo.com/show/444723/heart.svg"
                 }
               />
-              <h1 className="font-general-sanstext-neutral-800 text-lg font-medium dark:text-white">
+              <h1 className="font-general-sans text-neutral-800 text-lg font-medium dark:text-white">
                 Wishlist
               </h1>
             </div>

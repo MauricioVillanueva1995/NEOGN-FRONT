@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import ActiveSearch from "../utils/Icons/ActiveSearch.webp";
 
 const Searchbar = () => {
   const [search, setSearch] = useState("");
@@ -13,7 +14,7 @@ const Searchbar = () => {
 
   const handleSearchSuccess = () => {
     console.log("handleSearchSuccess called");
-    setSearch('');
+    setSearch("");
     console.log("Search cleared:", search);
   };
 
@@ -27,10 +28,7 @@ const Searchbar = () => {
           value={search}
           onChange={searcher}
         />
-        <img
-          className="w-8 h-8"
-          src="https://i.postimg.cc/RZ0hhfNJ/active-search-alt-svgrepo-com.png"
-        />
+        <img className="w-8 h-8" src={ActiveSearch} />
       </div>
       {search && (
         <ul className="absolute z-10 w-full bg-white border border-gray-200 shadow-lg rounded-md mt-2">
@@ -44,13 +42,13 @@ const Searchbar = () => {
                 className="py-2 px-4 hover:bg-gray-100 flex items-center"
               >
                 <Link
-  to={`/${product.id}`}
-  className="flex items-center w-full"
-  onClick={() => {
-    console.log("Link clicked");
-    handleSearchSuccess();
-  }}
->
+                  to={`/${product.id}`}
+                  className="flex items-center w-full"
+                  onClick={() => {
+                    console.log("Link clicked");
+                    handleSearchSuccess();
+                  }}
+                >
                   <img
                     src={product.image}
                     className="w-12 h-12 object-contain rounded"

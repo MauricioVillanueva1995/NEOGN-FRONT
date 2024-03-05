@@ -16,8 +16,15 @@ import Footer from "../components/Footer";
 import Carousel from "react-multi-carousel";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import MainBanner from "../utils/images/Home/MainBanner.webp"
-import HomeBanner from "../utils/images/Home/HomeBanner.webp"
+
+import MainBanner from "../utils/images/Home/MainBanner.webp";
+import HomeBanner from "../utils/images/Home/HomeBanner.webp";
+import PackageDark from "../utils/Icons/Info/PackageDark.webp";
+import PackageLight from "../utils/Icons/Info/PackageLight.webp";
+import ShippingDark from "../utils/Icons/Info/ShippingDark.webp";
+import ShippingLight from "../utils/Icons/Info/ShippingLight.webp";
+import WarrantyDark from "../utils/Icons/Info/WarrantyDark.webp";
+import WarrantyLight from "../utils/Icons/Info/WarrantyLight.webp";
 
 const responsive = {
   biggerscreen: {
@@ -49,7 +56,10 @@ const Home = ({ modalOpenCart, closeCart }) => {
   }, [dispatch]);
 
   return (
-    <div ref={homeRef} className="h-full w-auto pb-32 lg:pb-0 dark:bg-[#121212] overflow-x-hidden">
+    <div
+      ref={homeRef}
+      className="h-full w-auto pb-32 lg:pb-0 dark:bg-[#121212] overflow-x-hidden"
+    >
       <div className="h-auto w-auto mx-10 pt-10 lg:mx-0 lg:pt-0">
         <Slider />
       </div>
@@ -87,13 +97,10 @@ const Home = ({ modalOpenCart, closeCart }) => {
           Shop All
         </Link>
       </div>
-      <div className="w-full h-auto my-20">
-        <LazyLoadImage
-          className="w-auto h-auto"
-          src={HomeBanner}
-        />
+      <div className="w-full h-auto my-10 lg:my-20">
+        <LazyLoadImage className="w-auto h-auto" src={HomeBanner} />
       </div>
-      <div className="font-jakarta-sans w-auto flex justify-between items-center lg:justify-center">
+      <div className="font-jakarta-sans w-auto flex justify-between items-center lg:justify-center m-6">
         <h1 className="text-stone-900 text-[18px] font-bold tracking-wide dark:text-white lg:text-[60px] lg:font-exo lg:font-semibold lg:tracking-tight">
           Latest Products
         </h1>
@@ -101,7 +108,7 @@ const Home = ({ modalOpenCart, closeCart }) => {
           SEE ALL
         </p>
       </div>
-      <div className="lg:hidden w-full flex justify-center items-center">
+      <div className="lg:hidden w-full flex justify-center items-center my-10">
         <div className="w-auto h-auto grid grid-cols-2 gap-8">
           {products.length > 0 &&
             products.map((product, index) => (
@@ -138,15 +145,9 @@ const Home = ({ modalOpenCart, closeCart }) => {
         <div className="font-exo font-bold text-[24px] max-w-[1200px] py-2 px-8 flex justify-around items-center border-2 rounded-xl gap-x-32">
           <div className="w-[280px] h-auto flex flex-col items-center justify-center">
             {theme === "dark" ? (
-              <img
-                className="w-[30px] h-[30px]"
-                src="https://i.postimg.cc/Mph7Qjvv/gui-shipping-svgrepo-com-1.png"
-              />
+              <img className="w-[30px] h-[30px]" src={ShippingLight} />
             ) : (
-              <img
-                className="w-[30px] h-[30px]"
-                src="https://i.postimg.cc/sDx4ZLmj/gui-shipping-svgrepo-com-2.png"
-              />
+              <img className="w-[30px] h-[30px]" src={ShippingDark} />
             )}
             <h2 className="text-black dark:text-white text-center">
               Free Standard Shipping on most Orders
@@ -154,15 +155,9 @@ const Home = ({ modalOpenCart, closeCart }) => {
           </div>
           <div className="w-[280px] h-auto flex flex-col items-center justify-center">
             {theme === "dark" ? (
-              <img
-                className="w-[30px] h-[30px]"
-                src="https://i.postimg.cc/Y0nNsNrB/package-thin-svgrepo-com-2.png"
-              />
+              <img className="w-[30px] h-[30px]" src={PackageLight} />
             ) : (
-              <img
-                className="w-[30px] h-[30px]"
-                src="https://i.postimg.cc/5Nrq5mKw/package-thin-svgrepo-com-1.png"
-              />
+              <img className="w-[30px] h-[30px]" src={PackageDark} />
             )}
             <h2 className="text-black dark:text-white text-center">
               30-Day Hassle-Free Product Return
@@ -170,15 +165,9 @@ const Home = ({ modalOpenCart, closeCart }) => {
           </div>
           <div className="w-[280px] h-auto flex flex-col items-center justify-center">
             {theme === "dark" ? (
-              <img
-                className="w-[30px] h-[30px]"
-                src="https://i.postimg.cc/Mph7Qjvv/gui-shipping-svgrepo-com-1.png"
-              />
+              <img className="w-[30px] h-[30px]" src={WarrantyLight} />
             ) : (
-              <img
-                className="w-[30px] h-[30px]"
-                src="https://i.postimg.cc/kgtNTtLL/warranty-svgrepo-com-2.png"
-              />
+              <img className="w-[30px] h-[30px]" src={WarrantyDark} />
             )}
             <h2 className="text-black dark:text-white text-center">
               Up to 2-year Warranty on all products
@@ -186,8 +175,7 @@ const Home = ({ modalOpenCart, closeCart }) => {
           </div>
         </div>
       </div>
-      <AnimatePresence
-       initial={false} mode="wait" onExitComplete={() => null}>
+      <AnimatePresence initial={false} mode="wait" onExitComplete={() => null}>
         {modalOpenCart && (
           <CartDesktop
             closeCart={closeCart}

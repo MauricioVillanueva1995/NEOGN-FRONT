@@ -1,6 +1,8 @@
 import Searchbar from "./SearchBar";
 import Sidebar from "./Sidebar";
 import { useTheme } from "../ThemeContext";
+import NEOGNDARK from "../../../src/utils/images/Logo/NEOGNDARK.webp";
+import NEOGNLIGHT from "../../../src/utils/images/Logo/NEOGNLIGHT.webp";
 
 const TopBar = () => {
   const { theme } = useTheme();
@@ -11,11 +13,7 @@ const TopBar = () => {
       <div className="w-full h-auto">
         <div>
           <img
-            src={
-              theme === "dark"
-                ? "https://i.postimg.cc/8PRLdtWp/icosnns.png"
-                : "https://i.postimg.cc/hGvKFVV8/iconns.png"
-            }
+            src={theme === "dark" ? NEOGNLIGHT : NEOGNDARK}
             className="w-auto h-8"
           />
         </div>

@@ -3,6 +3,11 @@ import { AnimatePresence } from "framer-motion";
 import CartDesktop from "../components/Cart/CartDesktop";
 import { useTheme } from "../components/ThemeContext";
 import { useRef,useEffect } from "react";
+import EmailDark from "../utils/Icons/ContactUs/EmailDark.webp"
+import EmailLight from "../utils/Icons/ContactUs/EmailLight.webp"
+import Maps from "../utils/Icons/ContactUs/Maps.webp"
+import PhoneLight from "../utils/Icons/ContactUs/PhoneLight.webp"
+import PhoneDark from "../utils/Icons/ContactUs/PhoneDark.webp"
 
 const ContactUsDesktop = ({ modalOpenCart, closeCart }) => {
   const contactUsRef = useRef();
@@ -41,7 +46,7 @@ const ContactUsDesktop = ({ modalOpenCart, closeCart }) => {
             <div className="mb-4 flex gap-5">
               <img
                 className="h-[25px] w-[20px]"
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Google_Maps_icon_%282020%29.svg/800px-Google_Maps_icon_%282020%29.svg.png"
+                src={Maps}
               />
               <p className="mb-2 text-neutral-500 dark:text-neutral-300">
                 Palermo, CABA, Argentina
@@ -51,12 +56,12 @@ const ContactUsDesktop = ({ modalOpenCart, closeCart }) => {
               {theme === "dark" ? (
                 <img
                   className="h-[25px] w-[25px]"
-                  src="https://i.postimg.cc/Bndfv0Rz/phone-svgrepo-com.png"
+                  src={PhoneLight}
                 />
               ) : (
                 <img
                   className="h-[25px] w-[25px]"
-                  src="https://cdn0.iconfinder.com/data/icons/phone-activity-glyph/64/Phone_Activity_Icon_Set_Glyph-01-512.png"
+                  src={PhoneDark}
                 />
               )}
 
@@ -68,12 +73,12 @@ const ContactUsDesktop = ({ modalOpenCart, closeCart }) => {
               {theme === "dark" ? (
                 <img
                   className="h-[30px] w-[30px]"
-                  src="https://i.postimg.cc/yNZy1RNK/email-svgrepo-com.png"
+                  src={EmailLight}
                 />
               ) : (
                 <img
                   className="h-[30px] w-[30px]"
-                  src="https://static.vecteezy.com/system/resources/previews/020/009/601/original/email-and-mail-icon-black-free-png.png"
+                  src={EmailDark}
                 />
               )}
 

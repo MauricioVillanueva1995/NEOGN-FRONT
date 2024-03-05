@@ -11,6 +11,16 @@ import TitleSection from "../components/TitleSection";
 import { useTheme } from "../components/ThemeContext";
 import DetailDesktop from "../components/Detail/DetailDesktop";
 
+import HeartActive from "../utils/Icons/Detail/HeartActive.webp";
+import HeartActiveLight from "../utils/Icons/Detail/HeartActiveLight.webp";
+import HeartInactiveLight from "../utils/Icons/Detail/HeartInactiveLight.webp";
+import HeartInactiveDark from "../utils/Icons/Detail/HeartInactiveDark.webp";
+import Star from "../utils/Icons/Detail/Star.webp";
+import DocumentLight from "../utils/Icons/Detail/DocumentLight.webp";
+import DocumentDark from "../utils/Icons/Detail/DocumentDark.webp";
+import ColorsLight from "../utils/Icons/Detail/ColorsLight.webp";
+import ColorsDark from "../utils/Icons/Detail/ColorsDark.webp";
+
 const Detail = ({ modalOpenCart, closeCart }) => {
   const { theme } = useTheme();
   const navigate = useNavigate();
@@ -198,11 +208,11 @@ const Detail = ({ modalOpenCart, closeCart }) => {
                       src={
                         isAdded
                           ? theme === "dark"
-                            ? "https://i.postimg.cc/ydfDvxWm/heasrt.png"
-                            : "https://i.postimg.cc/YSGJpbnw/heart-svgrepo-com-1.png"
+                            ? { HeartActive }
+                            : { HeartActiveLight }
                           : theme === "dark"
-                          ? "https://i.postimg.cc/rsjdRY0z/heart.png"
-                          : "https://i.postimg.cc/4xFd9d9L/heart-svgrepo-com.png"
+                          ? { HeartInactiveLight }
+                          : { HeartInactiveDark }
                       }
                       className={`w-5 h-5 md:w-auto md:h-auto object-cover rounded-lg cursor-pointer ${
                         isAdded ? "text-red-500" : "text-gray-500"
@@ -236,7 +246,7 @@ const Detail = ({ modalOpenCart, closeCart }) => {
                 <img
                   className="relative w-[16px] h-[16px]"
                   alt="Star"
-                  src="https://i.postimg.cc/YCvVthCt/star-1-svgrepo-com.png"
+                  src={Star}
                 />
                 <div className="relative w-fit mt-[-0.50px] [font-family:'Roboto-Medium',Helvetica] font-medium text-oil-11 text-[13px] tracking-[0] leading-[normal] whitespace-nowrap">
                   4.9
@@ -251,9 +261,7 @@ const Detail = ({ modalOpenCart, closeCart }) => {
                 <div className="w-auto h-auto flex items-center justify-center p-[9px] bg-gray-100 dark:bg-darkCard rounded-[10px]">
                   <img
                     src={
-                      theme === "dark"
-                        ? "https://i.postimg.cc/L5KY5GcZ/document-svgsrepo-com.png"
-                        : "https://i.postimg.cc/NjZnFBKm/document-svgrepo-com.png"
+                      theme === "dark" ? { DocumentLight } : { DocumentDark }
                     }
                     className="relative w-[24px] h-[24px]"
                     alt="Document Icon"
@@ -302,11 +310,7 @@ const Detail = ({ modalOpenCart, closeCart }) => {
               <div className="gap-[12px] inline-flex items-center relative flex-[0_0_auto]">
                 <div className="justify-center gap-[10px] p-[9px] bg-gray-100 dark:bg-darkCard rounded-[10px] inline-flex items-center relative flex-[0_0_auto]">
                   <img
-                    src={
-                      theme === "dark"
-                        ? "https://i.postimg.cc/sXSxkwMf/colors-svgrsepo-com.png"
-                        : "https://i.postimg.cc/d0dxTpCX/colors-svgrepo-com.png"
-                    }
+                    src={theme === "dark" ? { ColorsLight } : { ColorsDark }}
                     className="relative w-[24px] h-[24px]"
                     alt="Colors Icon"
                   />

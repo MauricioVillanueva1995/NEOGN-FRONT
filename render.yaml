@@ -1,0 +1,3 @@
+routes:
+  - destination: /index.html
+    continue: true

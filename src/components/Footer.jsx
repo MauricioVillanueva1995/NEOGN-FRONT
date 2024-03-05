@@ -1,4 +1,12 @@
 import { Link } from "react-router-dom";
+import EmailLight from "../utils/Icons/ContactUs/EmailLight.webp";
+import NEOGNLIGHT from "../utils/images/Logo/NEOGNLIGHT";
+import AppleStore from "../utils/Icons/Footer/AppleStore.webp";
+import Figma from "../utils/Icons/Footer/Figma.webp";
+import Github from "../utils/Icons/Footer/Github.webp";
+import LinkedIn from "../utils/Icons/Footer/LinkedIn.webp";
+import Playstore from "../utils/Icons/Footer/Playstore.webp";
+import Website from "../utils/Icons/Footer/Website.webp";
 
 const Footer = () => {
   return (
@@ -10,10 +18,7 @@ const Footer = () => {
           </div>
           <div className="gap-x-4 w-auto h-auto flex items-center justify-around">
             <div className="py-3 w-[360px] h-auto rounded-full border-[#484848] border-[1px] gap-x-2 flex justify-start items-center px-4">
-              <img
-                className="w-6 h-auto"
-                src="https://i.postimg.cc/yNZy1RNK/email-svgrepo-com.png"
-              />
+              <img className="w-6 h-auto" src={EmailLight} />
               <input
                 className="text-white bg-transparent border-none outline-none font-poppins text-[14px] font-normal"
                 placeholder="Enter your email"
@@ -27,16 +32,14 @@ const Footer = () => {
         <div className="w-full h-[0px] border border-white border-opacity-30"></div>
         <div className="w-full h-auto flex justify-between items-center">
           <div className="w-[380px] h-auto flex flex-col justify-center items-start font-poppins gap-y-[16px]">
-            <img
-              className="w-[60px] h-auto"
-              src="https://i.postimg.cc/8PRLdtWp/icosnns.png"
-            />
+            <img className="w-[60px] h-auto" src={NEOGNLIGHT} />
             <div className="self-stretch text-white text-2xl font-semibold">
               Experience the future of gaming with NEOGN
             </div>
             <div className="text-white text-base font-normal">NEOGN, 2023.</div>
-            <div className="text-white text-base font-normal">Designed/Developed by Mauricio Villanueva</div>
-
+            <div className="text-white text-base font-normal">
+              Designed/Developed by Mauricio Villanueva
+            </div>
           </div>
           <div className="w-auto h-auto flex gap-x-[64px]">
             <div className="w-auto h-auto flex flex-col text-white gap-y-[16px]">
@@ -53,17 +56,25 @@ const Footer = () => {
                 Company
               </h3>
               <div className="flex flex-col font-poppins gap-y-[18px]">
-                <Link to="https://mawi.onrender.com/" target="_blank" className="flex gap-x-[9px]">
+                <Link
+                  to="https://mawi.onrender.com/"
+                  target="_blank"
+                  className="flex gap-x-[9px]"
+                >
                   <img
                     className="h-[24px] w-auto"
-                    src="https://i.postimg.cc/bNHg9T9B/website-webpage-url-domain-svgrepo-com.png"
+                    src={Website}
                   />
                   Portfolio
                 </Link>
-                <Link to="https://www.linkedin.com/in/mauriciogonzalovillanueva/" target="_blank" className="flex gap-x-[9px]">
+                <Link
+                  to="https://www.linkedin.com/in/mauriciogonzalovillanueva/"
+                  target="_blank"
+                  className="flex gap-x-[9px]"
+                >
                   <img
                     className="h-[24px] w-auto"
-                    src="https://i.postimg.cc/wjbsHykV/linkedin-svgrepo-com-1.png"
+                    src={LinkedIn}
                   />
                   LinkedIn
                 </Link>
@@ -74,17 +85,25 @@ const Footer = () => {
                 Resources
               </h3>
               <div className="flex flex-col font-poppins gap-y-[18px]">
-                <Link to="https://github.com/MauricioVillanueva/NEOGN" target="_blank" className="flex gap-x-[9px]">
+                <Link
+                  to="https://github.com/MauricioVillanueva/NEOGN"
+                  target="_blank"
+                  className="flex gap-x-[9px]"
+                >
                   <img
                     className="h-[24px] w-auto"
-                    src="https://i.postimg.cc/J0T6pF75/github-142-svgrepo-com.png"
+                    src={Github}
                   />
                   Github
                 </Link>
-                <Link to="https://www.figma.com/file/XW5R5igJ6SnnQeCgmzqFES/NEOGN?type=design&node-id=686%3A3753&mode=design&t=8hvpPLrwQRtukL2F-1" target="_blank" className="flex gap-x-[9px]">
+                <Link
+                  to="https://www.figma.com/file/XW5R5igJ6SnnQeCgmzqFES/NEOGN?type=design&node-id=686%3A3753&mode=design&t=8hvpPLrwQRtukL2F-1"
+                  target="_blank"
+                  className="flex gap-x-[9px]"
+                >
                   <img
                     className="h-[24px] w-auto"
-                    src="https://i.postimg.cc/KjcprbbY/figma-svgrepo-com.png"
+                    src={Figma}
                   />
                   Figma
                 </Link>
@@ -98,14 +117,14 @@ const Footer = () => {
                 <Link to="/ContactUs" className="flex gap-x-[9px]">
                   <img
                     className="h-[24px] w-auto"
-                    src="https://i.postimg.cc/sDMrqMvy/logo-google-playstore-svgrepo-com.png"
+                    src={Playstore}
                   />
                   PlayStore
                 </Link>
                 <Link to="/AboutUs" className="flex gap-x-[9px]">
                   <img
                     className="h-[24px] w-auto"
-                    src="https://i.postimg.cc/x1SbdVrk/apple-173-svgrepo-com.png"
+                    src={AppleStore}
                   />{" "}
                   Appstore
                 </Link>

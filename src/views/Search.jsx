@@ -12,6 +12,7 @@ import { useTheme } from "../components/ThemeContext";
 import SearchDesktop from "../components/SearchDesktop";
 
 const Search = ({ modalOpenCart, closeCart }) => {
+  window.scrollTo(0, 0);
   const location = useLocation();
   const navigate = useNavigate();
   const dispatch = useDispatch();

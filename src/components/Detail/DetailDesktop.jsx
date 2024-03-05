@@ -7,6 +7,16 @@ import { useState, useEffect, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stage } from "@react-three/drei";
 
+import HeartActive from "../../utils/Icons/HeartActive.webp"
+import HeartActiveLight from "../../utils/Icons/HeartActive.webp"
+import HeartInactiveLight from "../../utils/Icons/Detail/HeartInactiveLight.webp";
+import HeartInactiveDark from "../../utils/Icons/Detail/HeartInactiveDark.webp";
+import CloseDark from "../../utils/Icons/Detail/CloseDark.webp";
+import CloseLight from "../../utils/Icons/Detail/CloseLight.webp";
+import ThreeDDark from "../../utils/Icons/Detail/ThreeDDark.web"
+import ThreeDLight from "../../utils/Icons/Detail/ThreeDLight.web"
+
+
 const DetailDesktop = ({
   modalOpenCart,
   closeCart,
@@ -55,11 +65,11 @@ const DetailDesktop = ({
                 src={
                   isAdded
                     ? theme === "dark"
-                      ? "https://i.postimg.cc/ydfDvxWm/heasrt.png"
-                      : "https://i.postimg.cc/YSGJpbnw/heart-svgrepo-com-1.png"
+                      ? {HeartActive}
+                      : {HeartActiveLight}
                     : theme === "dark"
-                    ? "https://i.postimg.cc/rsjdRY0z/heart.png"
-                    : "https://i.postimg.cc/4xFd9d9L/heart-svgrepo-com.png"
+                    ? {HeartInactiveLight}
+                    : {HeartInactiveDark}
                 }
                 className={`w-9 h-9 object-cover rounded-lg cursor-pointer ${
                   isAdded ? "text-red-500" : "text-gray-500"
@@ -160,13 +170,13 @@ const DetailDesktop = ({
                 <img
                   className="w-[50px] h-auto z-10 absolute top-10 right-10 dark:text-white cursor-pointer bg-transparent border-none"
                   onClick={() => setShow3DObject(false)}
-                  src="https://i.postimg.cc/Y2mQRcQJ/close-x-svgrepo-com.png"
+                  src={CloseLight}
                 />
               ) : (
                 <img
                   className="w-[50px] h-auto z-10 absolute top-10 right-10 dark:text-white cursor-pointer bg-transparent border-none"
                   onClick={() => setShow3DObject(false)}
-                  src="https://i.postimg.cc/25xRm6Zd/close-x-svgrepoblack-com.png"
+                  src={CloseDark}
                 />
               )}
             </div>
@@ -178,13 +188,13 @@ const DetailDesktop = ({
                   <img
                     className="w-[50px] h-auto z-10 absolute bottom-10 left-10 dark:text-white cursor-pointer bg-transparent border-none"
                     onClick={() => setShow3DObject(true)}
-                    src="https://i.postimg.cc/SR4gdwPr/dark360-degrees.png"
+                    src={ThreeDLight}
                   />
                 ) : (
                   <img
                     className="w-[50px] h-auto z-10 absolute bottom-10 left-10 dark:text-white cursor-pointer bg-transparent border-none"
                     onClick={() => setShow3DObject(true)}
-                    src="https://i.postimg.cc/nr10P3bt/360-degrees.png"
+                    src={ThreeDDark}
                   />
                 )
               ) : null}

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import EmailLight from "../utils/Icons/ContactUs/EmailLight.webp";
-import NEOGNLIGHT from "../../src/utils/Images/Logo/NEOGNLIGHT.webp";
+import NEOGNLIGHT from "../utils/Images/Logo/NEOGNLIGHT.webp";
 import AppleStore from "../utils/Icons/Footer/AppleStore.webp";
 import Figma from "../utils/Icons/Footer/Figma.webp";
 import Github from "../utils/Icons/Footer/Github.webp";

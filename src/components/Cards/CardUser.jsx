@@ -1,5 +1,5 @@
 import { useState } from "react";
-import DefaultImage from "../../assets/images/User/DefaultImage.webp";
+import DefaultImage from "../../assets/Images/User/DefaultImage.webp";
 
 const CardUser = ({
   id,

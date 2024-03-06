@@ -17,10 +17,10 @@ import Carousel from "react-multi-carousel";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
-import MainBannerDesktop from "../assets/images/Home/MainBannerDesktop.webp";
-import HomeBannerDesktop from "../assets/images/Home/HomeBannerDesktop.webp";
-import MainBannerMobile from "../assets/images/Home/MainBannerMobile.webp";
-import HomeBannerMobile from "../assets/images/Home/HomeBannerMobile.webp";
+import MainBannerDesktop from "../assets/Images/Home/MainBannerDesktop.webp";
+import HomeBannerDesktop from "../assets/Images/Home/HomeBannerDesktop.webp";
+import MainBannerMobile from "../assets/Images/Home/MainBannerMobile.webp";
+import HomeBannerMobile from "../assets/Images/Home/HomeBannerMobile.webp";
 import PackageDark from "../assets/Icons/Info/PackageDark.webp";
 import PackageLight from "../assets/Icons/Info/PackageLight.webp";
 import ShippingDark from "../assets/Icons/Info/ShippingDark.webp";

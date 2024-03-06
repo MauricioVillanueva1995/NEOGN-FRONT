@@ -3,12 +3,12 @@ import { useAuth } from "./Context/AuthContext";
 import { useTheme } from "../ThemeContext";
 import { AnimatePresence } from "framer-motion";
 import CartDesktop from "../Cart/CartDesktop";
-import NEOGNDARK from "../../assets/images/Logo/NEOGNDARK.webp";
-import NEOGNLIGHT from "../../assets/images/Logo/NEOGNLIGHT.webp";
-import NEOGNLOGODARK from "../../assets/images/Logo/NEOGNLOGODARK.webp";
-import NEOGNLOGOLIGHT from "../../assets/images/Logo/NEOGNLOGOLIGHT.webp";
-import BGDark from "../../../src/assets/images/Background/BGDark.webp";
-import BackgroundLight from "../../assets/images/Background/BackgroundLight.webp";
+import NEOGNDARK from "../../assets/Images/Logo/NEOGNDARK.webp";
+import NEOGNLIGHT from "../../assets/Images/Logo/NEOGNLIGHT.webp";
+import NEOGNLOGODARK from "../../assets/Images/Logo/NEOGNLOGODARK.webp";
+import NEOGNLOGOLIGHT from "../../assets/Images/Logo/NEOGNLOGOLIGHT.webp";
+import BGDark from "../../../src/assets/Images/Background/BGDark.webp";
+import BackgroundLight from "../../assets/Images/Background/BackgroundLight.webp";
 import { Link } from "react-router-dom";
 
 const SignInDesktop = ({ modalOpenCart, closeCart }) => {

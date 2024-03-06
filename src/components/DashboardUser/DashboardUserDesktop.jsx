@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { AnimatePresence } from "framer-motion";
 import CartDesktop from "../Cart/CartDesktop";
 import Footer from "../Footer";
-import BGDark from "../../../src/assets/images/Background/BGDark.webp"
+import BGDark from "../../../src/assets/Images/Background/BGDark.webp"
 
 const DashboardUserDesktop = ({ modalOpenCart, closeCart }) => {
   const { theme } = useTheme();

@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "../ThemeContext";
 import { useAuth } from "./Context/AuthContext";
-import NEOGNDARK from "../../assets/images/Logo/NEOGNDARK.webp";
-import NEOGNLIGHT from "../../assets/images/Logo/NEOGNLIGHT.webp";
+import NEOGNDARK from "../../assets/Images/Logo/NEOGNDARK.webp";
+import NEOGNLIGHT from "../../assets/Images/Logo/NEOGNLIGHT.webp";
 import TitleSection from "../TitleSection";
 import { useNavigate } from "react-router-dom";
 import SignUpDesktop from "./SignUpDesktop";

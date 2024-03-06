@@ -3,7 +3,7 @@ import { useLocation, Link } from "react-router-dom";
 import { switchSelector } from "../redux/slices/navBarSlice";
 import { useDispatch } from "react-redux";
 import { useTheme } from "./ThemeContext";
-import NEOGNLOGO from "../assets/images/Logo/NEOGNLOGO.webp";
+import NEOGNLOGO from "../assets/Images/Logo/NEOGNLOGO.webp";
 import ActiveCart from "../assets/Icons/NavBar/ActiveCart.webp";
 import ActiveHeart from "../assets/Icons/NavBar/ActiveHeart.webp";
 import ActiveProfile from "../assets/Icons/NavBar/ActiveProfile.webp";

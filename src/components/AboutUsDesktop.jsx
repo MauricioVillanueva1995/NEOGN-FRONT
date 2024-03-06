@@ -3,7 +3,7 @@ import Footer from "./Footer";
 import { AnimatePresence } from "framer-motion";
 import CartDesktop from "../components/Cart/CartDesktop";
 import { useRef, useEffect } from "react";
-import AboutUs from "../assets/images/AboutUs/AboutUs.webp";
+import AboutUs from "../assets/Images/AboutUs/AboutUs.webp";
 
 const AboutUsDesktop = ({ modalOpenCart, closeCart }) => {
   const aboutUsRef = useRef();

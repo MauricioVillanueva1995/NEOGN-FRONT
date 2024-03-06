@@ -1,9 +1,9 @@
-import Aorus from "../assets/images/FooterLogos/Aorus.webp"
-import Asus from "../assets/images/FooterLogos/Asus.webp"
-import Corsair from "../assets/images/FooterLogos/Corsair.webp"
-import HyperX from "../assets/images/FooterLogos/HyperX.webp"
-import Logitech from "../assets/images/FooterLogos/Logitech.webp"
-import Razer from "../assets/images/FooterLogos/Razer.webp"
+import Aorus from "../assets/Images/FooterLogos/Aorus.webp"
+import Asus from "../assets/Images/FooterLogos/Asus.webp"
+import Corsair from "../assets/Images/FooterLogos/Corsair.webp"
+import HyperX from "../assets/Images/FooterLogos/HyperX.webp"
+import Logitech from "../assets/Images/FooterLogos/Logitech.webp"
+import Razer from "../assets/Images/FooterLogos/Razer.webp"
 const Brands = () => {
   return (
     <div className="hidden w-full h-auto lg:flex flex-col items-center justify-center gap-y-10">

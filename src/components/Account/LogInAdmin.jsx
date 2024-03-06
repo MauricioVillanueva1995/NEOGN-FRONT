@@ -1,5 +1,5 @@
-import NEOGNDARK from "../../assets/images/Logo/NEOGNDARK.webp";
-import NEOGNLIGHT from "../../assets/images/Logo/NEOGNLIGHT.webp";
+import NEOGNDARK from "../../assets/Images/Logo/NEOGNDARK.webp";
+import NEOGNLIGHT from "../../assets/Images/Logo/NEOGNLIGHT.webp";
 import { useTheme } from "../ThemeContext";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";

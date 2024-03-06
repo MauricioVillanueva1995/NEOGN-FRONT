@@ -8,6 +8,8 @@ import LinkedIn from "../utils/Icons/Footer/LinkedIn.webp";
 import Playstore from "../utils/Icons/Footer/Playstore.webp";
 import Website from "../utils/Icons/Footer/Website.webp";
 
+console.log(NEOGNLIGHT);
+
 const Footer = () => {
   return (
     <div className="w-full h-auto hidden lg:block">

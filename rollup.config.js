@@ -10,8 +10,9 @@ export default defineConfig({
     imageminPlugin(),
     VitePWA(),
     rollupPluginImage({
-      include: ['**/*.webp'],
+      include: ['**/*.png', '**/*.jpg', '**/*.gif', '**/*.webp'],
       exclude: 'node_modules/**',
+      dom:true,
     }),
   ],
 });

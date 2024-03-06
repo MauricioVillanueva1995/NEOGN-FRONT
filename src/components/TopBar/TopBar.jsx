@@ -1,8 +1,8 @@
 import Searchbar from "./SearchBar";
 import Sidebar from "./Sidebar";
 import { useTheme } from "../ThemeContext";
-import NEOGNDARK from "../../../src/utils/images/Logo/NEOGNDARK.webp";
-import NEOGNLIGHT from "../../../src/utils/images/Logo/NEOGNLIGHT.webp";
+import NEOGNDARK from "../../../src/assets/images/Logo/NEOGNDARK.webp";
+import NEOGNLIGHT from "../../../src/assets/images/Logo/NEOGNLIGHT.webp";
 
 const TopBar = () => {
   const { theme } = useTheme();

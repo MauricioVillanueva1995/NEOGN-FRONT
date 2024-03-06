@@ -3,11 +3,11 @@ import { AnimatePresence } from "framer-motion";
 import CartDesktop from "../components/Cart/CartDesktop";
 import { useTheme } from "../components/ThemeContext";
 import { useRef,useEffect } from "react";
-import EmailDark from "../utils/Icons/ContactUs/EmailDark.webp"
-import EmailLight from "../utils/Icons/ContactUs/EmailLight.webp"
-import Maps from "../utils/Icons/ContactUs/Maps.webp"
-import PhoneLight from "../utils/Icons/ContactUs/PhoneLight.webp"
-import PhoneDark from "../utils/Icons/ContactUs/PhoneDark.webp"
+import EmailDark from "../assets/Icons/ContactUs/EmailDark.webp"
+import EmailLight from "../assets/Icons/ContactUs/EmailLight.webp"
+import Maps from "../assets/Icons/ContactUs/Maps.webp"
+import PhoneLight from "../assets/Icons/ContactUs/PhoneLight.webp"
+import PhoneDark from "../assets/Icons/ContactUs/PhoneDark.webp"
 
 const ContactUsDesktop = ({ modalOpenCart, closeCart }) => {
   const contactUsRef = useRef();

@@ -7,14 +7,14 @@ import { useState, useEffect, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stage } from "@react-three/drei";
 
-import HeartActive from "../../utils/Icons/Detail/HeartActive.webp"
-import HeartActiveLight from "../../utils/Icons/Detail/HeartActive.webp"
-import HeartInactiveLight from "../../utils/Icons/Detail/HeartInactiveLight.webp";
-import HeartInactiveDark from "../../utils/Icons/Detail/HeartInactiveDark.webp";
-import CloseDark from "../../utils/Icons/Detail/CloseDark.webp";
-import CloseLight from "../../utils/Icons/Detail/CloseLight.webp";
-import ThreeDDark from "../../utils/Icons/Detail/ThreeDDark.webp"
-import ThreeDLight from "../../utils/Icons/Detail/ThreeDLight.webp"
+import HeartActive from "../../assets/Icons/Detail/HeartActive.webp"
+import HeartActiveLight from "../../assets/Icons/Detail/HeartActive.webp"
+import HeartInactiveLight from "../../assets/Icons/Detail/HeartInactiveLight.webp";
+import HeartInactiveDark from "../../assets/Icons/Detail/HeartInactiveDark.webp";
+import CloseDark from "../../assets/Icons/Detail/CloseDark.webp";
+import CloseLight from "../../assets/Icons/Detail/CloseLight.webp";
+import ThreeDDark from "../../assets/Icons/Detail/ThreeDDark.webp"
+import ThreeDLight from "../../assets/Icons/Detail/ThreeDLight.webp"
 
 
 const DetailDesktop = ({

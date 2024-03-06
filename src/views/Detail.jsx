@@ -11,15 +11,15 @@ import TitleSection from "../components/TitleSection";
 import { useTheme } from "../components/ThemeContext";
 import DetailDesktop from "../components/Detail/DetailDesktop";
 
-import HeartActive from "../utils/Icons/Detail/HeartActive.webp";
-import HeartActiveLight from "../utils/Icons/Detail/HeartActiveLight.webp";
-import HeartInactiveLight from "../utils/Icons/Detail/HeartInactiveLight.webp";
-import HeartInactiveDark from "../utils/Icons/Detail/HeartInactiveDark.webp";
-import Star from "../utils/Icons/Detail/Star.webp";
-import DocumentLight from "../utils/Icons/Detail/DocumentLight.webp";
-import DocumentDark from "../utils/Icons/Detail/DocumentDark.webp";
-import ColorsLight from "../utils/Icons/Detail/ColorsLight.webp";
-import ColorsDark from "../utils/Icons/Detail/ColorsDark.webp";
+import HeartActive from "../assets/Icons/Detail/HeartActive.webp";
+import HeartActiveLight from "../assets/Icons/Detail/HeartActiveLight.webp";
+import HeartInactiveLight from "../assets/Icons/Detail/HeartInactiveLight.webp";
+import HeartInactiveDark from "../assets/Icons/Detail/HeartInactiveDark.webp";
+import Star from "../assets/Icons/Detail/Star.webp";
+import DocumentLight from "../assets/Icons/Detail/DocumentLight.webp";
+import DocumentDark from "../assets/Icons/Detail/DocumentDark.webp";
+import ColorsLight from "../assets/Icons/Detail/ColorsLight.webp";
+import ColorsDark from "../assets/Icons/Detail/ColorsDark.webp";
 
 const Detail = ({ modalOpenCart, closeCart }) => {
   const { theme } = useTheme();

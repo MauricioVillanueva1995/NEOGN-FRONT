@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import EmailLight from "../utils/Icons/ContactUs/EmailLight.webp";
-import NEOGNLIGHT from "../../src/utils/Images/Logo/NeoGNLIGHT.webp";
-import AppleStore from "../utils/Icons/Footer/AppleStore.webp";
-import Figma from "../utils/Icons/Footer/Figma.webp";
-import Github from "../utils/Icons/Footer/Github.webp";
-import LinkedIn from "../utils/Icons/Footer/LinkedIn.webp";
-import Playstore from "../utils/Icons/Footer/Playstore.webp";
-import Website from "../utils/Icons/Footer/Website.webp";
+import EmailLight from "../assets/Icons/ContactUs/EmailLight.webp";
+import AppleStore from "../assets/Icons/Footer/AppleStore.webp";
+import NEOGNLIGHT from "../assets/Images/Logo/NeoGNLIGHT.webp";
+import Figma from "../assets/Icons/Footer/Figma.webp";
+import Github from "../assets/Icons/Footer/Github.webp";
+import LinkedIn from "../assets/Icons/Footer/LinkedIn.webp";
+import Playstore from "../assets/Icons/Footer/Playstore.webp";
+import Website from "../assets/Icons/Footer/Website.webp";
 
 console.log(NEOGNLIGHT);
 

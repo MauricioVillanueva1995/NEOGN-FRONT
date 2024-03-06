@@ -2,7 +2,8 @@ import { Route, Routes, useLocation, Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { AuthProvider } from "./components/Account/Context/AuthContext";
 import CircleLoader from "react-spinners/CircleLoader";
-import NEOGNLOGOLIGHT from "./utils/images/Logo/NEOGNLOGOLIGHT.webp";
+import BGDark from "../src/assets/images/Background/BGDark.webp";
+import NEOGNLOGOLIGHT from "./assets/images/Logo/NEOGNLOGOLIGHT.webp";
 import NavBar from "./components/NavBar";
 import Error from "./views/Error";
 import AppBar from "./components/AppBar/AppBar";
@@ -31,7 +32,6 @@ import OrderHistory from "./components/DashboardUser/OrderHistory";
 import WishlistAccount from "./components/DashboardUser/WishlistAccount";
 import OrderDetails from "./components/DashboardUser/Orders/OrderDetails";
 import { useSelector } from "react-redux";
-import BGDark from "../src/utils/images/Background/BGDark.webp";
 
 const App = () => {
   const [desktop, setDesktop] = useState(window.innerWidth > 1024);

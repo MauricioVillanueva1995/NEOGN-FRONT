@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import ActiveSearch from "../utils/Icons/ActiveSearch.webp";
+import ActiveSearch from "../assets/Icons/ActiveSearch.webp";
 
 const Searchbar = () => {
   const [search, setSearch] = useState("");

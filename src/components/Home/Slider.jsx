@@ -2,14 +2,14 @@ import { useState, useEffect } from "react";
 import Carousel from "react-multi-carousel";
 import CustomDot from "../CustomDot";
 import "react-multi-carousel/lib/styles.css";
-import Slide1Desktop from "../../utils/images/Slider/Slide1Desktop.webp";
-import Slide2Desktop from "../../utils/images/Slider/Slide2Desktop.webp";
-import Slide3Desktop from "../../utils/images/Slider/Slide3Desktop.webp";
-import Slide4Desktop from "../../utils/images/Slider/Slide4Desktop.webp";
-import Slide1Mobile from "../../utils/images/Slider/Slide1Mobile.webp";
-import Slide2Mobile from "../../utils/images/Slider/Slide2Mobile.webp";
-import Slide3Mobile from "../../utils/images/Slider/Slide3Mobile.webp";
-import Slide4Mobile from "../../utils/images/Slider/Slide4Mobile.webp";
+import Slide1Desktop from "../../assets/images/Slider/Slide1Desktop.webp";
+import Slide2Desktop from "../../assets/images/Slider/Slide2Desktop.webp";
+import Slide3Desktop from "../../assets/images/Slider/Slide3Desktop.webp";
+import Slide4Desktop from "../../assets/images/Slider/Slide4Desktop.webp";
+import Slide1Mobile from "../../assets/images/Slider/Slide1Mobile.webp";
+import Slide2Mobile from "../../assets/images/Slider/Slide2Mobile.webp";
+import Slide3Mobile from "../../assets/images/Slider/Slide3Mobile.webp";
+import Slide4Mobile from "../../assets/images/Slider/Slide4Mobile.webp";
 
 const Slider = () => {
   const [isDesktop, setIsDesktop] = useState(

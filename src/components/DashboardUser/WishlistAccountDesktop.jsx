@@ -5,7 +5,7 @@ import MyWishlistDesktop from "./MyWishlistDesktop";
 import { useTheme } from "../ThemeContext";
 import { useRef } from "react";
 import Footer from "../Footer";
-import BGDark from "../../../src/utils/images/Background/BGDark.webp"
+import BGDark from "../../../src/assets/images/Background/BGDark.webp"
 
 const WishlistAccountDesktop = ({ modalOpenCart, closeCart }) => {
   const wishlistAccountDesktopRef = useRef();

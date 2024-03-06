@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useAuth } from "./Context/AuthContext";
 import { clearUser } from "../../redux/slices/userSlice";
-import NEOGNDARK from "../../utils/images/Logo/NEOGNDARK.webp";
+import NEOGNDARK from "../../assets/images/Logo/NEOGNDARK.webp";
 import ToggleDarkMode from "../DashboardUser/ToggleDarkMode";
 import { useNavigate } from "react-router-dom";
 

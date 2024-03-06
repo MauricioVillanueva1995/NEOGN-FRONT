@@ -1,13 +1,13 @@
 import Carousel from "react-multi-carousel";
 import { useState } from "react";
-import Monitors from "../utils/images/CategoriesIcons/Monitors.webp";
-import Headsets from "../utils/images/CategoriesIcons/Headsets.webp";
-import Keyboards from "../utils/images/CategoriesIcons/Keyboards.webp";
-import Mice from "../utils/images/CategoriesIcons/Mice.webp";
-import Mousepads from "../utils/images/CategoriesIcons/Mousepads.webp";
-import Controllers from "../utils/images/CategoriesIcons/Controllers.webp";
-import Earbuds from "../utils/images/CategoriesIcons/Earbuds.webp";
-import Microphones from "../utils/images/CategoriesIcons/Microphones.webp";
+import Monitors from "../assets/images/CategoriesIcons/Monitors.webp";
+import Headsets from "../assets/images/CategoriesIcons/Headsets.webp";
+import Keyboards from "../assets/images/CategoriesIcons/Keyboards.webp";
+import Mice from "../assets/images/CategoriesIcons/Mice.webp";
+import Mousepads from "../assets/images/CategoriesIcons/Mousepads.webp";
+import Controllers from "../assets/images/CategoriesIcons/Controllers.webp";
+import Earbuds from "../assets/images/CategoriesIcons/Earbuds.webp";
+import Microphones from "../assets/images/CategoriesIcons/Microphones.webp";
 
 const CategoriesFilter = ({handleFilterCategory}) => {
   const [selectCategory, setSelectCategory] = useState("");

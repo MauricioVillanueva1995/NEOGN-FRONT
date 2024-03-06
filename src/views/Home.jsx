@@ -17,16 +17,16 @@ import Carousel from "react-multi-carousel";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
-import MainBannerDesktop from "../utils/images/Home/MainBannerDesktop.webp";
-import HomeBannerDesktop from "../utils/images/Home/HomeBannerDesktop.webp";
-import MainBannerMobile from "../utils/images/Home/MainBannerMobile.webp";
-import HomeBannerMobile from "../utils/images/Home/HomeBannerMobile.webp";
-import PackageDark from "../utils/Icons/Info/PackageDark.webp";
-import PackageLight from "../utils/Icons/Info/PackageLight.webp";
-import ShippingDark from "../utils/Icons/Info/ShippingDark.webp";
-import ShippingLight from "../utils/Icons/Info/ShippingLight.webp";
-import WarrantyDark from "../utils/Icons/Info/WarrantyDark.webp";
-import WarrantyLight from "../utils/Icons/Info/WarrantyLight.webp";
+import MainBannerDesktop from "../assets/images/Home/MainBannerDesktop.webp";
+import HomeBannerDesktop from "../assets/images/Home/HomeBannerDesktop.webp";
+import MainBannerMobile from "../assets/images/Home/MainBannerMobile.webp";
+import HomeBannerMobile from "../assets/images/Home/HomeBannerMobile.webp";
+import PackageDark from "../assets/Icons/Info/PackageDark.webp";
+import PackageLight from "../assets/Icons/Info/PackageLight.webp";
+import ShippingDark from "../assets/Icons/Info/ShippingDark.webp";
+import ShippingLight from "../assets/Icons/Info/ShippingLight.webp";
+import WarrantyDark from "../assets/Icons/Info/WarrantyDark.webp";
+import WarrantyLight from "../assets/Icons/Info/WarrantyLight.webp";
 
 const responsive = {
   biggerscreen: {

@@ -5,8 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { useAuth } from "../Account/Context/AuthContext";
 import { clearUser, getUser } from "../../redux/slices/userSlice";
-import NEOGNDARK from "../../utils/images/Logo/NEOGNDARK.webp";
-import NEOGNLIGHT from "../../utils/images/Logo/NEOGNLIGHT.webp";
+import NEOGNDARK from "../../assets/images/Logo/NEOGNDARK.webp";
+import NEOGNLIGHT from "../../assets/images/Logo/NEOGNLIGHT.webp";
 import ToggleDarkMode from "./ToggleDarkMode";
 import DashboardUserDesktop from "./DashboardUserDesktop";
 

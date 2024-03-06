@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useAuth } from "./Context/AuthContext";
 import { useTheme } from "../ThemeContext";
-import NEOGNDARK from "../../utils/images/Logo/NEOGNDARK.webp";
-import NEOGNLIGHT from "../../utils/images/Logo/NEOGNLIGHT.webp";
+import NEOGNDARK from "../../assets/images/Logo/NEOGNDARK.webp";
+import NEOGNLIGHT from "../../assets/images/Logo/NEOGNLIGHT.webp";
 import { Link } from "react-router-dom";
 import SignInDesktop from "./SignInDesktop";
 

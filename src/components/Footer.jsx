@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import EmailLight from "../assets/Icons/ContactUs/EmailLight.webp";
 import AppleStore from "../assets/Icons/Footer/AppleStore.webp";
-import NEOGNLIGHT from "../assets/Images/Logo/NeoGNLIGHT.webp";
+import NEOGNLIGHT from "../../src/assets/Images/Logo/NEOGNLIGHT.webp";
 import Figma from "../assets/Icons/Footer/Figma.webp";
 import Github from "../assets/Icons/Footer/Github.webp";
 import LinkedIn from "../assets/Icons/Footer/LinkedIn.webp";

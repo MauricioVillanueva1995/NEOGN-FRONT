@@ -92,19 +92,20 @@ const SearchBanner = ({ selectedCategory }) => {
           "radial-gradient(263.94% 114.61% at 68.54% 63.45%, #224683 0%, #171F2E 100%)",
       }}
     >
-      <div className="font-general-sans w-auto h-auto flex flex-col gap-y-[43px] absolute top-[140px] left-[200px]">
-        <h1 className="font-semibold text-[50px] text-white">
-          {statusInfo.statusTitle}
-        </h1>
-        <div className="w-[120px] h-[10px] border bg-[#C3C6C8] border-[#C3C6C8] border-opacity-30"></div>
-        <p className="h-auto max-w-[520px] font-medium text-[21px] text-white">
-          {statusInfo.statusParagraph}
-        </p>
+      <div className="w-full h-auto flex items-center justify-center">
+        <div className="font-general-sans w-auto h-auto flex flex-col gap-y-[43px]">
+          <h1 className="font-semibold text-[50px] text-white">
+            {statusInfo.statusTitle}
+          </h1>
+          <div className="w-[120px] h-[10px] border bg-[#C3C6C8] border-[#C3C6C8] border-opacity-30"></div>
+          <p className="h-auto max-w-[520px] font-medium text-[21px] text-white">
+            {statusInfo.statusParagraph}
+          </p>
+        </div>
       </div>
-      <img
-        className="h-[450px] w-auto absolute top-[10%] right-[5%]"
-        src={statusInfo.statusImage}
-      />
+      <div className="w-full h-auto flex items-center justify-center">
+        <img className="h-[450px] w-auto" src={statusInfo.statusImage} />
+      </div>
     </div>
   );
 };

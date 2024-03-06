@@ -2,8 +2,7 @@ import { Link } from "react-router-dom";
 
 const TopCategories = () => {
   return (
-    <div className="w-auto">
-      <div className="flex justify-center items-center ">
+      <div className="w-full flex justify-around items-center ">
         <Link to={`/Search?category=Monitors`}>
           <div className="w-[76px] h-[60px] rounded-xl border border-category flex flex-col justify-center items-center m-2 dark:bg-white">
             <img
@@ -49,7 +48,6 @@ const TopCategories = () => {
           </button>
         </Link>
       </div>
-    </div>
   );
 };
 

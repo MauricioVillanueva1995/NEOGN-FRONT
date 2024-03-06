@@ -2,14 +2,18 @@ import { useState, useEffect } from "react";
 import Carousel from "react-multi-carousel";
 import CustomDot from "../CustomDot";
 import "react-multi-carousel/lib/styles.css";
-import Slide1 from "../../utils/images/Slider/Slide1.webp";
-import Slide2 from "../../utils/images/Slider/Slide2.webp";
-import Slide3 from "../../utils/images/Slider/Slide3.webp";
-import Slide4 from "../../utils/images/Slider/Slide4.webp";
+import Slide1Desktop from "../../utils/images/Slider/Slide1Desktop.webp";
+import Slide2Desktop from "../../utils/images/Slider/Slide2Desktop.webp";
+import Slide3Desktop from "../../utils/images/Slider/Slide3Desktop.webp";
+import Slide4Desktop from "../../utils/images/Slider/Slide4Desktop.webp";
+import Slide1Mobile from "../../utils/images/Slider/Slide1Mobile.webp";
+import Slide2Mobile from "../../utils/images/Slider/Slide2Mobile.webp";
+import Slide3Mobile from "../../utils/images/Slider/Slide3Mobile.webp";
+import Slide4Mobile from "../../utils/images/Slider/Slide4Mobile.webp";
 
 const Slider = () => {
   const [isDesktop, setIsDesktop] = useState(
-    window.innerWidth >= 1024 && window.innerWidth <= 1080
+    window.innerWidth >= 1024 && window.innerWidth <= 1920
   );
 
   const responsive = {
@@ -30,28 +34,27 @@ const Slider = () => {
   useEffect(() => {
     const handleWindowResize = () => {
       const windowWidth = window.innerWidth;
-      setIsDesktop(windowWidth >= 1024 && windowWidth <= 1280);
+      setIsDesktop(windowWidth >= 1024 && windowWidth <= 1920);
     };
 
     window.addEventListener("resize", handleWindowResize);
+
+    // Llamar a handleWindowResize al inicio para establecer el estado inicial correctamente
+    handleWindowResize();
 
     return () => {
       window.removeEventListener("resize", handleWindowResize);
     };
   }, []);
 
-  const slides = [
-    Slide1,
-    Slide2,
-    Slide3,
-    Slide4,
-  ];
+  const slides = isDesktop ? [Slide1Desktop, Slide2Desktop, Slide3Desktop, Slide4Desktop] 
+                            : [Slide1Mobile, Slide2Mobile, Slide3Mobile, Slide4Mobile];
 
   return (
     <Carousel
-      showDots={isDesktop ? false : true}
+      showDots={true}
       draggable={false}
-      autoPlay={responsive !== "mobile" ? true : false}
+      autoPlay={isDesktop}
       autoPlaySpeed={5000}
       responsive={responsive}
       transitionDuration={500}

@@ -1,6 +1,6 @@
 const TopProducts = () => {
   return (
-    <div className="w-full h-auto hidden lg:flex items-center justify-center gap-x-14 pt-20 pb-10">
+    <div className="w-full h-auto hidden lg:flex items-center justify-center gap-x-14 py-20">
       <div className="w-[800px] h-[450px] bg-[#212121] slanted-corners pl-16 flex">
         <div className="w-[450px] h-auto flex flex-col justify-start pt-16 gap-y-10">
           <div className="w-[350px] h-[100px] overflow-hidden flex items-center justify-center">

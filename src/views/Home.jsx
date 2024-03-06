@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import CartDesktop from "../components/Cart/CartDesktop";
 import { useSelector, useDispatch } from "react-redux";
@@ -17,8 +17,10 @@ import Carousel from "react-multi-carousel";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
-import MainBanner from "../utils/images/Home/MainBanner.webp";
-import HomeBanner from "../utils/images/Home/HomeBanner.webp";
+import MainBannerDesktop from "../utils/images/Home/MainBannerDesktop.webp";
+import HomeBannerDesktop from "../utils/images/Home/HomeBannerDesktop.webp";
+import MainBannerMobile from "../utils/images/Home/MainBannerMobile.webp";
+import HomeBannerMobile from "../utils/images/Home/HomeBannerMobile.webp";
 import PackageDark from "../utils/Icons/Info/PackageDark.webp";
 import PackageLight from "../utils/Icons/Info/PackageLight.webp";
 import ShippingDark from "../utils/Icons/Info/ShippingDark.webp";
@@ -42,6 +44,7 @@ const responsive = {
 };
 
 const Home = ({ modalOpenCart, closeCart }) => {
+  const [isMobile, setIsMobile] = useState(false);
   const homeRef = useRef();
   const { theme } = useTheme();
   const dispatch = useDispatch();
@@ -50,6 +53,20 @@ const Home = ({ modalOpenCart, closeCart }) => {
 
   products = products.slice(0, 4);
   desktopProducts = desktopProducts.slice(0, 12);
+
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setIsMobile(window.innerWidth <= 640 || window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleWindowResize);
+
+    handleWindowResize();
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, []);
 
   useEffect(() => {
     dispatch(fetchProducts());
@@ -61,19 +78,19 @@ const Home = ({ modalOpenCart, closeCart }) => {
       ref={homeRef}
       className="h-full w-auto pb-32 lg:pb-0 dark:bg-[#121212] overflow-x-hidden"
     >
-      <div className="h-auto w-auto mx-10 pt-10 lg:mx-0 lg:pt-0">
+      <div className="h-auto w-auto pt-6 mx-10 lg:mx-0 lg:pt-0">
         <Slider />
       </div>
-      <div className="w-auto h-[550px] hidden overflow-hidden lg:flex lg:items-center lg:justify-center object-fill">
+      <TopProducts />
+      <div className="w-auto h-[394px] hidden overflow-hidden lg:flex lg:items-center lg:justify-center object-fill">
         <LazyLoadImage
           effect="blur"
           className="w-full h-auto"
-          src={MainBanner}
+          src={isMobile ? MainBannerMobile : MainBannerDesktop}
         />
         <h2 className=" max-w-[930px] text-center font-general-sans font-semibold text-white text-[55px] absolute z-10">{`Discover the top brands supporting the world's best teams.`}</h2>
       </div>
-      <TopProducts />
-      <div className="font-jakarta-sans w-auto flex justify-between items-center m-6 lg:justify-center">
+      <div className="font-jakarta-sans w-auto flex justify-between items-center m-6 mb-2 lg:justify-center">
         <h1 className="text-stone-900 text-[18px] font-bold tracking-wide dark:text-white lg:text-[60px] lg:font-exo lg:font-semibold lg:tracking-tight">
           Categories
         </h1>
@@ -84,7 +101,7 @@ const Home = ({ modalOpenCart, closeCart }) => {
           SEE ALL
         </Link>
       </div>
-      <div className="w-auto h-auto m-6 lg:hidden">
+      <div className="w-auto h-auto lg:hidden">
         <TopCategories />
       </div>
       <div className="w-full h-auto lg:flex items-center justify-center hidden">
@@ -98,10 +115,13 @@ const Home = ({ modalOpenCart, closeCart }) => {
           Shop All
         </Link>
       </div>
-      <div className="w-full h-auto my-10 lg:my-20">
-        <LazyLoadImage className="w-auto h-auto" src={HomeBanner} />
+      <div className="w-full h-auto my-6 lg:my-10">
+        <LazyLoadImage
+          className="w-auto h-auto"
+          src={isMobile ? HomeBannerMobile : HomeBannerDesktop}
+        />
       </div>
-      <div className="font-jakarta-sans w-auto flex justify-between items-center lg:justify-center m-6">
+      <div className="font-jakarta-sans w-auto h-auto flex justify-between items-center lg:justify-center m-6 mb-2">
         <h1 className="text-stone-900 text-[18px] font-bold tracking-wide dark:text-white lg:text-[60px] lg:font-exo lg:font-semibold lg:tracking-tight">
           Latest Products
         </h1>
@@ -109,7 +129,7 @@ const Home = ({ modalOpenCart, closeCart }) => {
           SEE ALL
         </p>
       </div>
-      <div className="lg:hidden w-full flex justify-center items-center my-10">
+      <div className="lg:hidden w-full flex justify-center items-center my-4">
         <div className="w-auto h-auto grid grid-cols-2 gap-8">
           {products.length > 0 &&
             products.map((product, index) => (

@@ -4,6 +4,7 @@ import { AnimatePresence } from "framer-motion";
 import CartDesktop from "../components/Cart/CartDesktop";
 import { useRef, useEffect } from "react";
 import AboutUs from "../assets/Images/AboutUs/AboutUs.webp";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const AboutUsDesktop = ({ modalOpenCart, closeCart }) => {
   const aboutUsRef = useRef();
@@ -43,9 +44,10 @@ const AboutUsDesktop = ({ modalOpenCart, closeCart }) => {
           </div>
           <div className="w-auto h-auto flex">
             <div className="w-[560px] h-auto overflow-hidden">
-              <img
+              <LazyLoadImage
                 className="w-auto h-auto"
                 src={AboutUs}
+                effect="blur"
               />
             </div>
             <div className="pl-[72px] gap-y-[24px] font-poppins w-[560px] h-auto overflow-hidden flex flex-col justify-center items-start bg-[#ebebeb]">

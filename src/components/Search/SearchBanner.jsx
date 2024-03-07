@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import SearchBannerPaths from "./SearchBannerPaths";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const SearchBanner = ({ selectedCategory }) => {
   const [statusInfo, setStatusInfo] = useState({
@@ -104,7 +105,7 @@ const SearchBanner = ({ selectedCategory }) => {
         </div>
       </div>
       <div className="w-full h-auto flex items-center justify-center">
-        <img className="h-[450px] w-auto" src={statusInfo.statusImage} />
+        <LazyLoadImage className="h-[450px] w-auto" src={statusInfo.statusImage} />
       </div>
     </div>
   );

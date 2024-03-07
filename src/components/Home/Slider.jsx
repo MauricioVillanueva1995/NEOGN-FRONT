@@ -91,6 +91,7 @@ const Slider = () => {
               className="w-full h-full object-cover"
               src={imageUrl}
               alt={`Slide ${index + 1}`}
+              effect="blur"
             />
           )}
         </div>

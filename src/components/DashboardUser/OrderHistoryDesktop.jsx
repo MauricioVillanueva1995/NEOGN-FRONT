@@ -5,7 +5,7 @@ import SidebarUser from "./SidebarUser";
 import { AnimatePresence } from "framer-motion";
 import CartDesktop from "../Cart/CartDesktop";
 import Footer from "../Footer";
-import BGDark from "../../assets/Images/Background/BGDark.web"
+import BGDark from "../../assets/Images/Background/BGDark.webp"
 
 const OrderHistoryDesktop = ({ modalOpenCart, closeCart }) => {
   const orderHistoryDesktopRef = useRef();

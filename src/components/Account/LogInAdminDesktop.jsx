@@ -5,7 +5,7 @@ import NEOGNLIGHT from "../../assets/Images/Logo/NEOGNLIGHT.webp";
 import NEOGNLOGODARK from "../../assets/Images/Logo/NEOGNLOGODARK.webp";
 import NEOGNLOGOLIGHT from "../../assets/Images/Logo/NEOGNLOGOLIGHT.webp";
 import BGDark from "../../../src/assets/Images/Background/BGDark.webp";
-import BackgroundLight from "../../assets/Images/Background/BackgroundLight.webp";
+import BGLight from "../../../src/assets/Images/Background/BGLight.webp";
 import { useTheme } from "../ThemeContext";
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
@@ -72,7 +72,7 @@ const LogInAdminDesktop = ({ modalOpenCart, closeCart }) => {
     backgroundPosition: "center",
   };
   const lightStyle = {
-    background: `url(${BackgroundLight})`,
+    background: `url(${BGLight})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover", // o 'contain'
     backgroundPosition: "center",

@@ -39,16 +39,24 @@ const Slider = () => {
 
     window.addEventListener("resize", handleWindowResize);
 
-    // Llamar a handleWindowResize al inicio para establecer el estado inicial correctamente
     handleWindowResize();
+    preloadImages();
 
     return () => {
       window.removeEventListener("resize", handleWindowResize);
     };
   }, []);
 
-  const slides = isDesktop ? [Slide1Desktop, Slide2Desktop, Slide3Desktop, Slide4Desktop] 
-                            : [Slide1Mobile, Slide2Mobile, Slide3Mobile, Slide4Mobile];
+  const slides = isDesktop
+    ? [Slide1Desktop, Slide2Desktop, Slide3Desktop, Slide4Desktop]
+    : [Slide1Mobile, Slide2Mobile, Slide3Mobile, Slide4Mobile];
+
+    const preloadImages = () => {
+      slides.forEach((imageUrl) => {
+        const img = new Image();
+        img.src = imageUrl;
+      });
+    };
 
   return (
     <Carousel

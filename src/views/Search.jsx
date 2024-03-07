@@ -94,10 +94,8 @@ const Search = ({ modalOpenCart, closeCart }) => {
       maxPrice: null,
     });
 
-    // Restablecer la URL al estado original
     navigate("/search");
 
-    // Cargar todos los productos
     dispatch(fetchProducts());
   };
 
@@ -105,19 +103,19 @@ const Search = ({ modalOpenCart, closeCart }) => {
     try {
       const url = buildFilterUrl();
       if (url == location.search) {
-        console.log(url + " es igual que " + location.search);
+        // console.log(url + " es igual que " + location.search);
         const json = await axios.get(`/api/products/filter${url}`);
         const products = json.data;
         dispatch(getFiltered(products));
         navigate(url);
       }
       if (url !== location.search) {
-        console.log(url + " no es igual que " + location.search);
+        // console.log(url + " no es igual que " + location.search);
         const json = await axios.get(`/api/products/filter${url}`);
         const products = json.data;
         dispatch(getFiltered(products));
         navigate(url);
-        console.log(`/api/products/filter${url}`);
+        // console.log(`/api/products/filter${url}`);
       }
     } catch (error) {
       console.error("Error al obtener los productos:", error);

@@ -2,8 +2,11 @@ import { Route, Routes, useLocation, Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { AuthProvider } from "./components/Account/Context/AuthContext";
 import CircleLoader from "react-spinners/CircleLoader";
+
+import BGDarkMobile from "./assets/Images/Background/BGDarkMobile.webp";
 import BGDark from "./assets/Images/Background/BGDark.webp";
 import NEOGNLOGOLIGHT from "./assets/Images/Logo/NEOGNLOGOLIGHT.webp";
+
 import NavBar from "./components/NavBar";
 import Error from "./views/Error";
 import AppBar from "./components/AppBar/AppBar";
@@ -47,7 +50,7 @@ const App = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 1000);
   }, []);
 
   useEffect(() => {
@@ -85,7 +88,7 @@ const App = () => {
         <div
           className="w-full h-screen flex flex-col gap-y-10 lg:flex-row lg:gap-x-10 justify-center items-center"
           style={{
-            background: `linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)), url(${BGDark})`,
+            background: `linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)), url(${desktop ? BGDark : BGDarkMobile})`,
           }}
         >
           <CircleLoader

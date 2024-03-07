@@ -8,7 +8,6 @@ import LinkedIn from "../assets/Icons/Footer/LinkedIn.webp";
 import Playstore from "../assets/Icons/Footer/Playstore.webp";
 import Website from "../assets/Icons/Footer/Website.webp";
 
-console.log(NEOGNLIGHT);
 
 const Footer = () => {
   return (

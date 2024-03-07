@@ -1,4 +1,8 @@
 import { Link } from "react-router-dom";
+import Monitors from "../../assets/Images/CategoriesDesktop/Monitors.webp"
+import Headsets from "../../assets/Images/CategoriesDesktop/Headsets.webp"
+import Keyboards from "../../assets/Images/CategoriesDesktop/Keyboards.webp"
+import Mice from "../../assets/Images/CategoriesDesktop/Mice.webp"
 
 const CategoriesDesktop = () => {
   return (
@@ -6,7 +10,7 @@ const CategoriesDesktop = () => {
         <Link to={`/Search?category=Monitors`}>
           <div className="w-[250px] h-[340px] overflow-hidden rounded-xl flex flex-col justify-center items-center">
             <img
-              src="https://i.postimg.cc/QCvnzQ7H/Frame-866.png"
+              src={Monitors}
               className="w-auto h-auto transition-transform duration-300 hover:scale-125 hover:rotate-6 grayscale hover:grayscale-0"
             />
             <div className="font-bakbak font-semibold text-white absolute text-[30px] dark:text-white z-10">
@@ -17,7 +21,7 @@ const CategoriesDesktop = () => {
         <Link to={`/Search?category=Headsets`}>
           <button className="w-[250px] h-[340px] overflow-hidden rounded-xl  flex flex-col justify-center items-center">
             <img
-              src="https://i.postimg.cc/8k3GbydT/Frame-864.png"
+              src={Headsets}
               className="w-auto h-auto transition-transform duration-300 hover:scale-125 hover:rotate-6 grayscale hover:grayscale-0"
             />
             <div className="font-bakbak font-semibold text-white absolute text-[30px] dark:text-white z-10">
@@ -28,7 +32,7 @@ const CategoriesDesktop = () => {
         <Link to={`/Search?category=Keyboards`}>
           <button className="w-[250px] h-[340px] overflow-hidden rounded-xl  flex flex-col justify-center items-center">
             <img
-              src="https://i.postimg.cc/kgNdqq05/Frame-865.png"
+              src={Keyboards}
               className="w-auto h-auto transition-transform duration-300 hover:scale-125 hover:rotate-6 grayscale hover:grayscale-0"
             />
             <div className="font-bakbak font-semibold text-white absolute text-[30px] dark:text-white z-10">
@@ -39,7 +43,7 @@ const CategoriesDesktop = () => {
         <Link to={`/Search?category=Mice`}>
           <button className="w-[250px] h-[340px] overflow-hidden rounded-xl  flex flex-col justify-center items-center dark:border-none">
             <img
-              src="https://i.postimg.cc/Dw3K98YD/Frame-867.png"
+              src={Mice}
               className="w-auto h-auto transition-transform duration-300 hover:scale-125 hover:rotate-6 grayscale hover:grayscale-0"
             />
             <div className="font-bakbak font-semibold text-white absolute text-[30px] dark:text-white z-10">

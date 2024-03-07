@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import Carousel from "react-multi-carousel";
 import CustomDot from "../CustomDot";
 import "react-multi-carousel/lib/styles.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 import Slide1Desktop from "../../assets/Images/Slider/Slide1Desktop.webp";
 import Slide2Desktop from "../../assets/Images/Slider/Slide2Desktop.webp";
 import Slide3Desktop from "../../assets/Images/Slider/Slide3Desktop.webp";
@@ -15,6 +17,16 @@ const Slider = () => {
   const [isDesktop, setIsDesktop] = useState(
     window.innerWidth >= 1024 && window.innerWidth <= 1920
   );
+  const slides = isDesktop
+    ? [Slide1Desktop, Slide2Desktop, Slide3Desktop, Slide4Desktop]
+    : [Slide1Mobile, Slide2Mobile, Slide3Mobile, Slide4Mobile];
+
+  const preloadImages = () => {
+    slides.forEach((imageUrl) => {
+      const img = new Image();
+      img.src = imageUrl;
+    });
+  };
 
   const responsive = {
     largeDesktop: {
@@ -35,6 +47,9 @@ const Slider = () => {
     const handleWindowResize = () => {
       const windowWidth = window.innerWidth;
       setIsDesktop(windowWidth >= 1024 && windowWidth <= 1920);
+      if (windowWidth > 1920) {
+        setIsDesktop(true);
+      }
     };
 
     window.addEventListener("resize", handleWindowResize);
@@ -46,17 +61,6 @@ const Slider = () => {
       window.removeEventListener("resize", handleWindowResize);
     };
   }, []);
-
-  const slides = isDesktop
-    ? [Slide1Desktop, Slide2Desktop, Slide3Desktop, Slide4Desktop]
-    : [Slide1Mobile, Slide2Mobile, Slide3Mobile, Slide4Mobile];
-
-    const preloadImages = () => {
-      slides.forEach((imageUrl) => {
-        const img = new Image();
-        img.src = imageUrl;
-      });
-    };
 
   return (
     <Carousel
@@ -72,15 +76,23 @@ const Slider = () => {
       className="rounded-3xl lg:rounded-none h-auto sm:h-auto xl:h-[788px] overflow-hidden lg:w-auto"
     >
       {slides.map((imageUrl, index) => (
-        <div 
+        <div
           key={index}
           className=" w-auto h-auto lg:h-[925px] xl:h-auto flex items-center justify-center overflow-hidden"
         >
-          <img
-            className="w-full h-full object-cover"
-            src={imageUrl}
-            alt={`Slide ${index + 1}`}
-          />
+          {isDesktop ? (
+            <img
+              className="w-full h-full object-cover"
+              src={imageUrl}
+              alt={`Slide ${index + 1}`}
+            />
+          ) : (
+            <LazyLoadImage
+              className="w-full h-full object-cover"
+              src={imageUrl}
+              alt={`Slide ${index + 1}`}
+            />
+          )}
         </div>
       ))}
     </Carousel>

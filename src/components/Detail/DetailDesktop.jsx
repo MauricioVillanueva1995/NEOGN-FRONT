@@ -65,11 +65,11 @@ const DetailDesktop = ({
                 src={
                   isAdded
                     ? theme === "dark"
-                      ? {HeartActive}
-                      : {HeartActiveLight}
+                      ? HeartActive
+                      : HeartActiveLight
                     : theme === "dark"
-                    ? {HeartInactiveLight}
-                    : {HeartInactiveDark}
+                    ? HeartInactiveLight
+                    : HeartInactiveDark
                 }
                 className={`w-9 h-9 object-cover rounded-lg cursor-pointer ${
                   isAdded ? "text-red-500" : "text-gray-500"

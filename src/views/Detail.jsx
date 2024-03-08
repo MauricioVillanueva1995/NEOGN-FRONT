@@ -201,7 +201,7 @@ const Detail = ({ modalOpenCart, closeCart }) => {
               />
             </div>
           </div>
-          <div className="Big image  flex bg-card dark:bg-white rounded-tl-[20px] rounded-bl-[20px] overflow-hidden relative  w-[30rem] md:w-[35rem] lg:w-[44rem] xl:w-auto">
+          <div className="Big image  flex bg-card dark:bg-white rounded-[20px] overflow-hidden relative  w-[30rem] md:w-[35rem] lg:w-[44rem] xl:w-auto">
             <div className="absolute top-4 right-4">
               <div
                 className="Wishlist-Heart inline-flex relative bg-absolutestaticwhite-s rounded-[10px]"
@@ -214,13 +214,13 @@ const Detail = ({ modalOpenCart, closeCart }) => {
                       src={
                         isAdded
                           ? theme === "dark"
-                            ? { HeartActive }
-                            : { HeartActiveLight }
+                            ? HeartActive
+                            : HeartActiveLight
                           : theme === "dark"
-                          ? { HeartInactiveLight }
-                          : { HeartInactiveDark }
+                          ? HeartInactiveLight
+                          : HeartInactiveDark
                       }
-                      className={`w-5 h-5 md:w-auto md:h-auto object-cover rounded-lg cursor-pointer ${
+                      className={`w-6 h-6 md:w-auto md:h-auto object-cover rounded-lg cursor-pointer ${
                         isAdded ? "text-red-500" : "text-gray-500"
                       }`}
                       onClick={handleToggleWishlist}
@@ -268,9 +268,7 @@ const Detail = ({ modalOpenCart, closeCart }) => {
                 <div className="w-auto h-auto flex items-center justify-center p-[9px] bg-gray-100 dark:bg-darkCard rounded-[10px]">
                   <LazyLoadImage
                     effect="blur"
-                    src={
-                      theme === "dark" ? { DocumentLight } : { DocumentDark }
-                    }
+                    src={theme === "dark" ? DocumentLight : DocumentDark}
                     className="relative w-[24px] h-[24px]"
                     alt="Document Icon"
                   />
@@ -319,7 +317,7 @@ const Detail = ({ modalOpenCart, closeCart }) => {
                 <div className="justify-center gap-[10px] p-[9px] bg-gray-100 dark:bg-darkCard rounded-[10px] inline-flex items-center relative flex-[0_0_auto]">
                   <LazyLoadImage
                     effect="blur"
-                    src={theme === "dark" ? { ColorsLight } : { ColorsDark }}
+                    src={theme === "dark" ? ColorsLight : ColorsDark}
                     className="relative w-[24px] h-[24px]"
                     alt="Colors Icon"
                   />

@@ -19,7 +19,7 @@ const WalletPayment = ({ prefId }) => {
           items: items.map((item) => ({
             id: item.id,
             title: item.name,
-            description: item.description.slice(0, 240) + "...",
+            description: item.description,
             picture_url: item.image[0],
             quantity: item.quantity,
             unit_price: item.price,

@@ -16,7 +16,6 @@ import Footer from "../components/Footer";
 import Carousel from "react-multi-carousel";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import { LazyLoadComponent } from "react-lazy-load-image-component";
 
 import MainBannerDesktop from "../assets/Images/Home/MainBannerDesktop.webp";
 import HomeBannerDesktop from "../assets/Images/Home/HomeBannerDesktop.webp";
@@ -105,9 +104,11 @@ const Home = ({ modalOpenCart, closeCart }) => {
       <div className="w-auto h-auto lg:hidden">
         <TopCategories />
       </div>
-      <LazyLoadComponent className="w-full h-auto lg:flex items-center justify-center hidden">
+      <div
+        className="w-full h-auto lg:flex items-center justify-center hidden"
+      >
         <CategoriesDesktop />
-      </LazyLoadComponent>
+      </div>
       <div className="py-10 hidden lg:flex lg:items-center lg:justify-center ">
         <Link
           to="/Search"

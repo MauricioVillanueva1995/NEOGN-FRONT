@@ -11,8 +11,9 @@ const TopProducts = () => {
         <div className="w-[450px] h-auto flex flex-col justify-start pt-16 gap-y-10">
           <div className="w-[350px] h-[100px] overflow-hidden flex items-center justify-center">
             <LazyLoadImage
+              effect="blur"
               className="w-auto h-[200px]"
-              src= {hyper1}
+              src={hyper1}
             />
           </div>
           <h2 className="font-general-sans text-white text-[35px] font-semibold line-clamp-2">
@@ -21,6 +22,7 @@ const TopProducts = () => {
           <div className="font-exo font-medium w-auto h-auto flex justify-start gap-x-5 items-center text-white">
             LEARN MORE
             <LazyLoadImage
+              effect="blur"
               className="w-auto h-[15px]"
               src="https://i.postimg.cc/KctdDwDM/right-arrow-svgrepo-com.png"
             />
@@ -28,14 +30,17 @@ const TopProducts = () => {
         </div>
         <div className="w-auto h-auto flex items-center justify-center overflow-hidden">
           <LazyLoadImage
+            effect="blur"
             className="w-full h-full object-cover"
-           src={CloudAlpha}/>
+            src={CloudAlpha}
+          />
         </div>
       </div>
       <div className="w-[800px] h-[450px] bg-[#DF102E] slanted-corners pl-16 flex">
         <div className="w-[450px] h-auto flex flex-col justify-start pt-16 gap-y-10">
           <div className="w-[350px] h-[100px] overflow-hidden flex items-center justify-center">
             <LazyLoadImage
+              effect="blur"
               className="w-auto h-[200px]"
               src={hyper2}
             />
@@ -46,13 +51,14 @@ const TopProducts = () => {
           <div className="font-exo font-medium w-auto h-auto flex justify-start gap-x-5 items-center text-white">
             LEARN MORE
             <LazyLoadImage
+              effect="blur"
               className="w-auto h-[15px]"
               src="https://i.postimg.cc/KctdDwDM/right-arrow-svgrepo-com.png"
             />
           </div>
         </div>
         <div className="w-auto h-auto ml-auto flex items-center justify-center">
-          <img src={ClutchGaming}/>
+          <img src={ClutchGaming} />
         </div>
       </div>
     </div>

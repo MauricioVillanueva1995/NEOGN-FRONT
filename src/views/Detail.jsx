@@ -10,6 +10,7 @@ import { addToWishlist, removeFromWishlist } from "../redux/slices/userSlice";
 import TitleSection from "../components/TitleSection";
 import { useTheme } from "../components/ThemeContext";
 import DetailDesktop from "../components/Detail/DetailDesktop";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import HeartActive from "../assets/Icons/Detail/HeartActive.webp";
 import HeartActiveLight from "../assets/Icons/Detail/HeartActiveLight.webp";
@@ -131,7 +132,8 @@ const Detail = ({ modalOpenCart, closeCart }) => {
                   : "border border-category"
               }`}
             >
-              <img
+              <LazyLoadImage
+                effect="blur"
                 className="relative w-full h-full object-cover"
                 alt="small img"
                 src={
@@ -149,7 +151,8 @@ const Detail = ({ modalOpenCart, closeCart }) => {
                   : "border border-category"
               }`}
             >
-              <img
+              <LazyLoadImage
+                effect="blur"
                 className="relative w-full h-full object-cover"
                 alt="small img"
                 src={
@@ -167,7 +170,8 @@ const Detail = ({ modalOpenCart, closeCart }) => {
                   : "border border-category"
               }`}
             >
-              <img
+              <LazyLoadImage
+                effect="blur"
                 className="relative w-full h-full object-cover"
                 alt="small img"
                 src={
@@ -185,7 +189,8 @@ const Detail = ({ modalOpenCart, closeCart }) => {
                   : "border border-category"
               }`}
             >
-              <img
+              <LazyLoadImage
+                effect="blur"
                 className="relative w-full h-full object-cover"
                 alt="small img"
                 src={
@@ -204,7 +209,8 @@ const Detail = ({ modalOpenCart, closeCart }) => {
               >
                 <div className="bg-white dark:bg-darkCard h-[42px] w-[42px] rounded-[10px] overflow-hidden flex items-center justify-center">
                   {
-                    <img
+                    <LazyLoadImage
+                      effect="blur"
                       src={
                         isAdded
                           ? theme === "dark"
@@ -243,7 +249,8 @@ const Detail = ({ modalOpenCart, closeCart }) => {
             </div>
             <div className="w-auto h-auto flex items-start justify-center">
               <div className="flex items-center justify-center h-[auto] gap-x-2 px-5 py-2 relative rounded-[10px] border border-solid border-oil-03">
-                <img
+                <LazyLoadImage
+                  effect="blur"
                   className="relative w-[16px] h-[16px]"
                   alt="Star"
                   src={Star}
@@ -259,7 +266,8 @@ const Detail = ({ modalOpenCart, closeCart }) => {
             <div className="w-auto gap-[12px] inline-flex items-center relative flex-[0_0_auto]">
               <div className="w-auto h-full items-start justify-start inline-flex relative flex-[0_0_auto]">
                 <div className="w-auto h-auto flex items-center justify-center p-[9px] bg-gray-100 dark:bg-darkCard rounded-[10px]">
-                  <img
+                  <LazyLoadImage
+                    effect="blur"
                     src={
                       theme === "dark" ? { DocumentLight } : { DocumentDark }
                     }
@@ -309,7 +317,8 @@ const Detail = ({ modalOpenCart, closeCart }) => {
             <div className="flex items-center justify-between relative self-stretch w-full flex-[0_0_auto]">
               <div className="gap-[12px] inline-flex items-center relative flex-[0_0_auto]">
                 <div className="justify-center gap-[10px] p-[9px] bg-gray-100 dark:bg-darkCard rounded-[10px] inline-flex items-center relative flex-[0_0_auto]">
-                  <img
+                  <LazyLoadImage
+                    effect="blur"
                     src={theme === "dark" ? { ColorsLight } : { ColorsDark }}
                     className="relative w-[24px] h-[24px]"
                     alt="Colors Icon"

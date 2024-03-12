@@ -15,6 +15,9 @@ export default {
       bakbak: ["Bakbak One", "sans-serif"],
     },
     extend: {
+      backgroundSize: {
+        "size-200": "200% 200%",
+      },
       spacing: {
         "backface-hidden": "backface-visibility: hidden;",
       },

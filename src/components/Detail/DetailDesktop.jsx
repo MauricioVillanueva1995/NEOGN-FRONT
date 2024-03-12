@@ -7,15 +7,14 @@ import { useState, useEffect, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stage } from "@react-three/drei";
 
-import HeartActive from "../../assets/Icons/Detail/HeartActive.webp"
-import HeartActiveLight from "../../assets/Icons/Detail/HeartActive.webp"
+import HeartActive from "../../assets/Icons/Detail/HeartActive.webp";
+import HeartActiveLight from "../../assets/Icons/Detail/HeartActive.webp";
 import HeartInactiveLight from "../../assets/Icons/Detail/HeartInactiveLight.webp";
 import HeartInactiveDark from "../../assets/Icons/Detail/HeartInactiveDark.webp";
 import CloseDark from "../../assets/Icons/Detail/CloseDark.webp";
 import CloseLight from "../../assets/Icons/Detail/CloseLight.webp";
-import ThreeDDark from "../../assets/Icons/Detail/ThreeDDark.webp"
-import ThreeDLight from "../../assets/Icons/Detail/ThreeDLight.webp"
-
+import ThreeDDark from "../../assets/Icons/Detail/ThreeDDark.webp";
+import ThreeDLight from "../../assets/Icons/Detail/ThreeDLight.webp";
 
 const DetailDesktop = ({
   modalOpenCart,
@@ -140,7 +139,7 @@ const DetailDesktop = ({
             </p>
             <button
               onClick={handleAddToCart}
-              className="px-7 py-2.5 justify-center items-center gap-2.5 inline-flex dark:bg-gradient-to-r dark:from-[#424242] dark:via-[#2F2F2F] dark:to-[#191919] bg-gradient-to-r from-[#cccccc] via-[#b4b4b4] to-[#a7a7a7] rounded-full dark:text-white"
+              className="px-7 py-2.5 justify-center items-center gap-2.5 text-white inline-flex dark:bg-gradient-to-r dark:from-[#424242] dark:via-[#2F2F2F] dark:to-[#191919] rounded-full dark:text-white transition-all duration-500 bg-gradient-to-br to-red-800 via-red-500 from-red-800 bg-size-200 hover:bg-right-bottom"
             >
               Add To Cart
             </button>

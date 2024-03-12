@@ -9,7 +9,7 @@ import CartProduct from "../Cards/CartProduct";
 const token = import.meta.env.VITE_PUBLIC_KEY;
 initMercadoPago(token);
 
-const CartDesktop = ({ closeCart,  parentHeight }) => {
+const CartDesktop = ({ closeCart, parentHeight }) => {
   const dropIn = {
     hidden: { x: "-100vw", opacity: 0 },
     visible: { x: "0vw", opacity: 1, damping: 25, stiffness: 500 },
@@ -42,25 +42,28 @@ const CartDesktop = ({ closeCart,  parentHeight }) => {
         initial="hidden"
         animate="visible"
         exit="exit"
-        className="absolute top-0 right-0"
+        className="absolute top-10 right-0"
       >
-        <div className="absolute top-0 right-10 h-[800px] w-[460px] p-8 overflow-y-hidden rounded-[30px] flex flex-col bg-[#0D0D0D]">
-          <h5
-            id="drawer-right-label"
-            className="inline-flex items-center mb-2 font-jakarta-sans text-[36px] font-semibold text-white"
-          >
-            Cart
-          </h5>
-          <button
-            type="button"
-            onClick={closeCart}
-            className="text-gray-400 bg-transparent hover:bg-gray-700 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white"
-          >
-            <img
-              className="w-[30px] h-[30px]"
-              src="https://i.postimg.cc/Y2mQRcQJ/close-x-svgrepo-com.png"
-            />
-          </button>
+        <div className="absolute top-0 right-10 h-[800px] w-[460px] p-8 overflow-y-hidden rounded-[24px] pt-4 flex flex-col bg-[#0D0D0D]">
+          <div className="w-full h-auto flex justify-between">
+            <h5
+              id="drawer-right-label"
+              className="inline-flex items-center mb-2 font-jakarta-sans text-[36px] font-semibold text-white"
+            >
+              Cart
+            </h5>
+            <button
+              type="button"
+              onClick={closeCart}
+              className="text-gray-400 bg-transparent hover:bg-gray-700 rounded-lg text-sm w-8 h-8 inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white"
+            >
+              <img
+                className="w-[30px] h-[30px]"
+                src="https://i.postimg.cc/Y2mQRcQJ/close-x-svgrepo-com.png"
+              />
+            </button>
+          </div>
+
           <div className="w-auto h-full flex flex-col gap-y-6 justify-between items-center">
             <div className="w-full h-[400px] flex flex-col justify-start items-center gap-y-6  py-5 overflow-y-auto">
               {cartIsEmpty && (

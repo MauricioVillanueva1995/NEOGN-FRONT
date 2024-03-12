@@ -90,7 +90,7 @@ const Home = ({ modalOpenCart, closeCart }) => {
         />
         <h2 className=" max-w-[930px] text-center font-general-sans font-semibold text-white text-[55px] absolute z-10">{`Discover the top brands supporting the world's best teams.`}</h2>
       </div>
-      <div className="font-jakarta-sans w-auto flex justify-between items-center m-6 mb-2 lg:justify-center">
+      <div className="font-jakarta-sans w-auto flex justify-between items-center m-6 lg:justify-center">
         <h1 className="text-stone-900 text-[18px] font-bold tracking-wide dark:text-white lg:text-[60px] lg:font-exo lg:font-semibold lg:tracking-tight">
           Categories
         </h1>

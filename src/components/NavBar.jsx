@@ -51,7 +51,7 @@ const NavBar = ({ modalOpenCart, openCart, closeCart }) => {
           >
             <p
               href="#"
-              className={`hover:text-red-500 w-[100px] flex justify-center items-center rounded-full py-[5px] ${
+              className={`hover:text-red-500 hover:bg-[#CFD1D4]/[0.4] w-[100px] flex justify-center items-center rounded-full py-[5px] ${
                 theme === "dark" && currentPath === "/"
                   ? "text-red-500 bg-white/[0.1]"
                   : theme === "text-white bg-white/[0.0]"
@@ -68,7 +68,7 @@ const NavBar = ({ modalOpenCart, openCart, closeCart }) => {
           <Link to="/Search">
             <p
               href="#"
-              className={`hover:text-red-500 w-[100px] flex justify-center items-center rounded-full py-[5px] ${
+              className={`hover:text-red-500 hover:bg-[#CFD1D4]/[0.4] w-[100px] flex justify-center items-center rounded-full py-[5px] ${
                 theme === "dark" && currentPath === "/Search"
                   ? "text-red-500 bg-white/[0.1]"
                   : theme === "text-white bg-white/[0.0]"
@@ -84,7 +84,7 @@ const NavBar = ({ modalOpenCart, openCart, closeCart }) => {
           <Link to="/AboutUs">
             <p
               href="#"
-              className={`hover:text-red-500 w-[100px] flex justify-center items-center rounded-full py-[5px] ${
+              className={`hover:text-red-500 hover:bg-[#CFD1D4]/[0.4] w-[100px] flex justify-center items-center rounded-full py-[5px] ${
                 theme === "dark" && currentPath === "/AboutUs"
                   ? "text-red-500 bg-white/[0.1]"
                   : theme === "text-white bg-white/[0.0]"
@@ -100,7 +100,7 @@ const NavBar = ({ modalOpenCart, openCart, closeCart }) => {
           <Link to="/ContactUs">
             <p
               href="#"
-              className={`hover:text-red-500 min-w-[100px] flex justify-center items-center rounded-full py-[5px] ${
+              className={`hover:text-red-500 hover:bg-[#CFD1D4]/[0.4] min-w-[100px] flex justify-center items-center rounded-full py-[5px] ${
                 theme === "dark" && currentPath === "/ContactUs"
                   ? "text-red-500 bg-white/[0.1]"
                   : theme === "text-white bg-white/[0.0]"

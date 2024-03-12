@@ -20,7 +20,7 @@ const TopProducts = () => {
           <h2 className="font-general-sans text-white text-[35px] font-semibold line-clamp-2">
             Cloud Alpha Wireless – DTS - Gaming Headset
           </h2>
-          <Link to={`${SKU013}`} className="font-exo font-medium w-auto h-auto flex justify-start gap-x-5 items-center text-white">
+          <Link to={`/SKU013`} className="font-exo font-medium w-auto h-auto flex justify-start gap-x-5 items-center text-white">
             LEARN MORE
             <LazyLoadImage
               effect="blur"
@@ -49,7 +49,7 @@ const TopProducts = () => {
           <h2 className="font-general-sans text-white text-[35px] font-semibold line-clamp-2">
             HyperX Clutch Gaming Controller
           </h2>
-          <Link to={`/${SKU070}`} className="font-exo font-medium w-auto h-auto flex justify-start gap-x-5 items-center text-white">
+          <Link to={`/SKU070`} className="font-exo font-medium w-auto h-auto flex justify-start gap-x-5 items-center text-white">
             LEARN MORE
             <LazyLoadImage
               effect="blur"

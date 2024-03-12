@@ -3,6 +3,7 @@ import CloudAlpha from "../../assets/Images/TopProducts/CloudAlpha.webp";
 import ClutchGaming from "../../assets/Images/TopProducts/ClutchGaming.webp";
 import hyper1 from "../../assets/Images/TopProducts/hyper1.webp";
 import hyper2 from "../../assets/Images/TopProducts/hyper2.webp";
+import { Link } from "react-router-dom";
 
 const TopProducts = () => {
   return (
@@ -19,14 +20,14 @@ const TopProducts = () => {
           <h2 className="font-general-sans text-white text-[35px] font-semibold line-clamp-2">
             Cloud Alpha Wireless – DTS - Gaming Headset
           </h2>
-          <div className="font-exo font-medium w-auto h-auto flex justify-start gap-x-5 items-center text-white">
+          <Link to={`${SKU013}`} className="font-exo font-medium w-auto h-auto flex justify-start gap-x-5 items-center text-white">
             LEARN MORE
             <LazyLoadImage
               effect="blur"
               className="w-auto h-[15px]"
               src="https://i.postimg.cc/KctdDwDM/right-arrow-svgrepo-com.png"
             />
-          </div>
+          </Link>
         </div>
         <div className="w-auto h-auto flex items-center justify-center overflow-hidden">
           <LazyLoadImage
@@ -48,14 +49,14 @@ const TopProducts = () => {
           <h2 className="font-general-sans text-white text-[35px] font-semibold line-clamp-2">
             HyperX Clutch Gaming Controller
           </h2>
-          <div className="font-exo font-medium w-auto h-auto flex justify-start gap-x-5 items-center text-white">
+          <Link to={`/${SKU070}`} className="font-exo font-medium w-auto h-auto flex justify-start gap-x-5 items-center text-white">
             LEARN MORE
             <LazyLoadImage
               effect="blur"
               className="w-auto h-[15px]"
               src="https://i.postimg.cc/KctdDwDM/right-arrow-svgrepo-com.png"
             />
-          </div>
+          </Link>
         </div>
         <div className="w-auto h-auto ml-auto flex items-center justify-center">
           <img src={ClutchGaming} />

@@ -58,7 +58,7 @@ const PricesFilter = ({ handleFilterPrice }) => {
       </div>
       <div className="flex justify-end pt-3">
         <button
-          className="px-4 py-1 bg-black dark:bg-[#CFD1D4] dark:text-black text-[14px] font-general-sans font-semibold tracking-wider text-white rounded-md hover:bg-slate-700"
+          className="px-4 py-1 transition-all duration-500 bg-gradient-to-br to-red-800 via-red-500 from-heroButton bg-size-200 hover:bg-right-bottom dark:bg-[#CFD1D4] dark:text-black text-[14px] font-general-sans font-semibold tracking-wider text-white rounded-md hover:bg-slate-700"
           onClick={applyFilters}
         >
           Apply

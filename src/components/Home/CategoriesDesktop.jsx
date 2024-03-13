@@ -10,9 +10,8 @@ const CategoriesDesktop = () => {
       <Link to={`/Search?category=Monitors`}>
         <div className="w-[250px] h-[340px] overflow-hidden rounded-xl flex flex-col justify-center items-center">
           <img
-            effect="blur"
             src={Monitors}
-            className="w-auto h-auto transition-transform duration-300 hover:scale-125 hover:rotate-6 grayscale hover:grayscale-0"
+            className="w-auto h-auto transition-transform duration-500 hover:scale-125 hover:rotate-6 grayscale hover:grayscale-0"
           />
           <div className="font-bakbak font-semibold text-white absolute text-[30px] dark:text-white z-10">
             MONITORS
@@ -22,9 +21,8 @@ const CategoriesDesktop = () => {
       <Link to={`/Search?category=Headsets`}>
         <button className="w-[250px] h-[340px] overflow-hidden rounded-xl  flex flex-col justify-center items-center">
           <img
-            effect="blur"
             src={Headsets}
-            className="w-auto h-auto transition-transform duration-300 hover:scale-125 hover:rotate-6 grayscale hover:grayscale-0"
+            className="w-auto h-auto transition-transform duration-500 hover:scale-125 hover:rotate-6 grayscale hover:grayscale-0"
           />
           <div className="font-bakbak font-semibold text-white absolute text-[30px] dark:text-white z-10">
             HEADSETS
@@ -34,9 +32,8 @@ const CategoriesDesktop = () => {
       <Link to={`/Search?category=Keyboards`}>
         <button className="w-[250px] h-[340px] overflow-hidden rounded-xl  flex flex-col justify-center items-center">
           <img
-            effect="blur"
             src={Keyboards}
-            className="w-auto h-auto transition-transform duration-300 hover:scale-125 hover:rotate-6 grayscale hover:grayscale-0"
+            className="w-auto h-auto transition-transform duration-500 hover:scale-125 hover:rotate-6 grayscale hover:grayscale-0"
           />
           <div className="font-bakbak font-semibold text-white absolute text-[30px] dark:text-white z-10">
             KEYBOARDS
@@ -46,9 +43,8 @@ const CategoriesDesktop = () => {
       <Link to={`/Search?category=Mice`}>
         <button className="w-[250px] h-[340px] overflow-hidden rounded-xl  flex flex-col justify-center items-center dark:border-none">
           <img
-            effect="blur"
             src={Mice}
-            className="w-auto h-auto transition-transform duration-300 hover:scale-125 hover:rotate-6 grayscale hover:grayscale-0"
+            className="w-auto h-auto transition-transform duration-500 hover:scale-125 hover:rotate-6 grayscale hover:grayscale-0"
           />
           <div className="font-bakbak font-semibold text-white absolute text-[30px] dark:text-white z-10">
             MICE

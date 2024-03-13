@@ -10,6 +10,7 @@ import { getProducts } from "../redux/slices/productsSlice";
 import { clearFiltered, getFiltered } from "../redux/slices/filteredSlice";
 import { useTheme } from "../components/ThemeContext";
 import SearchDesktop from "../components/SearchDesktop";
+import CircleLoader from "react-spinners/CircleLoader";
 
 const Search = ({ modalOpenCart, closeCart }) => {
   window.scrollTo(0, 0);
@@ -160,7 +161,7 @@ const Search = ({ modalOpenCart, closeCart }) => {
   }, [selectedCategory, selectedBrand, selectedOrder, minPrice, maxPrice]);
 
   return (
-    <div className="w-auto h-screen">
+    <div className="w-auto h-full max-h-screen">
       <SearchDesktop
         modalOpenCart={modalOpenCart}
         closeCart={closeCart}
@@ -172,7 +173,7 @@ const Search = ({ modalOpenCart, closeCart }) => {
         allFiltered={allFiltered}
         selectedCategory={selectedCategory}
       />
-      <div className="h-screen w-auto pb-32 dark:bg-black lg:hidden">
+      <div className="max-h-screen w-auto pb-20 dark:bg-black lg:hidden">
         <div className="font-jakarta-sans w-auto flex justify-between items-center mx-5 py-3 dark:bg-black">
           <h1 className="text-stone-900 text-[18px] font-bold tracking-wide dark:text-white">
             By Category
@@ -211,8 +212,8 @@ const Search = ({ modalOpenCart, closeCart }) => {
         <div className="w-auto h-auto m-6 backface-hidden">
           <CategoriesFilter handleFilterCategory={handleFilterCategory} />
         </div>
-        <div className="w-full h-auto flex justify-center items-center dark:bg-black">
-          <div className="w-auto h-auto grid grid-cols-1 gap-y-4 justify-center mx-3 font-bold dark:bg-black">
+        <div className="w-full max-h-[600px] overflow-hidden overflow-y-auto flex justify-center items-start dark:bg-black">
+          <div className="w-auto h-full overflow-hidden p-2 grid grid-cols-1 gap-y-4 justify-center font-bold dark:bg-black">
             {allFiltered ? (
               allFiltered.map((product) => (
                 <SearchCard
@@ -225,7 +226,15 @@ const Search = ({ modalOpenCart, closeCart }) => {
                 />
               ))
             ) : (
-              <p>No results.</p>
+              <div className="w-full max-h-screen h-screen flex items-center justify-center">
+                <CircleLoader
+                  color={"#DF102E"}
+                  loading={1}
+                  size={50}
+                  aria-label="Loading Spinner"
+                  data-testid="loader"
+                />
+              </div>
             )}
           </div>
         </div>

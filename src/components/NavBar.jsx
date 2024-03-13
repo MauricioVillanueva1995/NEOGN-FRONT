@@ -25,7 +25,6 @@ const NavBar = ({ modalOpenCart, openCart, closeCart }) => {
 
   // const toggleDrawer = () => {
   //   setIsDrawerOpen(!isDrawerOpen);
-  //   // Forzar una actualización para que React aplique las clases de transición
   //   setForceUpdate(!forceUpdate);
   // };
 
@@ -118,7 +117,15 @@ const NavBar = ({ modalOpenCart, openCart, closeCart }) => {
         <div className="w-[370px] h-auto border-opacity-20 justify-around items-center inline-flex">
           <Link
             to="/Account/Wishlist"
-            className="flex justify-center items-center"
+            className={`flex justify-center items-center p-2 hover:bg-[#CFD1D4]/[0.4] rounded-full ${
+                theme === "dark" && currentPath === "/Account/Wishlist"
+                  ? "bg-white/[0.1]"
+                  : theme === "bg-white/[0.0]"
+                  ? "text-gray-300"
+                  : theme !== "dark" && currentPath === "/Account/Wishlist"
+                  ? "bg-[#CFD1D4]/[0.4]"
+                  : "bg-white/[0.0]"
+              }`}
           >
             <div className="flex-col justify-center items-center inline-flex">
               <img alt="Saved" src={ActiveHeart} className="w-5 h-5" />
@@ -126,7 +133,7 @@ const NavBar = ({ modalOpenCart, openCart, closeCart }) => {
           </Link>
           <motion.button
             onClick={() => (modalOpenCart ? closeCart() : openCart())}
-            className="flex justify-center items-center"
+            className="flex justify-center items-center p-2 hover:bg-[#CFD1D4]/[0.4] rounded-full"
             type="button"
             data-drawer-target="drawer-right-example"
             data-drawer-show="drawer-right-example"
@@ -140,7 +147,15 @@ const NavBar = ({ modalOpenCart, openCart, closeCart }) => {
           <Link
             to="/Account"
             onClick={() => selected("Account")}
-            className="flex justify-center items-center"
+            className={`flex justify-center items-center p-2 hover:bg-[#CFD1D4]/[0.4] rounded-full ${
+                theme === "dark" && currentPath === "/Account"
+                  ? "bg-white/[0.1]"
+                  : theme === "bg-white/[0.0]"
+                  ? "text-gray-300"
+                  : theme !== "dark" && currentPath === "/Account"
+                  ? "bg-[#CFD1D4]/[0.4]"
+                  : "bg-white/[0.0]"
+              }`}
           >
             <div className="flex-col justify-center items-center inline-flex">
               <img src={ActiveProfile} className="w-6 h-6" alt="Account" />

@@ -13,7 +13,7 @@ const MyWishlistDesktop = () => {
               <tr className="font-poppins text-[#6C7275] text-sm">
                 <th scope="col" className="px-3 py-3.5 text-left"></th>
                 <th scope="col" className="px-3 py-3.5 text-left">
-                  Status
+                  Product
                 </th>
                 <th scope="col" className="px-3 py-3.5 text-left">
                   Price

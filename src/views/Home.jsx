@@ -112,7 +112,7 @@ const Home = ({ modalOpenCart, closeCart }) => {
       <div className="py-10 hidden lg:flex lg:items-center lg:justify-center ">
         <Link
           to="/Search"
-          className="py-2 px-14 rounded-full font-general-sans w-auto h-auto bg-heroButton text-white text-[16px] font-normal "
+          className="py-2 px-14 rounded-full font-general-sans w-auto h-auto text-white text-[16px] font-normal transition-all duration-500 bg-gradient-to-br to-red-800 via-red-500 from-heroButton bg-size-200 hover:bg-right-bottom"
         >
           Shop All
         </Link>

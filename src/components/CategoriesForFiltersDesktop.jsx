@@ -19,7 +19,7 @@ const CategoriesForFiltersDesktop = ({ handleFilterCategory }) => {
     <div className="w-full h-[200px] flex justify-center items-center gap-x-10 xl:gap-x-14">
       <button
         onClick={() => handleSelection("Monitors")}
-        className={`min-w-[110px] min-h-[110px] xl:w-[150px] xl:h-[110px]  hover:bg-[#E31B38] rounded-2xl border-[1.5px] flex flex-col justify-center items-center dark:backdrop-blur-[5px] dark:bg-neutral-100 dark:bg-opacity-20  ${
+        className={`min-w-[110px] min-h-[110px] xl:w-[150px] xl:h-[110px] transition-all duration-500 bg-gradient-to-br to-red-800 via-red-500 from-heroButton bg-size-200 hover:bg-right-bottom rounded-2xl border-[1.5px] flex flex-col justify-center items-center dark:backdrop-blur-[5px] dark:bg-neutral-100 dark:bg-opacity-20  ${
           selectCategory === "Monitors" ? "border-rose-500 bg-[#E31B38]" : "border-transparent bg-[#eb465e] dark:hover:border-rose-500"
         }`}
       >
@@ -34,7 +34,7 @@ const CategoriesForFiltersDesktop = ({ handleFilterCategory }) => {
 
       <button
         onClick={() => handleSelection("Headsets")}
-        className={`min-w-[110px] min-h-[110px] xl:w-[150px] xl:h-[110px]  hover:bg-[#E31B38] rounded-2xl border-[1.5px] flex flex-col justify-center items-center  dark:backdrop-blur-[5px] dark:bg-neutral-100 dark:bg-opacity-20 ${
+        className={`min-w-[110px] min-h-[110px] xl:w-[150px] xl:h-[110px] hover:transition-all hover:duration-500 hover:bg-gradient-to-br hover:to-red-800 hover:via-red-500 hover:from-heroButton hover:bg-size-200 hover:bg-right-bottom rounded-2xl border-[1.5px] flex flex-col justify-center items-center  dark:backdrop-blur-[5px] dark:bg-neutral-100 dark:bg-opacity-20 ${
           selectCategory === "Headsets" ? "border-rose-500 bg-[#E31B38]" : "border-transparent bg-[#eb465e] dark:hover:border-rose-500"
         }`}
       >
@@ -49,7 +49,7 @@ const CategoriesForFiltersDesktop = ({ handleFilterCategory }) => {
 
       <button
         onClick={() => handleSelection("Keyboards")}
-        className={`min-w-[110px] min-h-[110px] xl:w-[150px] xl:h-[110px]  hover:bg-[#E31B38] rounded-2xl border-[1.5px] flex flex-col justify-center items-center dark:backdrop-blur-[5px] dark:bg-neutral-100 dark:bg-opacity-20 ${
+        className={`min-w-[110px] min-h-[110px] xl:w-[150px] xl:h-[110px] hover:transition-all hover:duration-500 hover:bg-gradient-to-br hover:to-red-800 hover:via-red-500 hover:from-heroButton hover:bg-size-200 hover:bg-right-bottom rounded-2xl border-[1.5px] flex flex-col justify-center items-center  dark:backdrop-blur-[5px] dark:bg-neutral-100 dark:bg-opacity-20 ${
           selectCategory === "Keyboards" ? "border-rose-500 bg-[#E31B38]" : "border-transparent bg-[#eb465e] dark:hover:border-rose-500"
         }`}
       >
@@ -64,7 +64,7 @@ const CategoriesForFiltersDesktop = ({ handleFilterCategory }) => {
 
       <button
         onClick={() => handleSelection("Mice")}
-        className={`min-w-[110px] min-h-[110px] xl:w-[150px] xl:h-[110px]  hover:bg-[#E31B38] rounded-2xl border-[1.5px] flex flex-col justify-center items-center dark:backdrop-blur-[5px] dark:bg-neutral-100 dark:bg-opacity-20 ${
+        className={`min-w-[110px] min-h-[110px] xl:w-[150px] xl:h-[110px] hover:transition-all hover:duration-500 hover:bg-gradient-to-br hover:to-red-800 hover:via-red-500 hover:from-heroButton hover:bg-size-200 hover:bg-right-bottom rounded-2xl border-[1.5px] flex flex-col justify-center items-center  dark:backdrop-blur-[5px] dark:bg-neutral-100 dark:bg-opacity-20 ${
           selectCategory === "Mice" ? "border-rose-500 bg-[#E31B38]" : "border-transparent bg-[#eb465e] dark:hover:border-rose-500"
         }`}
       >
@@ -79,7 +79,7 @@ const CategoriesForFiltersDesktop = ({ handleFilterCategory }) => {
 
       <button
         onClick={() => handleSelection("Mousepads")}
-        className={`min-w-[110px] min-h-[110px] xl:w-[150px] xl:h-[110px]  hover:bg-[#E31B38] rounded-2xl border-[1.5px] flex flex-col justify-center items-center dark:backdrop-blur-[5px] dark:bg-neutral-100 dark:bg-opacity-20 ${
+        className={`min-w-[110px] min-h-[110px] xl:w-[150px] xl:h-[110px] hover:transition-all hover:duration-500 hover:bg-gradient-to-br hover:to-red-800 hover:via-red-500 hover:from-heroButton hover:bg-size-200 hover:bg-right-bottom rounded-2xl border-[1.5px] flex flex-col justify-center items-center  dark:backdrop-blur-[5px] dark:bg-neutral-100 dark:bg-opacity-20 ${
           selectCategory === "Mousepads" ? "border-rose-500 bg-[#E31B38]" : "border-transparent bg-[#eb465e] dark:hover:border-rose-500"
         }`}
       >
@@ -93,7 +93,7 @@ const CategoriesForFiltersDesktop = ({ handleFilterCategory }) => {
       </button>
       <button
         onClick={() => handleSelection("Controllers")}
-        className={`min-w-[110px] min-h-[110px] xl:w-[150px] xl:h-[110px] hover:bg-[#E31B38] rounded-2xl border-[1.5px] flex flex-col justify-center items-center dark:backdrop-blur-[5px] dark:bg-neutral-100 dark:bg-opacity-20 ${
+        className={`min-w-[110px] min-h-[110px] xl:w-[150px] xl:h-[110px] hover:transition-all hover:duration-500 hover:bg-gradient-to-br hover:to-red-800 hover:via-red-500 hover:from-heroButton hover:bg-size-200 hover:bg-right-bottom rounded-2xl border-[1.5px] flex flex-col justify-center items-center  dark:backdrop-blur-[5px] dark:bg-neutral-100 dark:bg-opacity-20 ${
           selectCategory === "Controllers" ? "border-rose-500 bg-[#E31B38]" : "border-transparent bg-[#eb465e] dark:hover:border-rose-500"
         }`}
       >
@@ -107,7 +107,7 @@ const CategoriesForFiltersDesktop = ({ handleFilterCategory }) => {
       </button>
       <button
         onClick={() => handleSelection("Earbuds")}
-        className={`min-w-[110px] min-h-[110px] xl:w-[150px] xl:h-[110px] hover:bg-[#E31B38] rounded-2xl border-[1.5px] flex flex-col justify-center items-center dark:backdrop-blur-[5px] dark:bg-neutral-100 dark:bg-opacity-20 ${
+        className={`min-w-[110px] min-h-[110px] xl:w-[150px] xl:h-[110px] hover:transition-all hover:duration-500 hover:bg-gradient-to-br hover:to-red-800 hover:via-red-500 hover:from-heroButton hover:bg-size-200 hover:bg-right-bottom rounded-2xl border-[1.5px] flex flex-col justify-center items-center  dark:backdrop-blur-[5px] dark:bg-neutral-100 dark:bg-opacity-20 ${
           selectCategory === "Earbuds" ? "border-rose-500 bg-[#E31B38]" : "border-transparent bg-[#eb465e] dark:hover:border-rose-500"
         }`}
       >
@@ -121,7 +121,7 @@ const CategoriesForFiltersDesktop = ({ handleFilterCategory }) => {
       </button>
       <button
         onClick={() => handleSelection("Microphones")}
-        className={`min-w-[110px] min-h-[110px] xl:w-[150px] xl:h-[110px] hover:bg-[#E31B38] rounded-2xl border-[1.5px] flex flex-col justify-center items-center dark:backdrop-blur-[5px] dark:bg-neutral-100 dark:bg-opacity-20 ${
+        className={`min-w-[110px] min-h-[110px] xl:w-[150px] xl:h-[110px] hover:transition-all hover:duration-500 hover:bg-gradient-to-br hover:to-red-800 hover:via-red-500 hover:from-heroButton hover:bg-size-200 hover:bg-right-bottom rounded-2xl border-[1.5px] flex flex-col justify-center items-center  dark:backdrop-blur-[5px] dark:bg-neutral-100 dark:bg-opacity-20 ${
           selectCategory === "Microphones" ? "border-rose-500 bg-[#E31B38]" : "border-transparent bg-[#eb465e] dark:hover:border-rose-500"
         }`}
       >

@@ -18,14 +18,14 @@ const Footer = () => {
             Join our newsletter to keep up to date with us!
           </div>
           <div className="gap-x-4 w-auto h-auto flex items-center justify-around">
-            <div className="py-3 w-[360px] h-auto rounded-full border-[#484848] border-[1px] gap-x-2 flex justify-start items-center px-4">
+            <div className="py-[10px] w-[360px] h-auto rounded-full border-[#484848] border-[1px] gap-x-2 flex justify-start items-center px-4">
               <img className="w-6 h-auto" src={EmailLight} />
               <input
                 className="text-white bg-transparent border-none outline-none font-poppins text-[14px] font-normal"
                 placeholder="Enter your email"
               />
             </div>
-            <button className="w-auto h-auto font-poppins font-medium text-white text-sm bg-heroButton py-[14px] px-[28px] rounded-full">
+            <button className="w-auto h-auto font-poppins font-medium text-white text-sm py-[12px] px-[28px] rounded-full transition-all duration-500 bg-gradient-to-br to-red-800 via-red-500 from-heroButton bg-size-200 hover:bg-right-bottom">
               Subscribe
             </button>
           </div>

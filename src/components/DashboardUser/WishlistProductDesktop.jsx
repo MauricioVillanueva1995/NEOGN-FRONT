@@ -75,7 +75,7 @@ const WishlistProductDesktop = ({
       <td className="py-4 pl-3 pr-4 text-right text-sm sm:pr-6 underline">
         <button
           onClick={handleAddToCart}
-          className="bg-[#DF102E] text-white py-[6px] px-[24px] rounded-[8px]"
+          className="text-white py-[6px] px-[24px] rounded-[8px] transition-all duration-500 bg-gradient-to-br to-red-800 via-red-500 from-heroButton bg-size-200 hover:bg-right-bottom"
         >
           Add to cart
         </button>

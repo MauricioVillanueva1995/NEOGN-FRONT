@@ -28,7 +28,7 @@ const RatingFilter = () => {
               />
               <FaStar
                 className="cursor-pointer transition duration-200"
-                color={ratingValue <= (hover || rating) ? "#ffc107" : "#e4e5e9"}
+                color={ratingValue <= (hover || rating) ? "#DF102E" : "#e4e5e9"}
                 size={25}
               />
             </label>

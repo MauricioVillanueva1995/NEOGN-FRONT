@@ -39,7 +39,7 @@ const SidebarUser = () => {
         <div className="w-full border-b-[2px] border-black">
           <Link
             to="/Account/EditProfile"
-            className={`w-full ${
+            className={`w-full hover:text-heroButton ${
               location.pathname.startsWith("/Account/EditProfile")
                 ? "text-black"
                 : "text-[#6C7275]"
@@ -48,10 +48,10 @@ const SidebarUser = () => {
             Account
           </Link>
         </div>
-        <div className="text-[#6C7275]">
+        <div>
           <Link
             to="/Account/Orders"
-            className={`w-full ${
+            className={`w-full hover:text-heroButton ${
               location.pathname.startsWith("/Account/Orders")
                 ? "text-black"
                 : "text-[#6C7275]"
@@ -63,7 +63,7 @@ const SidebarUser = () => {
         <div className="text-[#6C7275]">
           <Link
             to="/Account/Wishlist"
-            className={`w-full ${
+            className={`w-full hover:text-heroButton ${
               location.pathname.startsWith("/Account/Wishlist")
                 ? "text-black"
                 : "text-[#6C7275]"

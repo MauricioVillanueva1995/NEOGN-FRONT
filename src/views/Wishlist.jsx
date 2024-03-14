@@ -26,10 +26,10 @@ const Wishlist = () => {
   }
 
   return (
-    <div className="h-screen w-full">
-      <div className="h-screen w-full lg:hidden dark:bg-[#121212]">
+    <div className="h-full w-full">
+      <div className="h-full w-full lg:hidden dark:bg-[#121212]">
         <TitleSection title={"Wishlist"} location={"/"} />
-        <div className="w-full h-auto flex justify-center items-center">
+        <div className="w-full h-[76vh] overflow-y-auto overflow-hidden flex p-2 justify-center items-start">
           <div className="w-auto h-auto grid grid-cols-1 gap-y-4 justify-center mx-3 font-bold pt-4">
             {wishlist.length > 0 ? (
               wishlist.map((product) => (

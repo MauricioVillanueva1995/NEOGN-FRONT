@@ -212,8 +212,8 @@ const Search = ({ modalOpenCart, closeCart }) => {
         <div className="w-auto h-auto m-6 backface-hidden">
           <CategoriesFilter handleFilterCategory={handleFilterCategory} />
         </div>
-        <div className="w-full max-h-[600px] overflow-hidden overflow-y-auto flex justify-center items-start dark:bg-black">
-          <div className="w-auto h-full overflow-hidden p-2 grid grid-cols-1 gap-y-4 justify-center font-bold dark:bg-black">
+        <div className="w-full h-[64vh] overflow-hidden overflow-y-auto flex justify-center items-start dark:bg-black">
+          <div className="w-auto h-auto p-2 grid grid-cols-1 gap-y-4 justify-center font-bold dark:bg-black">
             {allFiltered ? (
               allFiltered.map((product) => (
                 <SearchCard
@@ -226,7 +226,7 @@ const Search = ({ modalOpenCart, closeCart }) => {
                 />
               ))
             ) : (
-              <div className="w-full max-h-screen h-screen flex items-center justify-center">
+              <div className="w-full max-h-[600px] flex items-center justify-center">
                 <CircleLoader
                   color={"#DF102E"}
                   loading={1}

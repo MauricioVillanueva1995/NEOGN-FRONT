@@ -30,7 +30,7 @@ const DetailOrderCard = ({ product }) => {
       <div className="flex items-center bg-card  justify-center w-[70px] h-[70px] rounded-[10px]">
         <img
           className="h-auto w-auto"
-          src={product.image[0]}
+          src={product.picture_url}
           alt="Product image"
         />
       </div>

@@ -19,7 +19,7 @@ const OrderHistory = () => {
   return (
     <div className="flex flex-col w-full h-auto pt-6">
       <TitleSection title="Order Details" location="/Account/Orders" />
-      <div className="w-full flex justify-center font-maven-pro font-medium text-xl mt-2">
+      <div className="w-full flex justify-center font-poppins font-medium text-xl mt-2">
         <div className="w-[340px]">
           <h2>Order ID #{orderDetail.paymentId}</h2>
         </div>

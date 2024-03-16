@@ -10,12 +10,9 @@ const DetailOrderCard = ({ product }) => {
   const handleToRating = async () => {
     const SKU = product.id;
     try {
-      const response = await axios.put(
-        `/api/products/rating/${SKU}`,
-        {
-          rating: ratingProduct,
-        }
-      );
+      const response = await axios.put(`/api/products/rating/${SKU}`, {
+        rating: ratingProduct,
+      });
       if (response.status === 200) {
         toast.success("Rating successfully added!");
         setShowRating(false);
@@ -26,21 +23,20 @@ const DetailOrderCard = ({ product }) => {
   };
 
   return (
-    <div className="relative flex justify-around items-center shadow-[0px_1px_10px_#00000040] shadow-[#f7e2e5] w-full min-w-[345px] h-[105px] bg-white rounded-2xl">
-      <div className="flex items-center bg-card  justify-center w-[70px] h-[70px] rounded-[10px]">
+    <div className="relative flex justify-around items-center shadow-[0px_1px_10px_#00000040] shadow-[#f7e2e5] w-full min-w-[350px] h-[92px] bg-white rounded-2xl">
+      <div className="flex items-center bg-card  justify-center w-[60px] h-[60px] rounded-[10px]">
         <img
-          className="h-auto w-auto"
+          className="h-[auto] w-auto"
           src={product.picture_url}
           alt="Product image"
         />
       </div>
-      <div className="w-auto h-[auto] flex flex-col gap-y-4">
+      <div className="w-auto h-[auto] flex flex-col gap-y-3">
         <h2 className="font-general-sans font-semibold overflow-hidden h-auto line-clamp-1">
           {product.title}
         </h2>
-
         <div className="flex w-full gap-x-20">
-          <p className="font-general-sans font-semibold w-auto h-auto text-rose-500">
+          <p className="font-general-sans font-medium text-xl w-auto h-auto text-rose-500">
             $ {product.unit_price}
           </p>
           {showRating && (
@@ -56,9 +52,9 @@ const DetailOrderCard = ({ product }) => {
           )}
           <button
             onClick={() => setShowRating(true)}
-            className="px-5 font-roboto font-bold bg-rose-500 text-slate-100 flex justify-end items-center rounded-lg"
+            className="px-2 font-poppins font-medium text-xs bg-[#E54660] text-slate-100 flex justify-center items-center rounded-lg"
           >
-            add rating
+            Add Review
           </button>
         </div>
       </div>

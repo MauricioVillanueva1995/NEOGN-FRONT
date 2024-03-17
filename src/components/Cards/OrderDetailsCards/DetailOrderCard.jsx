@@ -1,11 +1,15 @@
+import { motion, AnimatePresence } from "framer-motion";
 import toast from "react-hot-toast";
 import { useState } from "react";
 import axios from "axios";
 import AddRating from "./AddRating";
 
 const DetailOrderCard = ({ product }) => {
-  const [showRating, setShowRating] = useState(false);
+  const [modalRatingOpen, setModalRatingOpen] = useState(false);
   const [ratingProduct, setRatingProduct] = useState(0);
+
+  const closeRating = () => setModalRatingOpen(false);
+  const openRating = () => setModalRatingOpen(true);
 
   const handleToRating = async () => {
     const SKU = product.id;
@@ -39,23 +43,27 @@ const DetailOrderCard = ({ product }) => {
           <p className="font-general-sans font-medium text-xl w-auto h-auto text-rose-500">
             $ {product.unit_price}
           </p>
-          {showRating && (
-            <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 z-50">
-              <div className="bg-white p-4 rounded-lg">
-                <AddRating
-                  rating={ratingProduct}
-                  setRating={setRatingProduct}
-                  handleToRating={handleToRating}
-                />
-              </div>
-            </div>
-          )}
-          <button
-            onClick={() => setShowRating(true)}
+
+          <motion.button
+            onClick={() => (modalRatingOpen ? closeRating() : openRating())}
             className="px-2 font-poppins font-medium text-xs bg-[#E54660] text-slate-100 flex justify-center items-center rounded-lg"
           >
             Add Review
-          </button>
+          </motion.button>
+          <AnimatePresence
+            initial={false}
+            mode="wait"
+            onExitComplete={() => null}
+          >
+            {modalRatingOpen && (
+              <AddRating
+                rating={ratingProduct}
+                setRating={setRatingProduct}
+                handleToRating={handleToRating}
+                closeRating={closeRating}
+              />
+            )}
+          </AnimatePresence>
         </div>
       </div>
     </div>

@@ -10,6 +10,7 @@ const WalletPayment = ({ prefId }) => {
   const [preferenceId, setPreferenceId] = useState(null);
 
   const createPreference = async (items) => {
+    console.log(items);
     try {
       console.log(user.id);
       const response = await axios.post(
@@ -20,7 +21,7 @@ const WalletPayment = ({ prefId }) => {
             id: item.id,
             title: item.name,
             description: item.description,
-            picture_url: item.image[0],
+            picture_url: item.image,
             quantity: item.quantity,
             unit_price: item.price,
           })),

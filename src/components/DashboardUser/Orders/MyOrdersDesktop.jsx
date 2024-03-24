@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
-
+import OrderCardDesktop from "../../Cards/OrderDetailsCards/OrderCardDesktop";
+import { useSelector } from "react-redux";
 const MyOrdersDesktop = () => {
+  const myOrders = useSelector((state) => state.myOrders.myOrders);
   return (
     <div className="xl:w-[700px] h-auto flex justify-start">
       <div className="inline-block min-w-full py-2 align-middle">
@@ -23,82 +24,17 @@ const MyOrdersDesktop = () => {
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200 dark:text-white">
-              <tr>
-                <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm text-gray-900 sm:pl-6 dark:text-white">
-                  #3456_768
-                </td>
-                <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                  October 17, 2023
-                </td>
-                <td className="whitespace-nowrap px-3 py-4 text-sm">
-                  Delivered
-                </td>
-                <td className="whitespace-nowrap px-3 py-4 text-sm">
-                  $1234.00
-                </td>
-                <td className="py-4 pl-3 pr-4 text-right text-sm sm:pr-6 underline">
-                  <Link>
-                    View Details
-                  </Link>
-                </td>
-              </tr>
-              <tr>
-                <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm text-gray-900 sm:pl-6 dark:text-white">
-                  #3456_768
-                </td>
-                <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                  October 17, 2023
-                </td>
-                <td className="whitespace-nowrap px-3 py-4 text-sm">
-                  Delivered
-                </td>
-                <td className="whitespace-nowrap px-3 py-4 text-sm">
-                  $1234.00
-                </td>
-                <td className="py-4 pl-3 pr-4 text-right text-sm sm:pr-6 underline">
-                  <Link>
-                    View Details
-                  </Link>
-                </td>
-              </tr>
-              <tr>
-                <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm text-gray-900 sm:pl-6 dark:text-white">
-                  #3456_768
-                </td>
-                <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                  October 17, 2023
-                </td>
-                <td className="whitespace-nowrap px-3 py-4 text-sm">
-                  Delivered
-                </td>
-                <td className="whitespace-nowrap px-3 py-4 text-sm">
-                  $1234.00
-                </td>
-                <td className="py-4 pl-3 pr-4 text-right text-sm sm:pr-6 underline">
-                  <Link>
-                    View Details
-                  </Link>
-                </td>
-              </tr>
-              <tr>
-                <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm text-gray-900 sm:pl-6 dark:text-white">
-                  #3456_768
-                </td>
-                <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                  October 17, 2023
-                </td>
-                <td className="whitespace-nowrap px-3 py-4 text-sm">
-                  Delivered
-                </td>
-                <td className="whitespace-nowrap px-3 py-4 text-sm">
-                  $1234.00
-                </td>
-                <td className="py-4 pl-3 pr-4 text-right text-sm sm:pr-6 underline">
-                  <Link>
-                    View Details
-                  </Link>
-                </td>
-              </tr>
+              {myOrders.length > 0 &&
+                myOrders.map((order, index) => (
+                  <OrderCardDesktop
+                    key={index}
+                    order={order}
+                    status="Confirmed"
+                  />
+                ))}
+              <OrderCardDesktop />
+              <OrderCardDesktop />
+              <OrderCardDesktop />
             </tbody>
           </table>
         </div>

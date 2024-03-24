@@ -86,7 +86,7 @@ const SearchCardDesktop = ({
             key={index}
             className="h-auto w-auto flex justify-center "
           >
-            <img className="imageSearch img1 overflow-visible" src={image[0]} />
+            <img className="imageSearch img1 overflow-visible" src={image} />
 
             <div className="titleSearch px-2 line-clamp-1">{name}</div>
           </Link>

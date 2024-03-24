@@ -15,7 +15,6 @@ const SidebarUser = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
   const location = useLocation();
-  console.log(location.pathname);
 
   const handleLogout = () => {
     auth.logout();

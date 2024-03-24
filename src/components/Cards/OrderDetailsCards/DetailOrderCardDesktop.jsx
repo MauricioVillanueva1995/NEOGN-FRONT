@@ -4,7 +4,7 @@ import { useState } from "react";
 import axios from "axios";
 import AddRating from "./AddRating";
 
-const DetailOrderCard = ({ product }) => {
+const DetailOrderCardDesktop = ({ product }) => {
   const [modalRatingOpen, setModalRatingOpen] = useState(false);
   const [ratingProduct, setRatingProduct] = useState(0);
 
@@ -27,26 +27,26 @@ const DetailOrderCard = ({ product }) => {
   };
 
   return (
-    <div className="relative flex justify-around items-center shadow-[0px_1px_10px_#00000040] shadow-[#e0cdd0] w-full min-w-[350px] h-[92px] bg-white rounded-2xl">
-      <div className="flex items-center bg-card  justify-center w-[60px] h-[60px] rounded-[10px]">
+    <div className="relative flex justify-around items-center shadow-[0px_1px_10px_#00000040] shadow-[#e0cdd0] w-[295px] h-[75px] bg-white rounded-[10px] py-3">
+      <div className="flex items-center bg-card justify-center w-[50px] h-[50px] rounded-[7px]">
         <img
-          className="h-[auto] w-auto"
+          className="h-auto w-auto"
           src={product.picture_url}
           alt="Product image"
         />
       </div>
-      <div className="w-auto h-[auto] flex flex-col gap-y-3">
-        <h2 className="font-general-sans font-semibold overflow-hidden h-auto line-clamp-1 text-black">
+      <div className="w-auto h-[auto] flex flex-col gap-y-2">
+        <h2 className="font-general-sans font-medium text-sm overflow-hidden h-auto line-clamp-1 text-black">
           {product.title}
         </h2>
-        <div className="flex w-full gap-x-20">
-          <p className="font-general-sans font-medium text-xl w-auto h-auto text-rose-500">
-            $ {product.unit_price}
+        <div className="flex w-full justify-between gap-x-14 items-center">
+          <p className="font-general-sans font-medium text-sm w-auto h-auto text-rose-500">
+            $ {product.unit_price}.00
           </p>
 
           <motion.button
             onClick={() => (modalRatingOpen ? closeRating() : openRating())}
-            className="px-2 font-poppins font-medium text-xs bg-[#E54660] text-slate-100 flex justify-center items-center rounded-lg"
+            className="px-2 py-[2px] font-general-sans font-base text-xs bg-[#E54660] text-slate-100 flex justify-center items-center rounded-lg"
           >
             Add Review
           </motion.button>
@@ -70,4 +70,4 @@ const DetailOrderCard = ({ product }) => {
   );
 };
 
-export default DetailOrderCard;
+export default DetailOrderCardDesktop;

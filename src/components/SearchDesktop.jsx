@@ -47,7 +47,7 @@ const SearchDesktop = ({
                 id={el.id}
                 brand={el.brand}
                 name={el.name}
-                image={el.image}
+                image={el.image[0]}
                 price={el.price}
                 threeDi={el.threeDi}
               />

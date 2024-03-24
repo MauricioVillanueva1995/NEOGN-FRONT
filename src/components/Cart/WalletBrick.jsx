@@ -25,7 +25,6 @@ const WalletPayment = ({ prefId }) => {
             quantity: item.quantity,
             unit_price: item.price,
           })),
-          transaction_amount: amount,
         },
         {
           headers: {

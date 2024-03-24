@@ -7,9 +7,12 @@ import { initMercadoPago } from "@mercadopago/sdk-react";
 import CartProduct from "../Cards/CartProduct";
 
 const token = import.meta.env.VITE_PUBLIC_KEY;
-initMercadoPago(token);
 
 const CartDesktop = ({ closeCart, parentHeight }) => {
+  initMercadoPago(token,{
+    locale: "es-AR",
+  });
+
   const dropIn = {
     hidden: { x: "-100vw", opacity: 0 },
     visible: { x: "0vw", opacity: 1, damping: 25, stiffness: 500 },
@@ -20,7 +23,6 @@ const CartDesktop = ({ closeCart, parentHeight }) => {
   const [showPaymentMethods, setShowPaymentMethods] = useState(false);
   const [totalValue, setTotalValue] = useState(0);
   const [cartIsEmpty, setCartIsEmpty] = useState(cart.items.length === 0);
-  console.log(dropIn);
 
   const handleBuyClick = () => {
     if (cart.items.length > 0) {

@@ -22,8 +22,8 @@ const WalletPayment = ({ prefId }) => {
             title: item.name,
             description: item.description,
             picture_url: item.image,
-            quantity: item.quantity,
-            unit_price: item.price,
+            quantity: Number(item.quantity),
+            unit_price: Number(item.price),
           })),
         },
         {
@@ -45,9 +45,12 @@ const WalletPayment = ({ prefId }) => {
     async function fetchPreferenceId() {
       const id = await createPreference(items);
       setPreferenceId(id);
+      console.log(preferenceId);
     }
     fetchPreferenceId();
   }, []);
+
+
 
   const LazyWallet = lazy(() => {
     return new Promise((resolve) => {

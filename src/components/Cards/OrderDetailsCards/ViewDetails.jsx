@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import BackdropDetails from "./BackdropDetails";
 import OrderSummaryDesktop from "./OrderSummaryDesktop";
 import OrderedProductsDesktop from "./OrderedProductsDesktop";
+import { useSelector } from "react-redux";
 
 const dropIn = {
   hidden: { y: "-100vh", opacity: 0 },
@@ -9,7 +10,9 @@ const dropIn = {
   exit: { y: "100vh", opacity: 0 },
 };
 
-const ViewDetails = ({ closeDetail, order }) => {
+const ViewDetails = ({ closeDetail, order, formattedDate }) => {
+  
+  const user = useSelector((state) => state.user)
  console.log(order);
   return (
     <BackdropDetails closeDetail={closeDetail}>
@@ -28,9 +31,9 @@ const ViewDetails = ({ closeDetail, order }) => {
               src="https://i.pinimg.com/originals/6e/52/c7/6e52c7fe2447e34bc447b027cc20ea7d.png"
             />
             <div className="w-auto h-auto flex flex-col justify-center items-start font-general-sans">
-              <h2 className="font-semibold text-[14px]">Mauricio Villanueva</h2>
+              <h2 className="font-semibold text-[14px]">{user.name}</h2>
               <p className="font-normal text-[12px] text-[#6C7275] tracking-wider">16 Previous Orders</p>
-              <p className="font-normal text-[12px] text-[#6C7275] tracking-wider">mauriciovillanueva.dev@gmail.com</p>
+              <p className="font-normal text-[12px] text-[#6C7275] tracking-wider">{user.email}</p>
             </div>
           </div>
           <div className="w-full border-b-[1px] border-[#AAAAAA]" />
@@ -41,7 +44,7 @@ const ViewDetails = ({ closeDetail, order }) => {
             </div>
             <div className="flex flex-col w-auto h-auto items-start justify-center">
               <h3 className="text-xs tracking-wider">Date:</h3>
-              <p className="font-semibold text-sm">March 18, 2024</p>
+              <p className="font-semibold text-sm">{formattedDate}</p>
             </div>
             <div className="flex flex-col w-auto h-auto items-start justify-center">
               <h3 className="text-xs tracking-wider">Total:</h3>

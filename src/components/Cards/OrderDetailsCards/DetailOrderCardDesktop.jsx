@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import toast from "react-hot-toast";
 import { useState } from "react";
 import axios from "axios";
-import AddRating from "./AddRating";
+import AddRatingDesktop from "./AddRatingDesktop";
 
 const DetailOrderCardDesktop = ({ product }) => {
   const [modalRatingOpen, setModalRatingOpen] = useState(false);
@@ -56,7 +56,7 @@ const DetailOrderCardDesktop = ({ product }) => {
             onExitComplete={() => null}
           >
             {modalRatingOpen && (
-              <AddRating
+              <AddRatingDesktop
                 rating={ratingProduct}
                 setRating={setRatingProduct}
                 handleToRating={handleToRating}

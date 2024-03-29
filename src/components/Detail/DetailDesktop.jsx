@@ -15,6 +15,7 @@ import CloseDark from "../../assets/Icons/Detail/CloseDark.webp";
 import CloseLight from "../../assets/Icons/Detail/CloseLight.webp";
 import ThreeDDark from "../../assets/Icons/Detail/ThreeDDark.webp";
 import ThreeDLight from "../../assets/Icons/Detail/ThreeDLight.webp";
+import { CircleLoader } from "react-spinners";
 
 const DetailDesktop = ({
   modalOpenCart,
@@ -29,6 +30,14 @@ const DetailDesktop = ({
   const detailDesktopRef = useRef();
   const { theme } = useTheme();
   const [show3DObject, setShow3DObject] = useState(false);
+  const [loading3D, setLoading3D] = useState(false);
+
+  useEffect(() => {
+    if (show3DObject) {
+      const timeout = setTimeout(() => setLoading3D(false), 1000);
+      return () => clearTimeout(timeout);
+    }
+  }, [show3DObject]);
 
   useEffect(() => {
     const scrollToTop = () => {
@@ -148,6 +157,11 @@ const DetailDesktop = ({
         <div className="w-auto h-auto flex gap-x-6">
           {show3DObject ? (
             <div className="flex items-center justify-center w-[650px] h-[650px] relative">
+              {loading3D ? (
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  <CircleLoader size={50} color="#DF102E" />
+                </div>
+              ) : null}
               <Canvas
                 dpr={[1, 2]}
                 shadow="true"
@@ -162,7 +176,12 @@ const DetailDesktop = ({
                   zoomSpeed={1.2}
                 />
                 <Stage shadows={false}>
-                  <ThreeDObject scale={0.5} productName={detail.name} />
+                  <ThreeDObject
+                    scale={0.5}
+                    productName={detail.name}
+                    // Añadir una función de callback para indicar que la carga ha finalizado
+                    onLoad={() => setLoading3D(false)}
+                  />
                 </Stage>
               </Canvas>
               {theme === "dark" ? (
@@ -186,13 +205,21 @@ const DetailDesktop = ({
                 theme === "dark" ? (
                   <img
                     className="w-[50px] h-auto z-10 absolute bottom-10 left-10 dark:text-white cursor-pointer bg-transparent border-none"
-                    onClick={() => setShow3DObject(true)}
+                    onClick={() => {
+                      // Mostrar CircleLoader antes de cargar la imagen 3D
+                      setLoading3D(true);
+                      setShow3DObject(true);
+                    }}
                     src={ThreeDLight}
                   />
                 ) : (
                   <img
                     className="w-[50px] h-auto z-10 absolute bottom-10 left-10 dark:text-white cursor-pointer bg-transparent border-none"
-                    onClick={() => setShow3DObject(true)}
+                    onClick={() => {
+                      // Mostrar CircleLoader antes de cargar la imagen 3D
+                      setLoading3D(true);
+                      setShow3DObject(true);
+                    }}
                     src={ThreeDDark}
                   />
                 )

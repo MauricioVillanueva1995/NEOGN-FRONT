@@ -68,13 +68,13 @@ const LogInAdminDesktop = ({ modalOpenCart, closeCart }) => {
   const darkStyle = {
     background: `linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url(${BGDark})`,
     backgroundRepeat: "no-repeat",
-    backgroundSize: "cover", // o 'contain'
+    backgroundSize: "cover",
     backgroundPosition: "center",
   };
   const lightStyle = {
     background: `url(${BGLight})`,
     backgroundRepeat: "no-repeat",
-    backgroundSize: "cover", // o 'contain'
+    backgroundSize: "cover",
     backgroundPosition: "center",
   };
 

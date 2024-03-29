@@ -53,7 +53,7 @@ const OrderCardDesktop = ({ status, order }) => {
               mode="wait"
               onExitComplete={() => null}
             >
-              {modalDetailOpen && <ViewDetails closeDetail={closeDetail} order={order} />}
+              {modalDetailOpen && <ViewDetails closeDetail={closeDetail} order={order} formattedDate={formattedDate} />}
             </AnimatePresence>
           </div>
         ) : (

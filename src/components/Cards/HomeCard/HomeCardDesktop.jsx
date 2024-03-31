@@ -96,7 +96,7 @@ const HomeCardDesktop = ({ name, image, price, brand, id }) => {
             <h2>
               <sup>$</sup>
               {price}
-              <span>.99</span>
+              <span>.00</span>
             </h2>
             <button
               onClick={handleAddToCart}

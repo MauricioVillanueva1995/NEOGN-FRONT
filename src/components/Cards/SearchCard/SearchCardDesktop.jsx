@@ -94,7 +94,7 @@ const SearchCardDesktop = ({
           <div className="buySection flex items-center justify-around w-[250px]">
             <h2>
               <sup>$</sup>
-              {price}
+              {price}.00
             </h2>
             <button
               onClick={handleAddToCart}

@@ -144,7 +144,7 @@ const DetailDesktop = ({
           </div>
           <div className="w-[380px] h-auto flex justify-between items-center font-poppins gap-x-10">
             <p className="font-semibold text-[30px] dark:text-white">
-              $ {detail.price}
+              $ {detail.price}.00
             </p>
             <button
               onClick={handleAddToCart}

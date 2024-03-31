@@ -3,16 +3,16 @@ import { Wallet } from "@mercadopago/sdk-react";
 import { useSelector } from "react-redux";
 import axios from "axios";
 
-const WalletPayment = ({ prefId }) => {
+const WalletPayment = () => {
   const user = useSelector((state) => state.user);
   const items = useSelector((state) => state.cart.items);
   const amount = useSelector((state) => state.cart.totalPrice);
   const [preferenceId, setPreferenceId] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   const createPreference = async (items) => {
     console.log(items);
     try {
-      console.log(user.id);
       const response = await axios.post(
         "https://neogn-back-584v.onrender.com/api/payment/create-preference",
         {
@@ -34,6 +34,7 @@ const WalletPayment = ({ prefId }) => {
       );
       const data = response.data;
       const id = data.id;
+      console.log("console.log id", id);
 
       return id;
     } catch (e) {
@@ -45,22 +46,15 @@ const WalletPayment = ({ prefId }) => {
     async function fetchPreferenceId() {
       const id = await createPreference(items);
       setPreferenceId(id);
-      console.log(preferenceId);
+      setIsLoading(false);
+      console.log("preferenceId", id);
     }
     fetchPreferenceId();
-  }, []);
-
-
+  }, [items]);
 
   const LazyWallet = lazy(() => {
     return new Promise((resolve) => {
-      if (prefId && prefId !== null) {
-        resolve({
-          default: () => (
-            <Wallet initialization={{ amount, prefId, redirectMode: "self" }} />
-          ),
-        });
-      } else if (preferenceId !== null) {
+      if (preferenceId && preferenceId !== null) {
         resolve({
           default: () => (
             <Wallet
@@ -75,19 +69,22 @@ const WalletPayment = ({ prefId }) => {
     });
   });
 
+  if (isLoading && !preferenceId) {
+    return <span>Cargando...</span>;
+  }
+
+  if (!preferenceId) {
+    return <span>Error al obtener el ID de preferencia.</span>;
+  }
+
   return (
     <div>
-      <Suspense
-        fallback={
-          <span className="items=center text-base font-bold -leading-tight">
-            Cargando...
-          </span>
-        }
-      >
+      <Suspense fallback={<span>Cargando...</span>}>
         <LazyWallet />
       </Suspense>
     </div>
   );
+
 };
 
 export default WalletPayment;

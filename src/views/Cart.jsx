@@ -1,7 +1,7 @@
 import { useState } from "react";
 import TitleSection from "../components/TitleSection";
 import { useSelector } from "react-redux";
-import WalletPayment from "../components/Cart/WalletBrick";
+import WalletPayment from "../components/Cart/WalletPayment";
 import { initMercadoPago } from "@mercadopago/sdk-react";
 import CartProduct from "../components/Cards/CartProduct";
 

@@ -2,14 +2,14 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import LeftySlider from "./LeftySlider/LeftySlider";
 import { useSelector } from "react-redux";
-import WalletPayment from "./WalletBrick";
+import WalletPayment from "./WalletPayment";
 import { initMercadoPago } from "@mercadopago/sdk-react";
 import CartProduct from "../Cards/CartProduct";
 
 const token = import.meta.env.VITE_PUBLIC_KEY;
 
 const CartDesktop = ({ closeCart, parentHeight }) => {
-  initMercadoPago(token,{
+  initMercadoPago(token, {
     locale: "es-AR",
   });
 

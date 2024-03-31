@@ -45,7 +45,7 @@ const CartProduct = ({ id, product }) => {
         </div>
         <div className="w-[100px] lg:w-[130px] h-[70px] flex flex-col items-start justify-between font-semibold gap-y-2 dark:text-[#D7DCE4]">
           <h2 className="lg:font-general-sans lg:font-medium lg:text-xs h-[35px] w-auto lg:text-[#0D3B66] lg:dark:text-[#0D3B66] text-xs font-medium">{product.name}</h2>
-          <p className="font-semibold h-auto lg:text-black">$ {product.price}</p>
+          <p className="font-semibold h-auto lg:text-black">$ {product.price}.00</p>
         </div>
       </div>
 

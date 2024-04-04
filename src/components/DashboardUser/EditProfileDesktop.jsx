@@ -12,6 +12,7 @@ import { getUser } from "../../redux/slices/userSlice";
 import { useTheme } from "../ThemeContext";
 import Footer from "../Footer";
 import BGDark from "../../../src/assets/Images/Background/BGDark.webp"
+import { useLocation } from "react-router-dom";
 
 const EditProfileDesktop = ({ modalOpenCart, closeCart }) => {
   const darkStyle = {
@@ -68,17 +69,17 @@ const EditProfileDesktop = ({ modalOpenCart, closeCart }) => {
   return (
     <div
     ref={EditProfileDesktopRef}
-      className={`hidden w-full h-auto min-h-screen lg:flex flex-col items-center justify-center ${
+      className={`hidden w-full h-auto lg:flex flex-col items-center justify-center ${
         theme === "dark" ? "" : "bg-cover bg-center"
       }`}
       style={theme === "dark" ? darkStyle : {}}
     >
-     <div className="py-10 lg:pt-28 w-full h-auto">
-      <div className="w-full h-[100px] my-10  flex justify-center items-center">
+     <div className="py-10 lg:py-20 w-full h-full min-h-screen">
+      <div className="w-full h-[100px] my-10 mb-[35px] flex justify-center items-center">
         <h1 className="font-poppins text-5xl font-medium dark:text-white"> My Account</h1>
       </div>
       <div className="w-full h-auto hidden lg:flex items-start justify-center gap-x-[10vh] xl:gap-x-[200px] ">
-        <div className="p-4 h-full w-auto pt-2">
+        <div className="h-full w-auto">
           <SidebarUser />
         </div>
         <div className="hidden max-w-[700px] lg:flex flex-col w-full items-center justify-center h-auto pt-6 lg:pt-0">

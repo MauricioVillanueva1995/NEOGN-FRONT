@@ -104,19 +104,7 @@ const Home = ({ modalOpenCart, closeCart }) => {
       <div className="w-auto h-auto lg:hidden">
         <TopCategories />
       </div>
-      <div
-        className="w-full h-auto lg:flex items-center justify-center hidden"
-      >
         <CategoriesDesktop />
-      </div>
-      <div className="py-10 hidden lg:flex lg:items-center lg:justify-center ">
-        <Link
-          to="/Search"
-          className="py-2 px-14 rounded-full font-general-sans w-auto h-auto text-white text-[16px] font-normal transition-all duration-500 bg-gradient-to-br to-red-800 via-red-500 from-heroButton bg-size-200 hover:bg-right-bottom"
-        >
-          Shop All
-        </Link>
-      </div>
       <div className="w-full h-auto my-6 lg:my-10">
         <LazyLoadImage
           className="w-auto h-auto"

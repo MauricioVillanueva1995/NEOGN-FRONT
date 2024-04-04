@@ -13,8 +13,6 @@ import Searchbar from "./SearchbarDesktop";
 const NavBar = ({ modalOpenCart, openCart, closeCart }) => {
   const { theme } = useTheme();
   const dispatch = useDispatch();
-  // const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  // const [forceUpdate, setForceUpdate] = useState(false);
 
   const location = useLocation();
   const currentPath = location.pathname;
@@ -22,11 +20,6 @@ const NavBar = ({ modalOpenCart, openCart, closeCart }) => {
   const selected = (select) => {
     dispatch(switchSelector(select));
   };
-
-  // const toggleDrawer = () => {
-  //   setIsDrawerOpen(!isDrawerOpen);
-  //   setForceUpdate(!forceUpdate);
-  // };
 
   return (
     <nav className="hidden backdrop-blur-sm bg-slate-50/[0.1] border-gray-200 lg:block shadow-md mb-2 w-full">

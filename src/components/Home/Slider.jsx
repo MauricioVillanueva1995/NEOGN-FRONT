@@ -67,7 +67,7 @@ const Slider = () => {
       showDots={true}
       draggable={false}
       autoPlay={isDesktop}
-      autoPlaySpeed={5000}
+      autoPlaySpeed={3000}
       responsive={responsive}
       transitionDuration={500}
       infinite={true}

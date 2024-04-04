@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useAuth } from "./Context/AuthContext";
 import { clearUser } from "../../redux/slices/userSlice";
 import NEOGNDARK from "../../assets/Images/Logo/NEOGNDARK.webp";
-import ToggleDarkMode from "../DashboardUser/ToggleDarkMode";
+import ToggleMode from "../DashboardUser/ToggleMode/ToggleMode";
 import { useNavigate } from "react-router-dom";
 
 const AdminAccount = ({ handleThemeSwitch }) => {
@@ -27,7 +27,7 @@ const AdminAccount = ({ handleThemeSwitch }) => {
             Profile
           </h1>
         </div>
-        <ToggleDarkMode handleThemeSwitch={handleThemeSwitch} />
+        <ToggleMode handleThemeSwitch={handleThemeSwitch} />
       </div>
       <div className="w-full h-auto flex flex-col justify-center items-center gap-6">
         <div className="w-[120px] h-[120px] rounded-full flex items-center justify-center overflow-hidden">

@@ -13,6 +13,11 @@ const AddRatingDesktop = ({ rating, setRating, handleToRating, closeRating }) =>
     setRating(star);
   };
 
+  const handleConfirm = () => {
+    handleToRating();
+    closeRating();
+  };
+
   return (
     <BackdropRatingDesktop closeRating={closeRating}>
       <motion.div
@@ -38,7 +43,7 @@ const AddRatingDesktop = ({ rating, setRating, handleToRating, closeRating }) =>
           </div>
           <button
             className="transition-all duration-500 bg-gradient-to-br to-red-800 via-red-500 from-heroButton bg-size-200 hover:bg-right-bottom rounded-lg p-2 py-1 dark:text-black text-[14px] font-general-sans font-semibold tracking-wider text-white hover:bg-slate-700"
-            onClick={handleToRating}
+            onClick={handleConfirm}
           >
             Confirm
           </button>

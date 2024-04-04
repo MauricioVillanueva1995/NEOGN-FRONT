@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom";
 import { clearUser } from "../../redux/slices/userSlice";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
-import ToggleDarkMode from "./ToggleDarkMode";
+import ToggleMode from "./ToggleMode/ToggleMode";
 import { useTheme } from "../ThemeContext";
 
 const SidebarUser = () => {
@@ -24,18 +24,19 @@ const SidebarUser = () => {
   };
 
   return (
-    <div className="w-[270px] h-[500px] rounded-[8px] bg-[#EEEEEE] flex justify-around items-center flex-col px-4 py-2">
-      <div className="w-full bg-transparent flex items-center justify-end">
-        <ToggleDarkMode handleThemeSwitch={handleThemeSwitch} theme={theme} />
+    <div className="w-[270px] h-[410px] gap-y-[20px] rounded-[14px] bg-[#f3f3f3] flex justify-start items-center flex-col px-4 py-2">
+      <div className="w-full bg-transparent flex items-center justify-end pt-2">
+        <ToggleMode handleThemeSwitch={handleThemeSwitch} />
       </div>
-      <div className=" w-full h-auto flex justify-center items-center flex-col gap-4 mb-6">
+      <div className=" w-full h-auto flex justify-center items-center flex-col gap-4">
         <div className="border border-gray-300 rounded-full overflow-hidden flex justify-center items-center">
           <img className="w-[80px] h-[80px]" src={user.photo} />
         </div>
         <p className="font-general-sans font-semibold text-lg text-center">{user.name}</p>
       </div>
-      <div className="flex flex-col items-start justify-center gap-y-[40px] font-jakarta-sans text-base font-semibold w-full h-auto">
-        <div className="w-full border-b-[2px] border-black">
+      <div className="h-[2px] w-full bg-slate-300"></div>
+      <div className="flex flex-col items-start justify-center gap-y-[20px] font-jakarta-sans text-base font-semibold w-full h-auto">
+        <div>
           <Link
             to="/Account/EditProfile"
             className={`w-full hover:text-heroButton ${

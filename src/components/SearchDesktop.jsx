@@ -7,6 +7,7 @@ import Brands from "./Brands";
 import CartDesktop from "./Cart/CartDesktop";
 import SearchBanner from "./Search/SearchBanner";
 import { useRef } from "react";
+import { CircleLoader } from "react-spinners";
 
 const SearchDesktop = ({
   modalOpenCart,
@@ -40,19 +41,31 @@ const SearchDesktop = ({
           resetFilters={resetFilters}
         />
         <div className="flex justify-center pt-10 pl-10 w-full h-auto">
-          <div className="grid grid-rows-auto-1fr items-start lg:grid-cols-2 lg:gap-[70px] xl:grid-cols-3 xl:gap-[60px] 2xl:grid-cols-4 2xl:gap-[80px] ">
-            {allFiltered?.map((el, index) => (
-              <SearchCardDesktop
-                key={index}
-                id={el.id}
-                brand={el.brand}
-                name={el.name}
-                image={el.image[0]}
-                price={el.price}
-                threeDi={el.threeDi}
+          {allFiltered ? (
+            <div className="grid grid-rows-auto-1fr items-start lg:grid-cols-2 lg:gap-[70px] xl:grid-cols-3 xl:gap-[60px] 2xl:grid-cols-4 2xl:gap-[80px] ">
+              {allFiltered.map((product) => (
+                <SearchCardDesktop
+                  key={product.id}
+                  id={product.id}
+                  name={product.name}
+                  price={product.price}
+                  image={product.image[0]}
+                  description={product.description}
+                  threeDi={product.threeDi}
+                />
+              ))}
+            </div>
+          ) : (
+            <div className="w-full h-screen flex items-center justify-center">
+              <CircleLoader
+                color={"#DF102E"}
+                loading={1}
+                size={50}
+                aria-label="Loading Spinner"
+                data-testid="loader"
               />
-            ))}
-          </div>
+            </div>
+          )}
         </div>
       </div>
       <AnimatePresence initial={false} mode="wait" onExitComplete={() => null}>

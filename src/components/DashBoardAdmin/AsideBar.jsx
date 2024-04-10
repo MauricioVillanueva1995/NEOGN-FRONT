@@ -2,12 +2,12 @@ import { NavLink } from "react-router-dom";
 
 const AsideBar = () => {
   return (
-    <div
-      className="fixed top-0 left-0 z-40 w-64 h-screen pt-[64px] transition-transform -translate-x-full bg-white border-r border-gray-200 md:translate-x-0z"
+    <aside
+      className="hidden fixed lg:flex w-auto min-h-screen pt-[20px] transition-transform -translate-x-full bg-white border-r border-gray-200 md:translate-x-0"
       aria-label="Sidenav"
       id="drawer-navigation"
     >
-      <div className="overflow-y-auto py-5 px-3 h-full bg-white dark:bg-neutral-950">
+      <div className="overflow-y-auto py-5 px-3 h-full bg-white dark:bg-neutral-950 w-[300px]">
         <form action="#" method="GET" className="md:hidden mb-2">
           <label htmlFor="sidebar-search" className="sr-only">
             Search
@@ -39,7 +39,19 @@ const AsideBar = () => {
         <ul className="space-y-2">
           <li>
             <NavLink
-              to="purchaseHistory"
+              to="Dashboard"
+              className="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+            >
+              <img
+                className="w-[30px] h-[30px]"
+                src="https://cdn-icons-png.flaticon.com/512/8722/8722500.png"
+              />
+              <span className="ml-3">Dashboard</span>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="Purchase-History"
               className="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
             >
               <img
@@ -51,7 +63,7 @@ const AsideBar = () => {
           </li>
           <li>
             <NavLink
-              to="createProduct"
+              to="Create-Product"
               className="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
             >
               <img
@@ -63,19 +75,19 @@ const AsideBar = () => {
           </li>
           <li>
             <NavLink
-              to="productsToModify"
+              to="Products-To-Modify"
               className="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
             >
               <img
                 className="w-[30px] h-[30px]"
                 src="https://cdn-icons-png.flaticon.com/512/683/683139.png"
               />
-              <span className="ml-3">Modify Product</span>
+              <span className="ml-3">Products</span>
             </NavLink>
           </li>
           <li>
             <NavLink
-              to="manageStock"
+              to="Manage-Stock"
               className="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
             >
               <img
@@ -87,7 +99,7 @@ const AsideBar = () => {
           </li>
           <li>
             <NavLink
-              to="manageUser"
+              to="Manage-User"
               className="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
             >
               <img
@@ -99,7 +111,7 @@ const AsideBar = () => {
           </li>
         </ul>
       </div>
-    </div>
+    </aside>
   );
 };
 

@@ -3,7 +3,7 @@ import { useTheme } from "../ThemeContext";
 import NEOGNDARK from "../../assets/Images/Logo/NEOGNDARK.webp";
 import NEOGNLIGHT from "../../assets/Images/Logo/NEOGNLIGHT.webp";
 import NEOGNLOGOLIGHT from "../../assets/Images/Logo/NEOGNLOGOLIGHT.webp";
-import NEOGNLOGODARK from "../../assets/Images/Logo/NEOGNLOGOLIGHT.webp";
+import NEOGNLOGODARK from "../../assets/Images/Logo/NEOGNLOGODARK.webp";
 import BGDark from "../../../src/assets/Images/Background/BGDark.webp";
 import BGLight from "../../assets/Images/Background/BGLight.webp";
 import { useNavigate } from "react-router-dom";
@@ -175,7 +175,7 @@ const SignUpDesktop = () => {
               <button
                 onClick={(e) => handleRegister(e)}
                 disabled={isUserAuthenticated}
-                className="w-3/4 text-white bg-[#DF102E] hover:bg-red-400 focus:ring-4 focus:outline-none focus:ring-red-400 font-medium rounded-full text-base px-5 py-2 text-center dark:bg-heroButton dark:hover:bg-red-800 dark:focus:ring-red-800"
+                className="w-3/4 text-white transition-all duration-500 bg-gradient-to-br to-red-800 via-red-500 from-heroButton bg-size-200 hover:bg-right-bottom rounded-full text-base px-5 py-2 text-center"
               >
                 Sign Up
               </button>

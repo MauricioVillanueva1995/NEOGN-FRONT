@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { addToCart } from "../../../redux/slices/cartSlice";
 import { useDispatch } from "react-redux";
-import { useTheme } from "../../ThemeContext";
 
 const SearchCardDesktop = ({
   name,
@@ -17,7 +16,6 @@ const SearchCardDesktop = ({
   threeDi,
 }) => {
   const dispatch = useDispatch();
-  const { theme } = useTheme();
 
   const [brandImg, setBrandImg] = useState({
     brandImage: "",
@@ -98,7 +96,7 @@ const SearchCardDesktop = ({
             </h2>
             <button
               onClick={handleAddToCart}
-              className="h-[34px] w-auto transition-all duration-500 bg-gradient-to-br to-red-800 via-red-500 from-heroButton bg-size-200 hover:bg-right-bottom  rounded-full py-0 px-8  text-center "
+              className="h-[34px] w-auto transition-all duration-500 bg-gradient-to-br to-red-800 via-red-500 from-heroButton bg-size-200 hover:bg-right-bottom rounded-full py-0 px-8  text-center "
             >
               <p className="text-[14px] font-general-sans font-semibold tracking-wider text-white">
                 Buy Now

@@ -19,7 +19,6 @@ import TopBar from "./components/TopBar/TopBar";
 import Detail from "./views/Detail";
 import Categories from "./views/Categories";
 import AboutUs from "./views/AboutUs";
-import AdminAccount from "./components/Account/AdminAccount";
 import DashBoardAdmin from "./components/DashBoardAdmin/DashBoardAdmin";
 import EditedProduct from "./components/DashBoardAdmin/EditedProduct";
 import ManageStock from "./components/DashBoardAdmin/ManageStock";
@@ -35,6 +34,7 @@ import OrderHistory from "./components/DashboardUser/OrderHistory";
 import WishlistAccount from "./components/DashboardUser/WishlistAccount";
 import OrderDetails from "./components/DashboardUser/Orders/OrderDetails";
 import { useSelector } from "react-redux";
+import DashboardMetrics from "./components/DashBoardAdmin/DashboardMetrics";
 
 const App = () => {
   const [desktop, setDesktop] = useState(window.innerWidth > 1024);
@@ -82,6 +82,16 @@ const App = () => {
     location.pathname.startsWith("/Admin/Manage-Stock") ||
     location.pathname.startsWith("/Admin/Manage-User");
 
+  const isNavbarHidden = 
+    location.pathname === "/Admin" ||
+    location.pathname.startsWith("/Admin/Dashboard") ||
+    location.pathname.startsWith("/Admin/Purchase-History") ||
+    location.pathname.startsWith("/Admin/Create-Product") ||
+    location.pathname.startsWith("/Admin/Products-To-Modify") ||
+    location.pathname.startsWith("/Admin/Products-To-Modify/:id") ||
+    location.pathname.startsWith("/Admin/Manage-Stock") ||
+    location.pathname.startsWith("/Admin/Manage-User");
+
   return (
     <AuthProvider>
       {loading ? (
@@ -102,7 +112,7 @@ const App = () => {
         </div>
       ) : (
         <div>
-          <div
+        {!isNavbarHidden && <div
             className={`absolute w-full z-[9999] ${!desktop ? "hidden" : ""}`}
           >
             <NavBar
@@ -110,7 +120,7 @@ const App = () => {
               closeCart={closeCart}
               openCart={openCart}
             />
-          </div>
+          </div> }
           {!isTopBarHidden && <TopBar />}
           <Routes>
             {/* Dashboard Admin */}
@@ -118,6 +128,11 @@ const App = () => {
               path="/Admin"
               element={user.isAdmin ? <DashBoardAdmin /> : <Error />}
             >
+            <Route
+                path="Dashboard"
+                element={user.isAdmin ? <DashboardMetrics /> : <Error />}
+              />
+            
               <Route
                 path="Purchase-History"
                 element={user.isAdmin ? <PurchaseHistory /> : <Error />}
@@ -191,7 +206,6 @@ const App = () => {
                 <Account modalOpenCart={modalOpenCart} closeCart={closeCart} />
               }
             />
-            <Route path="/Account/Admin" element={<AdminAccount />} />
             <Route
               path="/Account/SignUp"
               element={

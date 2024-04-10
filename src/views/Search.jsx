@@ -19,6 +19,7 @@ const Search = ({ modalOpenCart, closeCart }) => {
   const dispatch = useDispatch();
   const { theme } = useTheme();
 
+  const [initialLoad, setInitialLoad] = useState(true);
   const allFiltered = useSelector((state) => state.filtered.filtered.results);
   const [modalFilterOpen, setModalFilterOpen] = useState(false);
   const [selectedOrder, setSelectedOrder] = useState("");
@@ -160,6 +161,12 @@ const Search = ({ modalOpenCart, closeCart }) => {
     };
   }, [selectedCategory, selectedBrand, selectedOrder, minPrice, maxPrice]);
 
+  useEffect(() => {
+    if (initialLoad) { 
+      window.scrollTo(0, 0);
+      setInitialLoad(false);
+    }
+  }, [initialLoad]);
   return (
     <div className="w-auto h-full max-h-screen">
       <SearchDesktop

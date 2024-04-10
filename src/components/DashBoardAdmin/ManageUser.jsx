@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUsers } from "../../redux/slices/allUsersSlice";
 
 import CardUser from "../Cards/CardUser";
+import ManageUserDesktop from "./ManageUserDesktop";
 
 const ManageUser = () => {
   const allUsers = useSelector((state) => state.allUsers.users);
@@ -48,25 +49,28 @@ const ManageUser = () => {
   };
 
   return (
-    <div className="w-auto flex justify-center flex-col ">
-      <h3 className="mt-6 text-xl">Users</h3>
-      <div className="flex flex-col mt-6 mb-20">
-        <div className="px-2">
-          {allUsers?.map((el) => (
-            <CardUser
-              key={el.id}
-              id={el.id}
-              toggleStatus={toggleStatus}
-              toggleAdminStatus={toggleAdminStatus}
-              name={el.name}
-              email={el.email}
-              image={el.photo}
-              isAdmin={el.isAdmin}
-              isDisable={el.isDisable}
-            />
-          ))}
+    <div className="w-full max-h-screen">
+      <div className="w-auto flex justify-center flex-col lg:hidden">
+        <h3 className="mt-6 text-xl">Users</h3>
+        <div className="flex flex-col mt-6 mb-20">
+          <div className="px-2">
+            {allUsers?.map((el) => (
+              <CardUser
+                key={el.id}
+                id={el.id}
+                toggleStatus={toggleStatus}
+                toggleAdminStatus={toggleAdminStatus}
+                name={el.name}
+                email={el.email}
+                image={el.photo}
+                isAdmin={el.isAdmin}
+                isDisable={el.isDisable}
+              />
+            ))}
+          </div>
         </div>
       </div>
+      <ManageUserDesktop allUsers={allUsers}/>
     </div>
   );
 };

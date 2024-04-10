@@ -30,7 +30,7 @@ const AboutUsDesktop = ({ modalOpenCart, closeCart }) => {
   return (
     <div ref={aboutUsRef} className="w-full h-auto">
       <div className="w-full h-screen hidden lg:flex items-center justify-center flex-col dark:bg-[#121212]">
-        <div className="w-auto h-auto flex items-start justify-center flex-col gap-y-[40px]">
+        <div className="w-auto h-auto flex items-start justify-center flex-col gap-y-[40px] pt-16">
           <div className="font-poppins dark:text-white flex flex-col items-start justify-center gap-y-[24px]">
             <h2 className="w-[850px] h-auto text-[54px] font-medium leading-[60px]">
               Empowering gamers with elite tools for a superior gaming journey.
@@ -43,30 +43,32 @@ const AboutUsDesktop = ({ modalOpenCart, closeCart }) => {
             </p>
           </div>
           <div className="w-auto h-auto flex">
-            <div className="w-[560px] h-auto overflow-hidden">
+            <div className="w-[560px] h-[auto] overflow-hidden">
               <LazyLoadImage
                 className="w-auto h-auto"
                 src={AboutUs}
                 effect="blur"
               />
             </div>
-            <div className="pl-[72px] gap-y-[24px] font-poppins w-[560px] h-auto overflow-hidden flex flex-col justify-center items-start bg-[#ebebeb]">
-              <h1 className="font-medium text-[40px]">About Us</h1>
-              <p className="text-[16px] font-normal max-w-[450px]">
-                NEOGN is your ultimate destination for gaming accessories,
-                committed to serving you since 2019. Our round-the-clock support
-                team is here to enhance your gaming experience.
-              </p>
-              <Link
-                to="/Search"
-                className="w-auto h-auto border-b-2 border-black flex items-start justify-center font-medium text-[16px]"
-              >
-                Shop Now{" "}
-                <img
-                  className="h-[25px] w-[25px]"
-                  src="https://www.svgrepo.com/show/510165/right-arrow.svg"
-                />
-              </Link>
+            <div className="font-poppins w-[560px] h-[420px] overflow-hidden flex flex-col justify-center items-center bg-[#ebebeb]">
+              <div className="flex items-start flex-col gap-y-[24px]">
+                <h1 className="font-medium text-[40px]">About Us</h1>
+                <p className="text-[16px] font-normal max-w-[450px]">
+                  NEOGN is your ultimate destination for gaming accessories,
+                  committed to serving you since 2019. Our round-the-clock
+                  support team is here to enhance your gaming experience.
+                </p>
+                <Link
+                  to="/Search"
+                  className="w-auto h-auto border-b-2 border-black flex items-start justify-center font-medium text-[16px]"
+                >
+                  Shop Now{" "}
+                  <img
+                    className="h-[25px] w-[25px]"
+                    src="https://www.svgrepo.com/show/510165/right-arrow.svg"
+                  />
+                </Link>
+              </div>
             </div>
           </div>
         </div>

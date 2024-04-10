@@ -4,9 +4,10 @@ import SignIn from "../components/Account/SignIn";
 import { useAuth } from "../components/Account/Context/AuthContext";
 import { clearUser } from "../redux/slices/userSlice";
 
-const Account = ({ modalOpenCart, closeCart}) => {
+const Account = ({ modalOpenCart, closeCart }) => {
   const auth = useAuth();
   const dispatch = useDispatch();
+  const user = useSelector(state => state.user);
 
   const handleLogout = () => {
     auth.logout();
@@ -28,8 +29,13 @@ const Account = ({ modalOpenCart, closeCart}) => {
     );
   }
 
+  if (!auth.user.uid && !user.id) {
+    return <SignIn modalOpenCart={modalOpenCart} closeCart={closeCart} />;
+  }
+
   return (
-    <div>{auth.user.uid ? <DashBoardUser modalOpenCart={modalOpenCart} closeCart={closeCart} /> : <SignIn modalOpenCart={modalOpenCart} closeCart={closeCart}/>}</div>
+    <DashBoardUser modalOpenCart={modalOpenCart} closeCart={closeCart} />
   );
 };
+
 export default Account;

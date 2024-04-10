@@ -145,7 +145,7 @@ const Home = ({ modalOpenCart, closeCart }) => {
             <HomeCardDesktop
               id={product.id}
               name={product.name}
-              image={product.image}
+              image={product.image[0]}
               price={product.price}
               brand={product.brand}
             />

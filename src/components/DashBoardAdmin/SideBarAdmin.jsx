@@ -7,7 +7,7 @@ const SideBarAdmin = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobileWidth(window.innerWidth < 768);
+      setIsMobileWidth(window.innerWidth < 1024);
     };
 
     handleResize();

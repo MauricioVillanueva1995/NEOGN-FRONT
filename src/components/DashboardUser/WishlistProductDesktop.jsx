@@ -70,7 +70,7 @@ const WishlistProductDesktop = ({
         </div>
       </td>
       <td className="dark:text-white whitespace-nowrap px-3 py-4 text-sm">
-        $ {price}
+        $ {price}.00
       </td>
       <td className="py-4 pl-3 pr-4 text-right text-sm sm:pr-6 underline">
         <button

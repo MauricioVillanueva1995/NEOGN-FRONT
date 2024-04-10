@@ -28,7 +28,7 @@ const ViewDetails = ({ closeDetail, order, formattedDate }) => {
           <div className="w-auto h-auto flex justify-start items-center gap-x-3">
             <img
               className="w-14 h-14 rounded-full"
-              src="https://i.pinimg.com/originals/6e/52/c7/6e52c7fe2447e34bc447b027cc20ea7d.png"
+              src={user.photo}
             />
             <div className="w-auto h-auto flex flex-col justify-center items-start font-general-sans">
               <h2 className="font-semibold text-[14px]">{user.name}</h2>

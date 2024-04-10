@@ -24,18 +24,31 @@ const SidebarUser = () => {
   };
 
   return (
-    <div className="w-[270px] h-[410px] gap-y-[20px] rounded-[14px] bg-[#f3f3f3] flex justify-start items-center flex-col px-4 py-2">
+    <div className="w-[270px] h-auto gap-y-[20px] rounded-[14px] bg-[#f3f3f3] flex justify-start items-center flex-col px-4 py-4">
       <div className="w-full bg-transparent flex items-center justify-end pt-2">
         <ToggleMode handleThemeSwitch={handleThemeSwitch} />
       </div>
       <div className=" w-full h-auto flex justify-center items-center flex-col gap-4">
         <div className="border border-gray-300 rounded-full overflow-hidden flex justify-center items-center">
-          <img className="w-[80px] h-[80px]" src={user.photo} />
+          <img className="w-[80px] h-[80px]" src={user && user.photo} />
         </div>
-        <p className="font-general-sans font-semibold text-lg text-center">{user.name}</p>
+        <p className="font-general-sans font-semibold text-lg text-center">
+          {user.name}
+        </p>
       </div>
       <div className="h-[2px] w-full bg-slate-300"></div>
       <div className="flex flex-col items-start justify-center gap-y-[20px] font-jakarta-sans text-base font-semibold w-full h-auto">
+        {user.isAdmin === true && (
+          <div>
+            <Link
+              to="/Admin/Dashboard"
+              className="w-full hover:text-heroButton text-[#6C7275]"
+            >
+              Dashboard Admin
+            </Link>
+          </div>
+        )}
+
         <div>
           <Link
             to="/Account/EditProfile"

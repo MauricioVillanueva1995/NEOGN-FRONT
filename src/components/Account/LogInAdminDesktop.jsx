@@ -32,7 +32,7 @@ const LogInAdminDesktop = ({ modalOpenCart, closeCart }) => {
         clearTimeout(timeoutId);
       }
       const newTimeoutId = setTimeout(() => {
-        navigate("/Account/Admin");
+        navigate("/Account");
       }, delay);
       setTimeoutId(newTimeoutId);
       return () => {
@@ -152,7 +152,7 @@ const LogInAdminDesktop = ({ modalOpenCart, closeCart }) => {
             <div className="w-full h-auto flex items-center justify-center">
               <button
                 onClick={handleLogin}
-                className="w-3/4 text-white bg-[#DF102E] hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-400 font-medium rounded-full text-base px-5 py-2 text-center dark:bg-heroButton dark:hover:bg-red-800 dark:focus:ring-red-800"
+                className="w-3/4 text-white transition-all duration-500 bg-gradient-to-br to-red-800 via-red-500 from-heroButton bg-size-200 hover:bg-right-bottom rounded-full text-base px-5 py-2 text-center dark:bg-heroButton dark:hover:bg-red-800 dark:focus:ring-red-800"
               >
                 Log In
               </button>

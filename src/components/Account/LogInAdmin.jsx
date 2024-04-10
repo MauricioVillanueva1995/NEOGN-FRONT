@@ -25,7 +25,7 @@ const LogInAdmin = ({ modalOpenCart, closeCart }) => {
         clearTimeout(timeoutId);
       }
       const newTimeoutId = setTimeout(() => {
-        navigate("/Account/Admin");
+        navigate("/Account");
       }, delay);
       setTimeoutId(newTimeoutId);
       return () => {

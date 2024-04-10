@@ -170,7 +170,7 @@ const CreateProduct = () => {
   }
 
   return (
-    <div className="h-screen overflow-y-auto justify-center items-start md:inset-0 md:h-full dark:bg-neutral-950 flex pt-16">
+    <div className="h-screen overflow-y-auto justify-center items-start md:inset-0 md:h-full dark:bg-neutral-950 flex pt-16 w-full">
       <div className="relative p-4 max-w-2xl h-screen md:h-auto font-general-sans w-full ">
         {/* <!-- content --> */}
         <div className="relative p-4 bg-white rounded-lg shadow dark:bg-zinc-950 sm:p-5 pb-[100px]">

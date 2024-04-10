@@ -68,7 +68,7 @@ const PurchaseHistory = () => {
   }, []);
 
   return (
-    <div className="w-auto flex justify-center flex-col ">
+    <div className="w-full flex justify-center flex-col ">
       <h3 className="mt-6 text-xl">Orders</h3>
       <div className="flex flex-col mt-6 mb-20">
         <div className="px-2 ">

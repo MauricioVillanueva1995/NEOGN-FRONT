@@ -36,7 +36,7 @@ export function AuthProvider({ children }) {
 
       try {
         const checkUserResponse = await axios.get(
-          `/api/users/${currentUser.uid}`
+          `/api/users/logIn/${currentUser.uid}`
         );
 
         if (checkUserResponse.status === 200) {

@@ -148,7 +148,7 @@ const SignInDesktop = ({ modalOpenCart, closeCart }) => {
               <button
                 type="submit"
                 onClick={(e) => handleLogin(e)}
-                className="w-3/4 text-white bg-[#DF102E] hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-400 font-medium rounded-full text-base px-5 py-2 text-center dark:bg-heroButton dark:hover:bg-red-800 dark:focus:ring-red-800"
+                className="w-3/4 text-white transition-all duration-500 bg-gradient-to-br to-red-800 via-red-500 from-heroButton bg-size-200 hover:bg-right-bottom rounded-full font-medium text-base px-5 py-2 text-center"
               >
                 Log In
               </button>

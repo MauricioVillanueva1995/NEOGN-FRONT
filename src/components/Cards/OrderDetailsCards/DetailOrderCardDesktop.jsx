@@ -35,7 +35,7 @@ const DetailOrderCardDesktop = ({ product }) => {
           alt="Product image"
         />
       </div>
-      <div className="w-auto h-[auto] flex flex-col gap-y-2">
+      <div className="w-[200px] h-[auto] flex flex-col gap-y-2">
         <h2 className="font-general-sans font-medium text-sm overflow-hidden h-auto line-clamp-1 text-black">
           {product.title}
         </h2>

@@ -48,7 +48,7 @@ const ManageStock = () => {
               id={el.id}
               title={el.name}
               toggleStatus={toggleStatus}
-              image_url={el.image_url}
+              image_url={el.image[0]}
               isAvailable={el.isAvailable}
               stock={el.stock}
             />

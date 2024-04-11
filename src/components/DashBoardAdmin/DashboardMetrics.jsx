@@ -6,11 +6,10 @@ import NewProductsChart from "./Charts/NewProductsChart";
 import WeekSignupsChart from "./Charts/WeekSignupsChart";
 import MonthlyStatistics from "./Charts/MonthlyStatistics";
 import SmartChatSection from "./Charts/SmartChatSection";
-import TransactionsSection from "./Charts/TransactionsSection";
 
 const DashboardMetrics = () => {
   return (
-    <div className="px-4 py-2 mt-4 w-auto md:ml-[300px]">
+    <div className="px-4 py-2 mt-4 w-auto lg:ml-[300px]">
       <div className="grid gap-4 xl:grid-cols-2 2xl:grid-cols-3">
         {/* <!-- Main widget --> */}
         <div className="p-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2 dark:border-gray-700 sm:p-6 dark:bg-gray-800">
@@ -277,7 +276,6 @@ const DashboardMetrics = () => {
         </div>
       </div>
       <SmartChatSection />
-      <TransactionsSection />
       <footer className="p-4 my-6 mx-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 xl:p-8 dark:bg-gray-800">
         <ul className="flex flex-wrap items-center mb-6 space-y-1 md:mb-0">
           <li>

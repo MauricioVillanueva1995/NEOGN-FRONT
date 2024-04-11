@@ -30,7 +30,6 @@ const RedirectComponent = ({status}) => {
           }
         );
 
-        console.log(response.data);
 
         return () => clearInterval(interval);
       } catch (error) {

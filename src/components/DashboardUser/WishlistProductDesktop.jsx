@@ -27,7 +27,6 @@ const WishlistProductDesktop = ({
     };
     toast.success("Added to cart successfully ");
 
-    console.log(productData);
     dispatch(addToCart(productData));
   };
 

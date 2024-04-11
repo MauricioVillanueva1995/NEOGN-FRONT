@@ -11,7 +11,6 @@ const WalletPayment = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const createPreference = async (items) => {
-    console.log(items);
     try {
       const response = await axios.post(
         "https://neogn-back-584v.onrender.com/api/payment/create-preference",
@@ -34,7 +33,6 @@ const WalletPayment = () => {
       );
       const data = response.data;
       const id = data.id;
-      console.log("console.log id", id);
 
       return id;
     } catch (e) {
@@ -47,7 +45,6 @@ const WalletPayment = () => {
       const id = await createPreference(items);
       setPreferenceId(id);
       setIsLoading(false);
-      console.log("preferenceId", id);
     }
     fetchPreferenceId();
   }, [items]);

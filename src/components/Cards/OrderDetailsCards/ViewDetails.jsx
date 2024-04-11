@@ -13,7 +13,6 @@ const dropIn = {
 const ViewDetails = ({ closeDetail, order, formattedDate }) => {
   
   const user = useSelector((state) => state.user)
- console.log(order);
   return (
     <BackdropDetails closeDetail={closeDetail}>
       <motion.div

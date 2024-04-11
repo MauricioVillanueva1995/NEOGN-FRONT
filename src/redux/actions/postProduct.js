@@ -9,7 +9,6 @@ export function postProduct(payload) {
     // );
     // return response;
   
-    console.log(payload);
     const response = await axios.post(
       "https://neogn-back-584v.onrender.com/api/products/create",
       payload

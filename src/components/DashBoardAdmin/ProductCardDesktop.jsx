@@ -14,10 +14,17 @@ const ProductCardDesktop = ({
   const [status, setStatus] = useState(isAvailable);
 
   const handleToggleStatus = () => {
-    console.log(id);
     const newStatus = !status;
     setStatus(newStatus);
     toggleStatus(id, newStatus);
+  };
+
+  const truncateTitle = (text, maxLength) => {
+    if (text.length > maxLength) {
+      return text.substring(0, maxLength) + "...";
+    } else {
+      return text;
+    }
   };
 
   return (
@@ -38,15 +45,15 @@ const ProductCardDesktop = ({
         </td>
         <th
           scope="row"
-          className="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+          className="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white w-[300px]"
         >
-          <div className="flex items-center mr-3">
+          <div className="flex items-center mr-3 w-[200px] max-w-[200px]">
             <img
               src={image_url}
               alt="Product Image"
               className="h-8 w-auto mr-3"
             />
-            {title}
+            {truncateTitle(title,30)}
           </div>
         </th>
         <td className="px-4 py-3">

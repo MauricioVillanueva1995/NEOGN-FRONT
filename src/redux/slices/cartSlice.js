@@ -62,7 +62,6 @@ const cartSlice = createSlice({
 
       const itemToUpdate = state.items.find((item) => item.id === id);
 
-      console.log(itemToUpdate);
       if (itemToUpdate) {
         if (act === "+") {
           itemToUpdate.quantity++;

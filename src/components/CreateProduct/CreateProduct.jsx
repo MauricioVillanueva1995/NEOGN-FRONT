@@ -147,14 +147,11 @@ const CreateProduct = () => {
       const image = files[i];
       formData.append("image", image);
     }
-    console.log(responseInput);
     const responseImage = await axios.post(
       `/api/products/images/${responseInput.data.id}`,
       formData,
       { headers: { "Content-Type": "multipart/form-data" } }
     );
-
-    console.log(responseImage);
 
     toast.succes("Product Created Successfully");
 

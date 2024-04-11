@@ -1,7 +1,6 @@
 import DetailOrderCardDesktop from "./DetailOrderCardDesktop";
 
 const OrderedProductsDesktop = ({ products }) => {
-    console.log(products);
   return (
     <div className="w-auto h-auto font-general-sans text-base font-medium">
       Products:

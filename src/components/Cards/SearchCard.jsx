@@ -39,7 +39,6 @@ const SearchCard = ({ id, name, image, price, description }) => {
     };
     toast.success("Added to cart successfully ");
 
-    console.log(productData);
     dispatch(addToCart(productData));
   };
 

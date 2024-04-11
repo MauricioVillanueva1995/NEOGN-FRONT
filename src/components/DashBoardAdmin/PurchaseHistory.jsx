@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import CardOrder from "../Cards/CardOrder";
+import TransactionsSection from "./Charts/TransactionsSection";
 
 const ordersJson = [
   {
@@ -68,18 +69,18 @@ const PurchaseHistory = () => {
   }, []);
 
   return (
-    <div className="w-full flex justify-center flex-col ">
-      <h3 className="mt-6 text-xl">Orders</h3>
-      <div className="flex flex-col mt-6 mb-20">
-        <div className="px-2 ">
-          {/* {orders?.map((el) => (
-                <CardOrder key={el.paymentId} id={el.total} />
-              ))} */}
-          {ordersJson.map((el, index) => (
-            <CardOrder key={index} id={el.paymentId} total={el.total} />
-          ))}
+    <div className="w-full h-auto">
+      <div className="w-full flex justify-center flex-col lg:hidden">
+        <h3 className="mt-6 text-xl">Orders</h3>
+        <div className="flex flex-col mt-6 mb-20">
+          <div className="px-2 ">
+            {ordersJson.map((el, index) => (
+              <CardOrder key={index} id={el.paymentId} total={el.total} />
+            ))}
+          </div>
         </div>
       </div>
+      <TransactionsSection/>
     </div>
   );
 };

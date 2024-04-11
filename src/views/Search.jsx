@@ -105,19 +105,16 @@ const Search = ({ modalOpenCart, closeCart }) => {
     try {
       const url = buildFilterUrl();
       if (url == location.search) {
-        // console.log(url + " es igual que " + location.search);
         const json = await axios.get(`/api/products/filter${url}`);
         const products = json.data;
         dispatch(getFiltered(products));
         navigate(url);
       }
       if (url !== location.search) {
-        // console.log(url + " no es igual que " + location.search);
         const json = await axios.get(`/api/products/filter${url}`);
         const products = json.data;
         dispatch(getFiltered(products));
         navigate(url);
-        // console.log(`/api/products/filter${url}`);
       }
     } catch (error) {
       console.error("Error al obtener los productos:", error);
@@ -131,11 +128,9 @@ const Search = ({ modalOpenCart, closeCart }) => {
   const handleFilterBrand = async (brand) => {
     setSelectedBrand(brand);
     updateFilter("brand", brand);
-    console.log(brand);
   };
 
   const handleFilterOrder = async (order) => {
-    console.log(order);
     setSelectedOrder(order);
     updateFilter("order", order);
   };

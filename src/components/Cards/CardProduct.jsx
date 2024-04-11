@@ -5,10 +5,8 @@ const CardProduct = ({ title, image_url, toggleStatus, isAvailable, id }) => {
   const [status, setStatus] = useState(isAvailable);
 
   const handleToggleStatus = () => {
-    console.log(id);
     const newStatus = !status;
     setStatus(newStatus);
-    console.log(newStatus);
     toggleStatus(id, newStatus);
   };
   return (

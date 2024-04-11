@@ -25,7 +25,7 @@ const DashBoardUser = ({ modalOpenCart, closeCart }) => {
           setLoading(true);
           setError(null);
 
-          const json = await axios.get(`/api/users/${auth.user.uid}`);
+          const json = await axios.get(`/api/users/logIn/${auth.user.uid}`);
           if (!json) console.log("No existe en la db");
           const detail = json.data;
           dispatch(getUser(detail));

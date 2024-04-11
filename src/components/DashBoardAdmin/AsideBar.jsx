@@ -63,18 +63,6 @@ const AsideBar = () => {
           </li>
           <li>
             <NavLink
-              to="Create-Product"
-              className="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
-            >
-              <img
-                className="w-[30px] h-[30px]"
-                src="https://cdn-icons-png.flaticon.com/512/5258/5258076.png"
-              />
-              <span className="ml-3">Create Product</span>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
               to="Products-To-Modify"
               className="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
             >
@@ -83,18 +71,6 @@ const AsideBar = () => {
                 src="https://cdn-icons-png.flaticon.com/512/683/683139.png"
               />
               <span className="ml-3">Products</span>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="Manage-Stock"
-              className="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
-            >
-              <img
-                className="w-[30px] h-[30px]"
-                src="https://cdn-icons-png.flaticon.com/512/5164/5164023.png"
-              />
-              <span className="ml-3">Manage Stock</span>
             </NavLink>
           </li>
           <li>

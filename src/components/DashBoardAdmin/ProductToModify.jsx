@@ -1,39 +1,51 @@
-import CardProduct from "../Cards/CardProduct";
 import axios from "axios";
-import { useEffect } from "react";
-import { getProducts } from "../../redux/slices/productsSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import CardProduct from "../Cards/CardProduct";
 import ProductsDesktop from "./ProductsDesktop";
 
 const ProductsToModify = () => {
-  const products = useSelector((state) => state.products.products);
-
-  const dispatch = useDispatch();
-
-  const fetchProducts = () => {
-    return async function (dispatch) {
-      try {
-        const response = await axios.get("/api/products/filter?order=A-Z");
-        const products = response.data;
-        return dispatch(getProducts(products.results));
-      } catch (error) {
-        console.error("Error fetching products:", error);
-      }
-    };
-  };
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    dispatch(fetchProducts());
-  }, [dispatch]);
+    fetchProducts();
+  }, [currentPage]);
+
+  const fetchProducts = async () => {
+    try {
+      const response = await axios.get(`/api/products?page=${currentPage}`);
+      setProducts(response.data.results);
+      setTotalPages(response.data.info.pages);
+    } catch (error) {
+      console.error("Error fetching products:", error);
+    }
+  };
 
   const toggleStatus = async (productId, newStatus) => {
     try {
       await axios.put(`/api/products/update/${productId}`, {
         isAvailable: newStatus,
       });
-      // dispatch(getAllUsers());
+      fetchProducts();
     } catch (error) {
       console.error("Error toggling admin status:", error);
+    }
+  };
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
+
+  const handlePrevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
     }
   };
 
@@ -54,7 +66,15 @@ const ProductsToModify = () => {
           ))}
         </div>
       </div>
-      <ProductsDesktop products={products} toggleStatus={toggleStatus} />
+      <ProductsDesktop
+        products={products}
+        toggleStatus={toggleStatus}
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={handlePageChange}
+        onPrevPage={handlePrevPage}
+        onNextPage={handleNextPage}
+      />
     </div>
   );
 };

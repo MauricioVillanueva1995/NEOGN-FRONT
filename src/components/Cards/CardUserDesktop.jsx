@@ -14,14 +14,12 @@ const CardUserDesktop = ({
   const [status, setStatus] = useState(isDisable);
 
   const handleToggleAdminStatus = () => {
-    console.log(id);
     const newAdminStatus = !adminStatus;
     setAdminStatus(newAdminStatus);
     toggleAdminStatus(id, newAdminStatus);
   };
 
   const handleToggleStatus = () => {
-    console.log(id);
     const newStatus = !status;
     setStatus(newStatus);
     toggleStatus(id, newStatus);

@@ -13,9 +13,7 @@ const Searchbar = () => {
   };
 
   const handleSearchSuccess = () => {
-    console.log("handleSearchSuccess called");
     setSearch("");
-    console.log("Search cleared:", search);
   };
 
   return (
@@ -45,7 +43,6 @@ const Searchbar = () => {
                   to={`/${product.id}`}
                   className="flex items-center w-full"
                   onClick={() => {
-                    console.log("Link clicked");
                     handleSearchSuccess();
                   }}
                 >

@@ -45,7 +45,6 @@ const Profile = ({ modalOpenCart, closeCart }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      console.log(event);
       await dispatch(editProfile(uid, input));
       await dispatch(getUser(input));
       toast.success("Your profile was successfully updated.");

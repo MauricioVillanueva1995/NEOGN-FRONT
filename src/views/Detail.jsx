@@ -64,13 +64,11 @@ const Detail = ({ modalOpenCart, closeCart }) => {
   };
 
   const handleToggleWishlist = () => {
-    console.log("user wish", wishlist);
     if (!user.id) {
       return navigate("/Account");
     }
     toggleWishlist(id);
     setIsAdded(!isAdded);
-    console.log("user wish", wishlist);
   };
 
   const toggleWishlist = () => {
@@ -104,7 +102,6 @@ const Detail = ({ modalOpenCart, closeCart }) => {
     };
     toast.success(`Added to cart successfully (${quantity})`);
 
-    console.log(productData);
     dispatch(addToCart(productData));
   };
 

@@ -1,16 +1,8 @@
 /** @type {import('tailwindcss').Config} */
-const flowbite = require("flowbite-react/tailwind");
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}", flowbite.content()],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   darkMode: "class",
   theme: {
-    transitionProperty: {
-      width: "width",
-    },
-    textDecoration: ["active"],
-    minWidth: {
-      kanban: "28rem",
-    },
     fontFamily: {
       "jakarta-sans": ["Plus Jakarta Sans", "sans-serif"],
       "general-sans": ["General Sans", "sans-serif"],
@@ -113,5 +105,5 @@ export default {
       },
     },
   },
-  plugins: [flowbite.plugin()],
+  plugins: [],
 };

@@ -1,8 +1,8 @@
+import 'react-loading-skeleton/dist/skeleton.css'
 import { Route, Routes, useLocation, Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { AuthProvider } from "./components/Account/Context/AuthContext";
 import CircleLoader from "react-spinners/CircleLoader";
-
 import BGDarkMobile from "./assets/Images/Background/BGDarkMobile.webp";
 import BGDark from "./assets/Images/Background/BGDark.webp";
 import NEOGNLOGOLIGHT from "./assets/Images/Logo/NEOGNLOGOLIGHT.webp";
@@ -35,6 +35,7 @@ import WishlistAccount from "./components/DashboardUser/WishlistAccount";
 import OrderDetails from "./components/DashboardUser/Orders/OrderDetails";
 import { useSelector } from "react-redux";
 import DashboardMetrics from "./components/DashBoardAdmin/DashboardMetrics";
+import { SkeletonTheme } from "react-loading-skeleton";
 
 const App = () => {
   const [desktop, setDesktop] = useState(window.innerWidth > 1024);
@@ -82,7 +83,7 @@ const App = () => {
     location.pathname.startsWith("/Admin/Manage-Stock") ||
     location.pathname.startsWith("/Admin/Manage-User");
 
-  const isNavbarHidden = 
+  const isNavbarHidden =
     location.pathname === "/Admin" ||
     location.pathname.startsWith("/Admin/Dashboard") ||
     location.pathname.startsWith("/Admin/Purchase-History") ||
@@ -93,175 +94,187 @@ const App = () => {
     location.pathname.startsWith("/Admin/Manage-User");
 
   return (
-    <AuthProvider>
-      {loading ? (
-        <div
-          className="w-full h-screen flex flex-col gap-y-10 lg:flex-row lg:gap-x-10 justify-center items-center"
-          style={{
-            background: `linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)), url(${desktop ? BGDark : BGDarkMobile})`,
-          }}
-        >
-          <CircleLoader
-            color={"#fff"}
-            loading={loading}
-            size={50}
-            aria-label="Loading Spinner"
-            data-testid="loader"
-          />
-          <img className="h-40" src={NEOGNLOGOLIGHT} />
-        </div>
-      ) : (
-        <div>
-        {!isNavbarHidden && <div
-            className={`absolute w-full z-[9999] ${!desktop ? "hidden" : ""}`}
-          >
-            <NavBar
-              modalOpenCart={modalOpenCart}
-              closeCart={closeCart}
-              openCart={openCart}
-            />
-          </div> }
-          {!isTopBarHidden && <TopBar />}
-          <Routes>
-            {/* Dashboard Admin */}
-            <Route
-              path="/Admin"
-              element={user.isAdmin ? <DashBoardAdmin /> : <Error />}
-            >
-            <Route
-                path="Dashboard"
-                element={user.isAdmin ? <DashboardMetrics /> : <Error />}
-              />
-            
-              <Route
-                path="Purchase-History"
-                element={user.isAdmin ? <PurchaseHistory /> : <Error />}
-              />
-
-              <Route
-                path="Create-Product"
-                element={user.isAdmin ? <CreateProduct /> : <Error />}
-              />
-
-              <Route
-                path="Products-To-Modify"
-                element={user.isAdmin ? <ProductsToModify /> : <Error />}
-              />
-
-              <Route
-                path="Products-To-Modify/:id"
-                element={user.isAdmin ? <EditedProduct /> : <Error />}
-              />
-
-              <Route
-                path="Manage-Stock"
-                element={user.isAdmin ? <ManageStock /> : <Error />}
-              />
-
-              <Route
-                path="Manage-User"
-                element={user.isAdmin ? <ManageUser /> : <Error />}
-              />
-            </Route>
-            <Route
-              path="/"
-              element={
-                <Home modalOpenCart={modalOpenCart} closeCart={closeCart} />
-              }
-            />
-            <Route path="/Cart" element={<Cart />} />
-            <Route
-              path="/Search"
-              element={
-                <Search modalOpenCart={modalOpenCart} closeCart={closeCart} />
-              }
-            />
-            <Route path="/Wishlist" element={<Wishlist />} />
-            <Route path="/Categories" element={<Categories />} />
-            <Route
-              path="/ContactUs"
-              element={
-                <ContactUs
-                  modalOpenCart={modalOpenCart}
-                  closeCart={closeCart}
-                />
-              }
-            />
-            <Route
-              path="/:id"
-              element={
-                <Detail modalOpenCart={modalOpenCart} closeCart={closeCart} />
-              }
-            />
-            <Route
-              path="/AboutUs"
-              element={
-                <AboutUs modalOpenCart={modalOpenCart} closeCart={closeCart} />
-              }
-            />
-            <Route path="/Error" element={<Error />} />
-            <Route
-              path="/Account"
-              element={
-                <Account modalOpenCart={modalOpenCart} closeCart={closeCart} />
-              }
-            />
-            <Route
-              path="/Account/SignUp"
-              element={
-                <SignUp/>
-              }
-            />
-            <Route
-              path="/Account/LogIn/Admin"
-              element={
-                <LogInAdmin
-                  modalOpenCart={modalOpenCart}
-                  closeCart={closeCart}
-                />
-              }
-            />
-            {/* Dashboard User */}
-            <Route
-              path="/Account/EditProfile"
-              element={
-                <EditProfile
-                  modalOpenCart={modalOpenCart}
-                  closeCart={closeCart}
-                />
-              }
-            />
-            <Route
-              path="/Account/Orders"
-              element={
-                <OrderHistory
-                  modalOpenCart={modalOpenCart}
-                  closeCart={closeCart}
-                />
-              }
-            />
-            <Route path="/Account/Orders/:id" element={<OrderDetails />} />
-            <Route
-              path="/Account/Wishlist"
-              element={
-                user.id ? (<WishlistAccount
-                  modalOpenCart={modalOpenCart}
-                  closeCart={closeCart}
-                />) :
-                <Navigate to="/Account" />
-              }
-            />
-          </Routes>
+    <SkeletonTheme baseColor="#b8b8b8" highlightColor="#fff">
+      <AuthProvider>
+        {loading ? (
           <div
-            className={` fixed bottom-0 left-0 w-full z-[1000] ${
-              desktop ? "hidden" : ""
-            }`}
+            className="w-full h-screen flex flex-col gap-y-10 lg:flex-row lg:gap-x-10 justify-center items-center"
+            style={{
+              background: `linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)), url(${
+                desktop ? BGDark : BGDarkMobile
+              })`,
+            }}
           >
-            <AppBar />
+            <CircleLoader
+              color={"#fff"}
+              loading={loading}
+              size={50}
+              aria-label="Loading Spinner"
+              data-testid="loader"
+            />
+            <img className="h-40" src={NEOGNLOGOLIGHT} />
           </div>
-        </div>
-      )}
-    </AuthProvider>
+        ) : (
+          <div>
+            {!isNavbarHidden && (
+              <div
+                className={`absolute w-full z-[9999] ${
+                  !desktop ? "hidden" : ""
+                }`}
+              >
+                <NavBar
+                  modalOpenCart={modalOpenCart}
+                  closeCart={closeCart}
+                  openCart={openCart}
+                />
+              </div>
+            )}
+            {!isTopBarHidden && <TopBar />}
+            <Routes>
+              {/* Dashboard Admin */}
+              <Route
+                path="/Admin"
+                element={user.isAdmin ? <DashBoardAdmin /> : <Error />}
+              >
+                <Route
+                  path="Dashboard"
+                  element={user.isAdmin ? <DashboardMetrics /> : <Error />}
+                />
+
+                <Route
+                  path="Purchase-History"
+                  element={user.isAdmin ? <PurchaseHistory /> : <Error />}
+                />
+
+                <Route
+                  path="Create-Product"
+                  element={user.isAdmin ? <CreateProduct /> : <Error />}
+                />
+
+                <Route
+                  path="Products-To-Modify"
+                  element={user.isAdmin ? <ProductsToModify /> : <Error />}
+                />
+
+                <Route
+                  path="Products-To-Modify/:id"
+                  element={user.isAdmin ? <EditedProduct /> : <Error />}
+                />
+
+                <Route
+                  path="Manage-Stock"
+                  element={user.isAdmin ? <ManageStock /> : <Error />}
+                />
+
+                <Route
+                  path="Manage-User"
+                  element={user.isAdmin ? <ManageUser /> : <Error />}
+                />
+              </Route>
+              <Route
+                path="/"
+                element={
+                  <Home modalOpenCart={modalOpenCart} closeCart={closeCart} />
+                }
+              />
+              <Route path="/Cart" element={<Cart />} />
+              <Route
+                path="/Search"
+                element={
+                  <Search modalOpenCart={modalOpenCart} closeCart={closeCart} />
+                }
+              />
+              <Route path="/Wishlist" element={<Wishlist />} />
+              <Route path="/Categories" element={<Categories />} />
+              <Route
+                path="/ContactUs"
+                element={
+                  <ContactUs
+                    modalOpenCart={modalOpenCart}
+                    closeCart={closeCart}
+                  />
+                }
+              />
+              <Route
+                path="/:id"
+                element={
+                  <Detail modalOpenCart={modalOpenCart} closeCart={closeCart} />
+                }
+              />
+              <Route
+                path="/AboutUs"
+                element={
+                  <AboutUs
+                    modalOpenCart={modalOpenCart}
+                    closeCart={closeCart}
+                  />
+                }
+              />
+              <Route path="/Error" element={<Error />} />
+              <Route
+                path="/Account"
+                element={
+                  <Account
+                    modalOpenCart={modalOpenCart}
+                    closeCart={closeCart}
+                  />
+                }
+              />
+              <Route path="/Account/SignUp" element={<SignUp />} />
+              <Route
+                path="/Account/LogIn/Admin"
+                element={
+                  <LogInAdmin
+                    modalOpenCart={modalOpenCart}
+                    closeCart={closeCart}
+                  />
+                }
+              />
+              {/* Dashboard User */}
+              <Route
+                path="/Account/EditProfile"
+                element={
+                  <EditProfile
+                    modalOpenCart={modalOpenCart}
+                    closeCart={closeCart}
+                  />
+                }
+              />
+              <Route
+                path="/Account/Orders"
+                element={
+                  <OrderHistory
+                    modalOpenCart={modalOpenCart}
+                    closeCart={closeCart}
+                  />
+                }
+              />
+              <Route path="/Account/Orders/:id" element={<OrderDetails />} />
+              <Route
+                path="/Account/Wishlist"
+                element={
+                  user.id ? (
+                    <WishlistAccount
+                      modalOpenCart={modalOpenCart}
+                      closeCart={closeCart}
+                    />
+                  ) : (
+                    <Navigate to="/Account" />
+                  )
+                }
+              />
+            </Routes>
+            <div
+              className={` fixed bottom-0 left-0 w-full z-[1000] ${
+                desktop ? "hidden" : ""
+              }`}
+            >
+              <AppBar />
+            </div>
+          </div>
+        )}
+      </AuthProvider>
+    </SkeletonTheme>
   );
 };
 

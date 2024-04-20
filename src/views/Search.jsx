@@ -150,6 +150,9 @@ const Search = ({ modalOpenCart, closeCart }) => {
   }, [dispatch]);
 
   useEffect(() => {
+    if (!initialLoad) {
+      window.scrollTo(0, 0);
+    }
     fetchFilteredProducts();
     return () => {
       dispatch(clearFiltered());

@@ -7,6 +7,7 @@ import detailReducer from "./slices/detailSlice";
 import filteredReducer from "./slices/filteredSlice"
 import myOrdersReducer from "./slices/myOrdersSlice"
 import orderDetailReducer from "./slices/orderDetailSlice"
+import productsPerPageReducer from "./slices/productsPerPage"
 import cartReducer from "./slices/cartSlice"
 import storage from "redux-persist/lib/storage";
 import categoryReducer from "./slices/categorySlice";
@@ -28,6 +29,7 @@ const rootReducer = combineReducers({
   filtered: filteredReducer,
   cart:cartReducer,
   detail: detailReducer,
+  productsPerPage: productsPerPageReducer,
   products: productsReducer,
   allUsers: allUsersReducer,
 });

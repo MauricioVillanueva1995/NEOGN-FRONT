@@ -1,115 +1,80 @@
-import axios from "axios";
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { getUsers } from "../../redux/slices/allUsersSlice";
+import UsersTableSkeleton from "./Skeletons/UsersTableSkeleton";
 import CardUserDesktop from "../Cards/CardUserDesktop";
 
-const ManageUserDesktop = ({allUsers}) => {
-  const dispatch = useDispatch();
-
-  const getAllUsers = () => {
-    return async function (dispatch) {
-      try {
-        const json = await axios.get(
-          "https://neogn-back-584v.onrender.com/api/users"
-        );
-        const users = json.data;
-        return dispatch(getUsers(users));
-      } catch (error) {
-        console.error("Error getting users:", error);
-      }
-    };
-  };
-
-  useEffect(() => {
-    dispatch(getAllUsers());
-  }, [dispatch]);
-
-  const toggleAdminStatus = async (userId, newAdminStatus) => {
-    try {
-      await axios.put(
-        `https://neogn-back-584v.onrender.com/api/users/update/${userId}`,
-        {
-          isAdmin: newAdminStatus,
-        }
-      );
-      dispatch(getAllUsers());
-    } catch (error) {
-      console.error("Error toggling admin status:", error);
-    }
-  };
-
-  const toggleStatus = async (userId, newStatus) => {
-    try {
-      await axios.put(
-        `https://neogn-back-584v.onrender.com/api/users/update/${userId}`,
-        {
-          isDisable: newStatus,
-        }
-      );
-      dispatch(getAllUsers());
-    } catch (error) {
-      console.error("Error toggling admin status:", error);
-    }
-  };
-
+const ManageUserDesktop = ({ allUsers, toggleStatus, toggleAdminStatus }) => {
   return (
-    <div className="w-auto hidden lg:flex justify-center flex-col lg:ml-[350px]">
-      <h3 className="mt-6 text-gray-800 text-2xl font-semibold font-general-sans">Users</h3>
-      <div className="flex flex-col mt-6 w-full">
-        <div className="w-full">
-          <div className="inline-block w-full pr-6">
-            <div className="overflow-hidden border-b border-gray-200 rounded-md shadow-md">
-              <table className="w-full divide-y divide-gray-200">
-                <thead className="bg-gray-50">
-                  <tr>
-                    <th
-                      scope="col"
-                      className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase"
-                    >
-                      Name
-                    </th>
+    <div className="hidden lg:flex justify-center w-auto lg:ml-[350px] h-full py-10">
+      <section className="bg-gray-50 dark:bg-gray-900 antialiased w-full">
+        <div className="max-w-screen-2xl w-full">
+          <div className="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden w-full">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between space-y-3 md:space-y-0 md:space-x-4">
+              <div className="w-full hidden lg:flex justify-center flex-col">
+                <h3 className=" text-gray-800 text-2xl font-semibold font-general-sans p-4">
+                  Users
+                </h3>
+                <div className="flex flex-col w-full">
+                    <div className="inline-block w-full">
+                      <div className="overflow-hidden border-b border-gray-200 rounded-md shadow-md">
+                        <table className="w-full divide-y divide-gray-200">
+                          <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                            <tr>
+                              <th
+                                scope="col"
+                                className="px-6 py-3 tracking-wider text-left"
+                              >
+                                Name
+                              </th>
 
-                    <th
-                      scope="col"
-                      className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase"
-                    >
-                      Status
-                    </th>
-                    <th
-                      scope="col"
-                      className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase"
-                    >
-                      Role
-                    </th>
-                    <th scope="col" className="relative px-6 py-3">
-                      <span className="sr-only">Edit</span>
-                    </th>
-                  </tr>
-                </thead>
-                {allUsers
-                  ?.slice()
-                  .sort((a, b) => a.name.localeCompare(b.name))
-                  .map((el) => (
-                    <CardUserDesktop
-                      key={el.id}
-                      id={el.id}
-                      toggleStatus={toggleStatus}
-                      toggleAdminStatus={toggleAdminStatus}
-                      name={el.name}
-                      email={el.email}
-                      image={el.photoURL}
-                      isAdmin={el.isAdmin}
-                      isDisable={el.isDisable}
-                    />
-                  ))}
-              </table>
+                              <th
+                                scope="col"
+                                className="px-6 py-3 tracking-wider text-left"
+                              >
+                                Status
+                              </th>
+                              <th
+                                scope="col"
+                                className="px-6 py-3 tracking-wider text-left"
+                              >
+                                Role
+                              </th>
+                              <th scope="col" className="relative px-6 py-3">
+                                <span className="sr-only">Edit</span>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody className="bg-white divide-y divide-gray-200">
+                            {allUsers.length === 0 ? (
+                              <UsersTableSkeleton />
+                            ) : (
+                              allUsers
+                                .slice()
+                                .sort((a, b) => a.name.localeCompare(b.name))
+                                .map((el) => (
+                                  <CardUserDesktop
+                                    key={el.id}
+                                    id={el.id}
+                                    toggleStatus={toggleStatus}
+                                    toggleAdminStatus={toggleAdminStatus}
+                                    name={el.name}
+                                    email={el.email}
+                                    image={el.photoURL}
+                                    isAdmin={el.isAdmin}
+                                    isDisable={el.isDisable}
+                                  />
+                                ))
+                            )}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };
 
-export default ManageUserDesktop
+export default ManageUserDesktop;

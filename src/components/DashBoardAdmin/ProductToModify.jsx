@@ -2,25 +2,35 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import CardProduct from "../Cards/CardProduct";
 import ProductsDesktop from "./ProductsDesktop";
+import { useDispatch, useSelector } from "react-redux";
+import { getProductsPerPage } from "../../redux/slices/productsPerPage";
 
 const ProductsToModify = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
-  const [products, setProducts] = useState([]);
+  const products = useSelector((state) => state.productsPerPage.productsPerPage.results);
+  const dispatch = useDispatch();
+
+  const fetchProducts = () => {
+    return async function (dispatch) {
+      try {
+        const response = await axios.get(`/api/products?page=${currentPage}`);
+        const products = response.data;
+        setTotalPages(response.data.info.pages);
+        return dispatch(getProductsPerPage(products));
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
+  };
 
   useEffect(() => {
-    fetchProducts();
-  }, [currentPage]);
+    dispatch(fetchProducts());
 
-  const fetchProducts = async () => {
-    try {
-      const response = await axios.get(`/api/products?page=${currentPage}`);
-      setProducts(response.data.results);
-      setTotalPages(response.data.info.pages);
-    } catch (error) {
-      console.error("Error fetching products:", error);
-    }
-  };
+    return () => {
+      dispatch(getProductsPerPage({ results: [] }));
+    };
+  }, [currentPage, dispatch]);
 
   const toggleStatus = async (productId, newStatus) => {
     try {
@@ -53,7 +63,7 @@ const ProductsToModify = () => {
     <div className="w-full max-h-screen lg:h-full">
       <div className="flex justify-center lg:hidden">
         <div className="w-auto h-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-16 mb-4 pb-20 pt-16 lg:hidden">
-          {products.map((el) => (
+          {products?.map((el) => (
             <div key={el.id}>
               <CardProduct
                 id={el.id}

@@ -70,7 +70,11 @@ const ManageUser = () => {
           </div>
         </div>
       </div>
-      <ManageUserDesktop allUsers={allUsers}/>
+      <ManageUserDesktop
+        allUsers={allUsers}
+        toggleStatus={toggleStatus}
+        toggleAdminStatus={toggleAdminStatus}
+      />
     </div>
   );
 };

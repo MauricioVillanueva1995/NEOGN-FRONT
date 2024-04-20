@@ -29,7 +29,6 @@ const CardUserDesktop = ({
     "https://i.pinimg.com/originals/1d/2a/7b/1d2a7b6ecfa0afc3b7c854d3aad01f37.jpg";
 
   return (
-    <tbody className="bg-white divide-y divide-gray-200">
       <tr className="transition-all hover:bg-gray-100 hover:shadow-lg">
         <td className="px-6  whitespace-nowrap">
           <div className="flex items-center">
@@ -61,7 +60,7 @@ const CardUserDesktop = ({
         <td className="px-6 text-sm text-gray-500 whitespace-nowrap">
           {adminStatus === true ? "Admin" : "User"}
         </td>
-        <td className="px-3 py-2 text-sm font-medium text-center">
+        <td className="px-3 py-2 text-sm font-medium text-end">
           {adminStatus ? (
             <button
               type="button"
@@ -81,7 +80,6 @@ const CardUserDesktop = ({
           )}
         </td>
       </tr>
-    </tbody>
   );
 };
 

@@ -1,20 +1,27 @@
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 import toast from "react-hot-toast";
 import { motion } from "framer-motion";
 
-import { categories } from "./helpers/FormHelpers";
+import { useState } from "react";
 import {
   validateName,
   validateDescription,
   validateCategory,
   validateStock,
   validatePrice,
+  validateRating,
   validateDiscount,
-} from "./helpers/ProductValidation";
-import Category from "./Category";
-import BackdropModal from "./BackdropModal";
+} from "../CreateProduct/helpers/ProductValidation";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { editProduct } from "../../redux/actions/editProduct";
+import { useNavigate } from "react-router-dom";
+import Category from "../CreateProduct/Category";
+
+import { setProductDetail, clearDetail } from "../../redux/slices/detailSlice";
+
+import { categories } from "../CreateProduct/helpers/FormHelpers";
+import BackdropEdit from "./BackdropEdit";
 
 const dropIn = {
   hidden: { y: "-100vh", opacity: 0 },
@@ -22,26 +29,76 @@ const dropIn = {
   exit: { y: "100vh", opacity: 0 },
 };
 
-const CreateProductDesktop = ({ closeCreate }) => {
-  const [files, setFiles] = useState([]);
+const EditProductDesktop = ({ id, closeEdit }) => {
+  const detail = useSelector((state) => state.detail.detail);
+  const dispatch = useDispatch();
   const history = useNavigate();
+
+  const fetchDetail = () => {
+    return async function (dispatch) {
+      try {
+        const json = await axios.get(`/api/products/${id}`);
+        const detail = json.data;
+        return dispatch(setProductDetail(detail));
+      } catch (error) {
+        console.error("Error fetching detail:", error);
+      }
+    };
+  };
+
+  useEffect(() => {
+    dispatch(fetchDetail());
+    return () => {
+      dispatch(clearDetail());
+    };
+  }, [dispatch, id]);
 
   const [input, setInput] = useState({
     name: "",
     description: "",
     category: "",
+    image: "",
     stock: 0,
     price: 0,
     discount: 0,
+    rating: 0,
   });
+
+  useEffect(() => {
+    if (detail) {
+      const calculateAverageRating = (ratings) => {
+        if (!ratings || ratings.length === 0) {
+          return 0;
+        }
+
+        const sum = ratings.reduce((total, rating) => total + rating, 0);
+        const average = sum / ratings.length;
+        return average;
+      };
+      const averageRating = calculateAverageRating(detail.rating);
+
+      setInput({
+        name: detail.name,
+        description: detail.description,
+        category: detail.category,
+        image: detail.image,
+        stock: detail.stock,
+        price: detail.price,
+        discount: detail.discount,
+        rating: averageRating,
+      });
+    }
+  }, [detail]);
 
   const [errors, setErrors] = useState({
     name: "",
     description: "",
     category: "",
+    image: "",
     stock: "",
     price: "",
     discount: "",
+    rating: "",
   });
 
   const [descriptionLength, setDescriptionLength] = useState(0);
@@ -76,6 +133,7 @@ const CreateProductDesktop = ({ closeCreate }) => {
     setInput((prevInput) => ({
       ...prevInput,
       category: selectedCategory,
+      size: [],
     }));
     setErrors((prevErrors) => ({
       ...prevErrors,
@@ -123,11 +181,22 @@ const CreateProductDesktop = ({ closeCreate }) => {
     }));
   };
 
+  const handleRatingChange = (event) => {
+    const { name, value } = event.target;
+    setInput((prevInput) => ({
+      ...prevInput,
+      [name]: parseInt(value),
+    }));
+
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      rating: validateRating(value),
+    }));
+  };
   //***************************************************************** */
 
-  async function handleSubmit(event) {
+  function handleSubmit(event) {
     event.preventDefault();
-
     const fieldErrors = {
       name: validateName(input.name),
       description: validateDescription(input.description),
@@ -135,6 +204,7 @@ const CreateProductDesktop = ({ closeCreate }) => {
       stock: validateStock(input.stock),
       price: validatePrice(input.price),
       discount: validateDiscount(input.discount),
+      rating: validateRating(input.rating),
     };
 
     setErrors(fieldErrors);
@@ -145,34 +215,29 @@ const CreateProductDesktop = ({ closeCreate }) => {
       return;
     }
 
-    const responseInput = await axios.post("/api/products/create", input);
+    const updatedInput = {
+      ...input,
+      rating: [input.rating],
+    };
 
-    const formData = new FormData();
-    for (let i = 0; i < files.length; i++) {
-      const image = files[i];
-      formData.append("image", image);
-    }
-    const responseImage = await axios.post(
-      `/api/products/images/${responseInput.data.id}`,
-      formData,
-      { headers: { "Content-Type": "multipart/form-data" } }
-    );
-
-    toast.succes("Product Created Successfully");
+    dispatch(editProduct(id, updatedInput));
+    toast.success("Product Edited Successfully");
 
     setInput({
       name: "",
       description: "",
       category: "",
+      image: "",
       stock: 0,
       price: 0,
       discount: 0,
+      rating: 0,
     });
-    history("/Admin/Create-Product");
+    history("/Admin/Products-To-Modify");
   }
 
   return (
-    <BackdropModal closeModal={closeCreate}>
+    <BackdropEdit closeModal={closeEdit}>
       <motion.div
         onClick={(event) => event.stopPropagation()}
         variants={dropIn}
@@ -180,18 +245,18 @@ const CreateProductDesktop = ({ closeCreate }) => {
         animate="visible"
         exit="exit"
       >
-        <div className="h-screen overflow-y-auto justify-center items-start md:inset-0 md:h-full dark:bg-neutral-950 flex pt-16 w-full">
+        <div className="h-screen overflow-y-auto w-[700px] justify-center items-start md:inset-0 md:h-full dark:bg-neutral-950 flex pt-10">
           <div className="relative p-4 max-w-2xl h-screen md:h-auto font-general-sans w-full ">
             {/* <!-- content --> */}
             <div className="relative p-4 bg-white rounded-lg shadow dark:bg-zinc-950 sm:p-5 pb-[100px]">
               {/* <!--  header --> */}
               <div className="flex justify-between items-center pb-4 mb-4 rounded-t border-b sm:mb-5 dark:border-gray-600">
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                  Add Product
+                  Edit Product
                 </h3>
                 <button
                   type="button"
-                  onClick={closeCreate}
+                  onClick={closeEdit}
                   className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
                   data-modal-toggle="updateProductModal"
                 >
@@ -257,27 +322,6 @@ const CreateProductDesktop = ({ closeCreate }) => {
                       </div>
                     )}
                   </div>
-
-                  <div>
-                    <label
-                      htmlFor="images"
-                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                    >
-                      Images
-                    </label>
-                    <input
-                      type="file"
-                      accept="image/*"
-                      multiple={true}
-                      onChange={(event) => setFiles(event.target.files)}
-                      className="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none focus:border-blue-500 dark:focus:border-blue-500 text-sm rounded-lg block w-full py-2.5 px-6  dark:bg-stone-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-                    />
-                    {/* {errors.image && (
-                  <div className="mb-3 text-normal text-red-500 ">
-                    {errors.images}
-                  </div>
-                )} */}
-                  </div>
                   <div className="sm:col-span-2">
                     <label
                       htmlFor="description"
@@ -300,13 +344,7 @@ const CreateProductDesktop = ({ closeCreate }) => {
                         {errors.description}
                       </div>
                     )}
-                    <span
-                      className={`flex justify-end ${
-                        descriptionLength === maxDescriptionLength
-                          ? "text-red-600"
-                          : "dark:text-white"
-                      }`}
-                    >
+                    <span className="flex justify-end dark:text-white">
                       {`${descriptionLength}/${maxDescriptionLength}`}
                     </span>
                   </div>
@@ -321,6 +359,7 @@ const CreateProductDesktop = ({ closeCreate }) => {
                       type="number"
                       name="stock"
                       id="stock"
+                      value={input.stock}
                       autoComplete="off"
                       className="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none focus:border-blue-500 dark:focus:border-blue-500 text-sm rounded-lg  block w-full p-2.5 dark:bg-stone-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                       onChange={handleStockChange}
@@ -344,6 +383,7 @@ const CreateProductDesktop = ({ closeCreate }) => {
                       type="number"
                       name="price"
                       id="price"
+                      value={input.price}
                       autoComplete="off"
                       onChange={handlePriceChange}
                       className="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none focus:border-blue-500 dark:focus:border-blue-500 text-sm rounded-lg  block w-full p-2.5 dark:bg-stone-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
@@ -367,6 +407,7 @@ const CreateProductDesktop = ({ closeCreate }) => {
                       type="number"
                       name="discount"
                       id="discount"
+                      value={input.discount}
                       autoComplete="off"
                       onChange={handleDiscountChange}
                       className="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none focus:border-blue-500 dark:focus:border-blue-500 text-sm rounded-lg  block w-full p-2.5 dark:bg-stone-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
@@ -379,25 +420,37 @@ const CreateProductDesktop = ({ closeCreate }) => {
                       </div>
                     )}
                   </div>
+                  <div>
+                    <label
+                      htmlFor="rating"
+                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >
+                      Rating
+                    </label>
+                    <input
+                      type="number"
+                      name="rating"
+                      id="rating"
+                      value={input.rating}
+                      autoComplete="off"
+                      onChange={handleRatingChange}
+                      className="bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none focus:border-blue-500 dark:focus:border-blue-500 text-sm rounded-lg  block w-full p-2.5 dark:bg-stone-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+                      placeholder="1/5"
+                      required=""
+                    />
+                    {errors.rating && (
+                      <div className="mb-3 text-normal text-red-500 ">
+                        {errors.rating}
+                      </div>
+                    )}
+                  </div>
                 </div>
                 <div className="flex justify-end">
                   <button
                     type="submit"
                     className="text-white inline-flex items-center bg-black hover:bg-neutral-900 focus:ring-4 focus:outline-none focus:ring-neutral-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-black dark:bg-gray-200 dark:hover:bg-white"
                   >
-                    <svg
-                      className="mr-1 -ml-1 w-6 h-6"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
-                        clipRule="evenodd"
-                      ></path>
-                    </svg>
-                    Add new product
+                    Edit product
                   </button>
                 </div>
               </form>
@@ -405,8 +458,8 @@ const CreateProductDesktop = ({ closeCreate }) => {
           </div>
         </div>
       </motion.div>
-    </BackdropModal>
+    </BackdropEdit>
   );
 };
 
-export default CreateProductDesktop;
+export default EditProductDesktop;
